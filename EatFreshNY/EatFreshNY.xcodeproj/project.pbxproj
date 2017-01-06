@@ -12,6 +12,8 @@
 		50DB2B581E20380600AA63A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B561E20380600AA63A8 /* Main.storyboard */; };
 		50DB2B5A1E20380600AA63A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B591E20380600AA63A8 /* Assets.xcassets */; };
 		50DB2B5D1E20380600AA63A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B5B1E20380600AA63A8 /* LaunchScreen.storyboard */; };
+		50DB2B651E203F6C00AA63A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B641E203F6C00AA63A8 /* GoogleService-Info.plist */; };
+		51F44638A47FB4A9D0ED945F /* Pods_EatFreshNY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC7D54759AD5C660197A4C3 /* Pods_EatFreshNY.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		50DB2B591E20380600AA63A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50DB2B5C1E20380600AA63A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50DB2B5E1E20380600AA63A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50DB2B641E203F6C00AA63A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7EC7D54759AD5C660197A4C3 /* Pods_EatFreshNY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatFreshNY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F00FDEAEA1731D06D53F6D2 /* Pods-EatFreshNY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFreshNY.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY.release.xcconfig"; sourceTree = "<group>"; };
+		CFE0AD9FDA2592534603FA1E /* Pods-EatFreshNY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFreshNY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51F44638A47FB4A9D0ED945F /* Pods_EatFreshNY.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20FA0EC11A569BEB9E07ABB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EC7D54759AD5C660197A4C3 /* Pods_EatFreshNY.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		440481085AFA50D56E62E521 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFE0AD9FDA2592534603FA1E /* Pods-EatFreshNY.debug.xcconfig */,
+				8F00FDEAEA1731D06D53F6D2 /* Pods-EatFreshNY.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		50DB2B461E20380600AA63A8 = {
 			isa = PBXGroup;
 			children = (
 				50DB2B511E20380600AA63A8 /* EatFreshNY */,
 				50DB2B501E20380600AA63A8 /* Products */,
+				440481085AFA50D56E62E521 /* Pods */,
+				20FA0EC11A569BEB9E07ABB8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +86,7 @@
 				50DB2B591E20380600AA63A8 /* Assets.xcassets */,
 				50DB2B5B1E20380600AA63A8 /* LaunchScreen.storyboard */,
 				50DB2B5E1E20380600AA63A8 /* Info.plist */,
+				50DB2B641E203F6C00AA63A8 /* GoogleService-Info.plist */,
 			);
 			path = EatFreshNY;
 			sourceTree = "<group>";
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50DB2B611E20380600AA63A8 /* Build configuration list for PBXNativeTarget "EatFreshNY" */;
 			buildPhases = (
+				7F1776FE2902D9AFD00E5274 /* [CP] Check Pods Manifest.lock */,
 				50DB2B4B1E20380600AA63A8 /* Sources */,
 				50DB2B4C1E20380600AA63A8 /* Frameworks */,
 				50DB2B4D1E20380600AA63A8 /* Resources */,
+				08F2F2C90B11713DBA885CA0 /* [CP] Embed Pods Frameworks */,
+				A8FA726AB6AEA8C26BD94F37 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,12 +154,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				50DB2B5D1E20380600AA63A8 /* LaunchScreen.storyboard in Resources */,
+				50DB2B651E203F6C00AA63A8 /* GoogleService-Info.plist in Resources */,
 				50DB2B5A1E20380600AA63A8 /* Assets.xcassets in Resources */,
 				50DB2B581E20380600AA63A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08F2F2C90B11713DBA885CA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F1776FE2902D9AFD00E5274 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A8FA726AB6AEA8C26BD94F37 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		50DB2B4B1E20380600AA63A8 /* Sources */ = {
@@ -256,6 +335,7 @@
 		};
 		50DB2B621E20380600AA63A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFE0AD9FDA2592534603FA1E /* Pods-EatFreshNY.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EatFreshNY/Info.plist;
@@ -268,6 +348,7 @@
 		};
 		50DB2B631E20380600AA63A8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F00FDEAEA1731D06D53F6D2 /* Pods-EatFreshNY.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EatFreshNY/Info.plist;
@@ -297,6 +378,7 @@
 				50DB2B631E20380600AA63A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
