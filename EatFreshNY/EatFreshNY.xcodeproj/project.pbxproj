@@ -15,6 +15,7 @@
 		50DB2B651E203F6C00AA63A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B641E203F6C00AA63A8 /* GoogleService-Info.plist */; };
 		51F44638A47FB4A9D0ED945F /* Pods_EatFreshNY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC7D54759AD5C660197A4C3 /* Pods_EatFreshNY.framework */; };
 		EEBC506E1E2899F4005EAE7B /* Newyorkcity.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEBC506D1E2899F4005EAE7B /* Newyorkcity.ttf */; };
+		EEBC50D11E2ACDCF005EAE7B /* ImageAssets in Resources */ = {isa = PBXBuildFile; fileRef = EEBC50D01E2ACDCF005EAE7B /* ImageAssets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8F00FDEAEA1731D06D53F6D2 /* Pods-EatFreshNY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFreshNY.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY.release.xcconfig"; sourceTree = "<group>"; };
 		CFE0AD9FDA2592534603FA1E /* Pods-EatFreshNY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFreshNY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY.debug.xcconfig"; sourceTree = "<group>"; };
 		EEBC506D1E2899F4005EAE7B /* Newyorkcity.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Newyorkcity.ttf; path = ../../../../../../../../Downloads/new_york_city/Newyorkcity.ttf; sourceTree = "<group>"; };
+		EEBC50D01E2ACDCF005EAE7B /* ImageAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ImageAssets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				50DB2B511E20380600AA63A8 /* EatFreshNY */,
 				50DB2B501E20380600AA63A8 /* Products */,
+				EEBC50D01E2ACDCF005EAE7B /* ImageAssets */,
 				440481085AFA50D56E62E521 /* Pods */,
 				20FA0EC11A569BEB9E07ABB8 /* Frameworks */,
 			);
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50DB2B5D1E20380600AA63A8 /* LaunchScreen.storyboard in Resources */,
+				EEBC50D11E2ACDCF005EAE7B /* ImageAssets in Resources */,
 				50DB2B651E203F6C00AA63A8 /* GoogleService-Info.plist in Resources */,
 				50DB2B5A1E20380600AA63A8 /* Assets.xcassets in Resources */,
 				EEBC506E1E2899F4005EAE7B /* Newyorkcity.ttf in Resources */,
