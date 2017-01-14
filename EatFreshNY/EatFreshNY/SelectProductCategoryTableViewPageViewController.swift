@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SelectProductCategoryTableViewPageViewController.swift
 //  EatFreshNY
 //
 //  Created by Group 3 (Grace, Israel, Richel, Matt, Oskar) on 1/6/17.
@@ -9,7 +9,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SelectProductCategoryTableViewPageViewController: UIViewController {
+	
+	// IBOutlets 
+	@IBOutlet weak var selectProductCategoryTableView: UITableView!
 
    override func viewDidLoad() {
       super.viewDidLoad()

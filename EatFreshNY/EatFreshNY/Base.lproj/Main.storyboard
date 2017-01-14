@@ -12,7 +12,7 @@
         <!--Select Product Category TableView Page-->
         <scene sceneID="lHe-ZA-IEg">
             <objects>
-                <viewController id="Vqx-za-xSY" userLabel="Select Product Category TableView Page" sceneMemberID="viewController">
+                <viewController id="Vqx-za-xSY" userLabel="Select Product Category TableView Page" customClass="SelectProductCategoryTableViewPageViewController" customModule="EatFreshNY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kDE-MM-pTI"/>
                         <viewControllerLayoutGuide type="bottom" id="kXQ-qp-nCM"/>
@@ -32,7 +32,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="104" id="65d-o2-FqS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="104" id="65d-o2-FqS" customClass="SelectProductTableViewCell" customModule="EatFreshNY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="65d-o2-FqS" id="aOi-fn-arn">
@@ -45,8 +45,15 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ProductCategoryImageOutlet" destination="FD7-Zl-suv" id="JJ8-SA-bGe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Vqx-za-xSY" id="RFZ-sR-tDh"/>
+                                    <outlet property="delegate" destination="Vqx-za-xSY" id="5ze-qI-JAX"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.36169453660000001" green="0.70724936549999995" blue="0.095656805999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -72,6 +79,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="selectProductCategoryTableView" destination="S5T-uk-GDU" id="euK-s1-eiH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1p-Vb-cEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,7 +90,7 @@
         <!--All Product Collection View Page-->
         <scene sceneID="QpJ-nz-G4s">
             <objects>
-                <viewController id="AR3-WU-OkQ" userLabel="All Product Collection View Page" sceneMemberID="viewController">
+                <viewController id="AR3-WU-OkQ" userLabel="All Product Collection View Page" customClass="AllProductCollectionViewPageViewController" customModule="EatFreshNY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BFV-NX-5I9"/>
                         <viewControllerLayoutGuide type="bottom" id="jhB-FK-FFE"/>
@@ -100,14 +110,23 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NEp-2R-uoN">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NEp-2R-uoN" customClass="AllProductsCollectionViewCell" customModule="EatFreshNY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DwW-MH-k2R">
+                                                    <rect key="frame" x="8" y="8" width="109" height="109"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
                                         <size key="customSize" width="125" height="125"/>
+                                        <connections>
+                                            <outlet property="productImage" destination="DwW-MH-k2R" id="UVJ-7h-haM"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -128,15 +147,18 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                     </navigationItem>
+                    <connections>
+                        <outlet property="allProductsCollectionView" destination="usq-Cp-bGx" id="L5M-F2-Bzv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJZ-gg-85X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2383" y="-170"/>
+            <point key="canvasLocation" x="2381.5999999999999" y="-170.46476761619192"/>
         </scene>
         <!--Select Vendor TableView Page-->
         <scene sceneID="qXn-YZ-CPe">
             <objects>
-                <viewController id="wGD-qk-79x" userLabel="Select Vendor TableView Page" sceneMemberID="viewController">
+                <viewController id="wGD-qk-79x" userLabel="Select Vendor TableView Page" customClass="SelectVendorTableViewPageViewController" customModule="EatFreshNY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cra-ne-79L"/>
                         <viewControllerLayoutGuide type="bottom" id="65D-7O-rTE"/>
@@ -150,7 +172,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="112" id="qbX-9Q-PH2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="112" id="qbX-9Q-PH2" customClass="SelectVendorTableViewCell" customModule="EatFreshNY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qbX-9Q-PH2" id="cKr-uC-K6t">
@@ -170,8 +192,16 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="vendorImage" destination="ZRB-mh-iI3" id="tcc-5J-Chm"/>
+                                            <outlet property="vendorNameLabel" destination="IQ7-pb-P62" id="jVN-4n-Xxs"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wGD-qk-79x" id="LLO-ax-uMj"/>
+                                    <outlet property="delegate" destination="wGD-qk-79x" id="NhJ-St-QlH"/>
+                                </connections>
                             </tableView>
                             <searchBar contentMode="redraw" fixedFrame="YES" text="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Vxh-vU-iby">
                                 <rect key="frame" x="22" y="8" width="330" height="44"/>
@@ -203,15 +233,18 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="selectVendorTableView" destination="NEb-1D-d21" id="h9x-mv-Dgk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ov-jT-kt5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1494" y="499"/>
         </scene>
-        <!--View Controller-->
+        <!--Cart View Controller-->
         <scene sceneID="5cJ-YP-WQU">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="gCl-A6-oSw" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="gCl-A6-oSw" customClass="CartViewController" customModule="EatFreshNY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mbL-IY-eUL"/>
                         <viewControllerLayoutGuide type="bottom" id="N9Z-iD-PR2"/>
@@ -225,7 +258,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="117" id="OSg-fU-kSQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="117" id="OSg-fU-kSQ" customClass="CartTableViewCell" customModule="EatFreshNY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="117"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OSg-fU-kSQ" id="xer-NQ-uJK">
@@ -235,6 +268,9 @@
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="6e8-AK-3Wc">
                                                     <rect key="frame" x="213" y="79" width="94" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="quantityStepperTapped:" destination="OSg-fU-kSQ" eventType="valueChanged" id="eWR-oF-EtE"/>
+                                                    </connections>
                                                 </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2T-Ez-1BT">
                                                     <rect key="frame" x="315" y="79" width="52" height="29"/>
@@ -277,8 +313,18 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="priceAmountLabel" destination="vA0-oz-qw8" id="vq2-n6-6OX"/>
+                                            <outlet property="productImage" destination="lQk-Z4-DWr" id="S3r-Nu-Brr"/>
+                                            <outlet property="productNameLabel" destination="x4b-lY-kbs" id="xuV-SF-mjf"/>
+                                            <outlet property="quantityAmountLabel" destination="c2T-Ez-1BT" id="ohx-bg-p2K"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="gCl-A6-oSw" id="G5I-YP-bHe"/>
+                                    <outlet property="delegate" destination="gCl-A6-oSw" id="Sdj-6o-jcY"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(#ITEM)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMJ-3c-7xj">
                                 <rect key="frame" x="129" y="470" width="125" height="21"/>
@@ -308,6 +354,9 @@
                                 <state key="normal" title="PURCHASE">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="purchaseButtonTapped:" destination="gCl-A6-oSw" eventType="touchUpInside" id="2Mf-j6-D3F"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cart " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJd-ZG-SgJ">
                                 <rect key="frame" x="127" y="8" width="128" height="62"/>
@@ -320,6 +369,11 @@
                         <color key="backgroundColor" red="0.36169453660000001" green="0.70724936549999995" blue="0.095656805999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cartNumberOfItemsTotalLabel" destination="yMJ-3c-7xj" id="dCj-7F-trF"/>
+                        <outlet property="cartTableView" destination="J2B-Eh-UHn" id="3mq-mE-ycL"/>
+                        <outlet property="cartTotalPriceLabel" destination="QPQ-xt-O7D" id="FnY-HM-nlm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gmf-g9-MJW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -328,7 +382,7 @@
         <!--Thank You Purchase Confirmation Page-->
         <scene sceneID="bJU-0O-4Nm">
             <objects>
-                <viewController id="GO7-2d-fdZ" userLabel="Thank You Purchase Confirmation Page" sceneMemberID="viewController">
+                <viewController id="GO7-2d-fdZ" userLabel="Thank You Purchase Confirmation Page" customClass="ThankYouPurchaseConfirmationPageViewController" customModule="EatFreshNY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cw9-PC-yBo"/>
                         <viewControllerLayoutGuide type="bottom" id="xqr-i4-ZN5"/>
@@ -365,10 +419,17 @@
                                 <state key="normal" title="Continue Shopping ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="continueShoppingButtonTapped:" destination="GO7-2d-fdZ" eventType="touchUpInside" id="DqO-SZ-PiY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="cartIDLabel" destination="p8C-el-Mr5" id="O2l-IR-z3W"/>
+                        <outlet property="estimatedPickUpTimeLabel" destination="Qvh-iG-rbW" id="6Ma-iV-scT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="too-ZZ-6MN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -398,7 +459,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YEk-4A-Feg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Products" image="Vegetarian Food_000000_25" selectedImage="Vegetarian Food_000000_25" id="odr-8c-ogh"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="d9j-zf-Dno">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="d9j-zf-Dno">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -414,7 +475,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H6O-sa-sua" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Vendors" image="Shop_000000_25" selectedImage="Shop_000000_25" id="tpe-fh-Mga"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="jzl-TB-QsF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="jzl-TB-QsF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -427,7 +488,7 @@
         <!--Vendor Product Collection View Page-->
         <scene sceneID="tRz-h0-2oH">
             <objects>
-                <viewController id="l8A-5A-zAT" userLabel="Vendor Product Collection View Page" sceneMemberID="viewController">
+                <viewController id="l8A-5A-zAT" userLabel="Vendor Product Collection View Page" customClass="VendorProductCollectionViewPageViewController" customModule="EatFreshNY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rLM-Xr-n94"/>
                         <viewControllerLayoutGuide type="bottom" id="M53-po-LUw"/>
@@ -447,14 +508,23 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UeI-k9-t9V">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UeI-k9-t9V" customClass="VendorProductsCollectionViewCell" customModule="EatFreshNY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T0M-MD-K2v">
+                                                    <rect key="frame" x="8" y="8" width="109" height="109"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
                                         <size key="customSize" width="125" height="125"/>
+                                        <connections>
+                                            <outlet property="vendorProductImage" destination="T0M-MD-K2v" id="18G-34-uCU"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -467,15 +537,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.36169453660000001" green="0.70724936549999995" blue="0.095656805999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="vendorProductsCollectionView" destination="2ZD-l7-AyM" id="nNr-5w-kL6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAJ-WZ-JlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2382" y="499"/>
+            <point key="canvasLocation" x="2381.5999999999999" y="498.80059970014997"/>
         </scene>
         <!--Product Detail Page-->
         <scene sceneID="J3l-ND-ZKT">
             <objects>
-                <viewController id="3AH-0a-BZc" userLabel="Product Detail Page" sceneMemberID="viewController">
+                <viewController id="3AH-0a-BZc" userLabel="Product Detail Page" customClass="ProductDetailPageViewController" customModule="EatFreshNY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ttr-OH-xPi"/>
                         <viewControllerLayoutGuide type="bottom" id="F57-Uk-hTR"/>
@@ -505,6 +578,9 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="CXE-SK-di0">
                                 <rect key="frame" x="163" y="516" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="quantityStepperTapped:" destination="3AH-0a-BZc" eventType="valueChanged" id="aaI-zL-mrC"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QUANTITY:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZQ-sQ-c6P">
                                 <rect key="frame" x="67" y="520" width="88" height="21"/>
@@ -534,6 +610,9 @@
                                 <state key="normal" title="ADD TO CART">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addToCartButtonTapped:" destination="3AH-0a-BZc" eventType="touchUpInside" id="KrG-5N-fUT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgU-XP-b3H">
                                 <rect key="frame" x="260" y="516" width="52" height="29"/>
@@ -551,6 +630,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="productDescriptionLabel" destination="D1A-q3-ggM" id="HnW-gm-by0"/>
+                        <outlet property="productDetailImage" destination="8Ra-Cc-DxC" id="3VP-qn-bpG"/>
+                        <outlet property="productNameLabel" destination="cIt-Vh-B5Z" id="AOv-wD-zkR"/>
+                        <outlet property="productPriceLabel" destination="jTO-y2-Xpm" id="QBK-iO-w7A"/>
+                        <outlet property="quantityNumberLabel" destination="rgU-XP-b3H" id="QQM-gJ-Qqa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSG-Vz-9ob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
