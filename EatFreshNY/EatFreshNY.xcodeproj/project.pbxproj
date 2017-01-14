@@ -14,6 +14,7 @@
 		50DB2B5D1E20380600AA63A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B5B1E20380600AA63A8 /* LaunchScreen.storyboard */; };
 		50DB2B651E203F6C00AA63A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B641E203F6C00AA63A8 /* GoogleService-Info.plist */; };
 		51F44638A47FB4A9D0ED945F /* Pods_EatFreshNY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC7D54759AD5C660197A4C3 /* Pods_EatFreshNY.framework */; };
+		EEBC506E1E2899F4005EAE7B /* Newyorkcity.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEBC506D1E2899F4005EAE7B /* Newyorkcity.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7EC7D54759AD5C660197A4C3 /* Pods_EatFreshNY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatFreshNY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F00FDEAEA1731D06D53F6D2 /* Pods-EatFreshNY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFreshNY.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY.release.xcconfig"; sourceTree = "<group>"; };
 		CFE0AD9FDA2592534603FA1E /* Pods-EatFreshNY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFreshNY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY.debug.xcconfig"; sourceTree = "<group>"; };
+		EEBC506D1E2899F4005EAE7B /* Newyorkcity.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Newyorkcity.ttf; path = ../../../../../../../../Downloads/new_york_city/Newyorkcity.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		50DB2B511E20380600AA63A8 /* EatFreshNY */ = {
 			isa = PBXGroup;
 			children = (
+				EEBC506C1E2899D4005EAE7B /* Font File */,
 				50DB2B521E20380600AA63A8 /* AppDelegate.swift */,
 				50DB2B541E20380600AA63A8 /* ViewController.swift */,
 				50DB2B561E20380600AA63A8 /* Main.storyboard */,
@@ -89,6 +92,14 @@
 				50DB2B641E203F6C00AA63A8 /* GoogleService-Info.plist */,
 			);
 			path = EatFreshNY;
+			sourceTree = "<group>";
+		};
+		EEBC506C1E2899D4005EAE7B /* Font File */ = {
+			isa = PBXGroup;
+			children = (
+				EEBC506D1E2899F4005EAE7B /* Newyorkcity.ttf */,
+			);
+			name = "Font File";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +137,7 @@
 				TargetAttributes = {
 					50DB2B4E1E20380600AA63A8 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = VJQVDWQ9VC;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -156,6 +168,7 @@
 				50DB2B5D1E20380600AA63A8 /* LaunchScreen.storyboard in Resources */,
 				50DB2B651E203F6C00AA63A8 /* GoogleService-Info.plist in Resources */,
 				50DB2B5A1E20380600AA63A8 /* Assets.xcassets in Resources */,
+				EEBC506E1E2899F4005EAE7B /* Newyorkcity.ttf in Resources */,
 				50DB2B581E20380600AA63A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +351,7 @@
 			baseConfigurationReference = CFE0AD9FDA2592534603FA1E /* Pods-EatFreshNY.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VJQVDWQ9VC;
 				INFOPLIST_FILE = EatFreshNY/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gyk42.EatFreshNY;
@@ -351,6 +365,7 @@
 			baseConfigurationReference = 8F00FDEAEA1731D06D53F6D2 /* Pods-EatFreshNY.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VJQVDWQ9VC;
 				INFOPLIST_FILE = EatFreshNY/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gyk42.EatFreshNY;
