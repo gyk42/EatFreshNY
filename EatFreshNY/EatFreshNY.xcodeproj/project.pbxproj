@@ -15,6 +15,7 @@
 		50DB2B651E203F6C00AA63A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B641E203F6C00AA63A8 /* GoogleService-Info.plist */; };
 		51F44638A47FB4A9D0ED945F /* Pods_EatFreshNY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC7D54759AD5C660197A4C3 /* Pods_EatFreshNY.framework */; };
 		EEBC50D11E2ACDCF005EAE7B /* ImageAssets in Resources */ = {isa = PBXBuildFile; fileRef = EEBC50D01E2ACDCF005EAE7B /* ImageAssets */; };
+		EEBC50E01E2AD1EC005EAE7B /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEBC50DF1E2AD1EC005EAE7B /* Auth.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,8 @@
 		7EC7D54759AD5C660197A4C3 /* Pods_EatFreshNY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatFreshNY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F00FDEAEA1731D06D53F6D2 /* Pods-EatFreshNY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFreshNY.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY.release.xcconfig"; sourceTree = "<group>"; };
 		CFE0AD9FDA2592534603FA1E /* Pods-EatFreshNY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFreshNY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY.debug.xcconfig"; sourceTree = "<group>"; };
-		EEBC50D01E2ACDCF005EAE7B /* ImageAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ImageAssets; sourceTree = "<group>"; };
+		EEBC50D01E2ACDCF005EAE7B /* ImageAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ImageAssets; path = ../ImageAssets; sourceTree = "<group>"; };
+		EEBC50DF1E2AD1EC005EAE7B /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				50DB2B511E20380600AA63A8 /* EatFreshNY */,
+				EEBC50DD1E2AD107005EAE7B /* Assets */,
+				EEBC50D61E2ACFA4005EAE7B /* Plist  */,
 				50DB2B501E20380600AA63A8 /* Products */,
-				EEBC50D01E2ACDCF005EAE7B /* ImageAssets */,
 				440481085AFA50D56E62E521 /* Pods */,
 				20FA0EC11A569BEB9E07ABB8 /* Frameworks */,
 			);
@@ -83,15 +86,129 @@
 		50DB2B511E20380600AA63A8 /* EatFreshNY */ = {
 			isa = PBXGroup;
 			children = (
-				50DB2B521E20380600AA63A8 /* AppDelegate.swift */,
-				50DB2B541E20380600AA63A8 /* ViewController.swift */,
-				50DB2B561E20380600AA63A8 /* Main.storyboard */,
-				50DB2B591E20380600AA63A8 /* Assets.xcassets */,
-				50DB2B5B1E20380600AA63A8 /* LaunchScreen.storyboard */,
+				EEBC50DE1E2AD14D005EAE7B /* Main */,
+				EEBC50D51E2ACF49005EAE7B /* Global Data Model */,
+				EEBC50D41E2ACF3C005EAE7B /* Clients */,
+				EEBC50D31E2ACF22005EAE7B /* Vendors */,
+				EEBC50D21E2ACF0F005EAE7B /* Auth */,
+			);
+			path = EatFreshNY;
+			sourceTree = "<group>";
+		};
+		EEBC50D21E2ACF0F005EAE7B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				EEBC50DF1E2AD1EC005EAE7B /* Auth.storyboard */,
+			);
+			name = Auth;
+			sourceTree = "<group>";
+		};
+		EEBC50D31E2ACF22005EAE7B /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				EEBC50E11E2AD3A8005EAE7B /* Data */,
+				EEBC50E21E2AD3B0005EAE7B /* Logic */,
+				EEBC50E31E2AD3B7005EAE7B /* UI */,
+			);
+			name = Vendors;
+			sourceTree = "<group>";
+		};
+		EEBC50D41E2ACF3C005EAE7B /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				EEBC50D91E2AD059005EAE7B /* Data */,
+				EEBC50D81E2AD031005EAE7B /* Logic */,
+				EEBC50D71E2AD00C005EAE7B /* UI */,
+			);
+			name = Clients;
+			sourceTree = "<group>";
+		};
+		EEBC50D51E2ACF49005EAE7B /* Global Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				EEBC50DA1E2AD091005EAE7B /* FireBase */,
+			);
+			name = "Global Data Model";
+			sourceTree = "<group>";
+		};
+		EEBC50D61E2ACFA4005EAE7B /* Plist  */ = {
+			isa = PBXGroup;
+			children = (
 				50DB2B5E1E20380600AA63A8 /* Info.plist */,
 				50DB2B641E203F6C00AA63A8 /* GoogleService-Info.plist */,
 			);
+			name = "Plist ";
 			path = EatFreshNY;
+			sourceTree = "<group>";
+		};
+		EEBC50D71E2AD00C005EAE7B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				50DB2B561E20380600AA63A8 /* Main.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		EEBC50D81E2AD031005EAE7B /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				50DB2B541E20380600AA63A8 /* ViewController.swift */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		EEBC50D91E2AD059005EAE7B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		EEBC50DA1E2AD091005EAE7B /* FireBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FireBase;
+			sourceTree = "<group>";
+		};
+		EEBC50DD1E2AD107005EAE7B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				50DB2B591E20380600AA63A8 /* Assets.xcassets */,
+				EEBC50D01E2ACDCF005EAE7B /* ImageAssets */,
+			);
+			name = Assets;
+			path = EatFreshNY;
+			sourceTree = "<group>";
+		};
+		EEBC50DE1E2AD14D005EAE7B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				50DB2B5B1E20380600AA63A8 /* LaunchScreen.storyboard */,
+				50DB2B521E20380600AA63A8 /* AppDelegate.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		EEBC50E11E2AD3A8005EAE7B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		EEBC50E21E2AD3B0005EAE7B /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		EEBC50E31E2AD3B7005EAE7B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEBC50E01E2AD1EC005EAE7B /* Auth.storyboard in Resources */,
 				50DB2B5D1E20380600AA63A8 /* LaunchScreen.storyboard in Resources */,
 				EEBC50D11E2ACDCF005EAE7B /* ImageAssets in Resources */,
 				50DB2B651E203F6C00AA63A8 /* GoogleService-Info.plist in Resources */,
