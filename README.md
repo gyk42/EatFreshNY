@@ -8,3 +8,6 @@ This is a Group Project3.
 * Richel richelcuyler@icloud.com
 * Matt mtripodi1027@gmail.com
 * Oskar oskarmorett@gmail.com
+
+##Slack Channel
+eatfreshny
