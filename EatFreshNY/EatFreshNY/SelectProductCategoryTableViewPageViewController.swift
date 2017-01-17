@@ -22,7 +22,7 @@ class SelectProductCategoryTableViewPageViewController: UIViewController, UITabl
 	
 	// TableView 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+		return 6
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

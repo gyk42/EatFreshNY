@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CartViewController: UIViewController {
+class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	// IBOutlets
 	@IBOutlet weak var cartTableView: UITableView!
@@ -26,6 +26,17 @@ class CartViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+	
+	// TableView 
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 1
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath)
+		return cell 
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
