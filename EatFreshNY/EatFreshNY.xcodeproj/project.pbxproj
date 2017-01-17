@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C189B571E2DD0C200684E85 /* VendorStoryboard1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C189B561E2DD0C200684E85 /* VendorStoryboard1.storyboard */; };
 		0C3A98581E2C84B80014E190 /* VendorStoryboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */; };
 		50DB2B531E20380600AA63A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB2B521E20380600AA63A8 /* AppDelegate.swift */; };
 		50DB2B551E20380600AA63A8 /* SelectProductCategoryTableViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB2B541E20380600AA63A8 /* SelectProductCategoryTableViewPageViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C189B561E2DD0C200684E85 /* VendorStoryboard1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VendorStoryboard1.storyboard; sourceTree = "<group>"; };
 		0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VendorStoryboard2.storyboard; sourceTree = "<group>"; };
 		50DB2B4F1E20380600AA63A8 /* EatFreshNY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatFreshNY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DB2B521E20380600AA63A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 		EEBC50E31E2AD3B7005EAE7B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4C189B561E2DD0C200684E85 /* VendorStoryboard1.storyboard */,
 				0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */,
 			);
 			name = UI;
@@ -330,6 +333,7 @@
 				0C3A98581E2C84B80014E190 /* VendorStoryboard2.storyboard in Resources */,
 				EEBC50E01E2AD1EC005EAE7B /* Auth.storyboard in Resources */,
 				50DB2B5D1E20380600AA63A8 /* LaunchScreen.storyboard in Resources */,
+				4C189B571E2DD0C200684E85 /* VendorStoryboard1.storyboard in Resources */,
 				EEBC50D11E2ACDCF005EAE7B /* ImageAssets in Resources */,
 				50DB2B651E203F6C00AA63A8 /* GoogleService-Info.plist in Resources */,
 				50DB2B5A1E20380600AA63A8 /* Assets.xcassets in Resources */,
