@@ -45,5 +45,6 @@ class SelectVendorTableViewPageViewController: UIViewController, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
+	
 
 }
