@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VendorProductCollectionViewPageViewController: UIViewController {
+class VendorProductCollectionViewPageViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 	
 	// IBOutlets 
 	@IBOutlet weak var vendorProductsCollectionView: UICollectionView!
@@ -18,6 +18,16 @@ class VendorProductCollectionViewPageViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+	
+	// CollectionView
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return 1
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "vendorProductsCell", for: indexPath)
+		return cell
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

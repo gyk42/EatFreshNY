@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectVendorTableViewPageViewController: UIViewController {
+class SelectVendorTableViewPageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	
 	// IBOutlets 
 	@IBOutlet weak var selectVendorTableView: UITableView!
@@ -19,6 +19,16 @@ class SelectVendorTableViewPageViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+	
+	// TableView 
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 1
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "vendorCell", for: indexPath)
+		return cell 
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

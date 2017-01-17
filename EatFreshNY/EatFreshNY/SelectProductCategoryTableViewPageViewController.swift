@@ -9,7 +9,7 @@
 
 import UIKit
 
-class SelectProductCategoryTableViewPageViewController: UIViewController {
+class SelectProductCategoryTableViewPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	// IBOutlets 
 	@IBOutlet weak var selectProductCategoryTableView: UITableView!
@@ -18,6 +18,17 @@ class SelectProductCategoryTableViewPageViewController: UIViewController {
       super.viewDidLoad()
       // Do any additional setup after loading the view, typically from a nib.
    }
+	
+	
+	// TableView 
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 1
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath)
+		return cell 
+	}
 
    override func didReceiveMemoryWarning() {
       super.didReceiveMemoryWarning()
