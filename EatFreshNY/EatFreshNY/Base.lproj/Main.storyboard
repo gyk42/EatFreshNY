@@ -398,7 +398,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YEk-4A-Feg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Products" image="Vegetarian Food_000000_25" selectedImage="Vegetarian Food_000000_25" id="odr-8c-ogh"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="d9j-zf-Dno">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="d9j-zf-Dno">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -414,7 +414,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H6O-sa-sua" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Vendors" image="Shop_000000_25" selectedImage="Shop_000000_25" id="tpe-fh-Mga"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="jzl-TB-QsF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="jzl-TB-QsF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

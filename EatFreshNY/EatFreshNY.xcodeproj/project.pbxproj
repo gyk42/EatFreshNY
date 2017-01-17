@@ -14,6 +14,9 @@
 		50DB2B5D1E20380600AA63A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B5B1E20380600AA63A8 /* LaunchScreen.storyboard */; };
 		50DB2B651E203F6C00AA63A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B641E203F6C00AA63A8 /* GoogleService-Info.plist */; };
 		51F44638A47FB4A9D0ED945F /* Pods_EatFreshNY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC7D54759AD5C660197A4C3 /* Pods_EatFreshNY.framework */; };
+		8D0B7CD41E2ADE83008799F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B7CD31E2ADE83008799F4 /* LoginViewController.swift */; };
+		8D0B7CD61E2ADEAE008799F4 /* ClientSingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B7CD51E2ADEAE008799F4 /* ClientSingUpViewController.swift */; };
+		8D0B7CD81E2ADEC8008799F4 /* VendorSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B7CD71E2ADEC8008799F4 /* VendorSignUpViewController.swift */; };
 		EEBC50D11E2ACDCF005EAE7B /* ImageAssets in Resources */ = {isa = PBXBuildFile; fileRef = EEBC50D01E2ACDCF005EAE7B /* ImageAssets */; };
 		EEBC50E01E2AD1EC005EAE7B /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEBC50DF1E2AD1EC005EAE7B /* Auth.storyboard */; };
 /* End PBXBuildFile section */
@@ -28,6 +31,9 @@
 		50DB2B5E1E20380600AA63A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50DB2B641E203F6C00AA63A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7EC7D54759AD5C660197A4C3 /* Pods_EatFreshNY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatFreshNY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0B7CD31E2ADE83008799F4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8D0B7CD51E2ADEAE008799F4 /* ClientSingUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientSingUpViewController.swift; sourceTree = "<group>"; };
+		8D0B7CD71E2ADEC8008799F4 /* VendorSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorSignUpViewController.swift; sourceTree = "<group>"; };
 		8F00FDEAEA1731D06D53F6D2 /* Pods-EatFreshNY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFreshNY.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY.release.xcconfig"; sourceTree = "<group>"; };
 		CFE0AD9FDA2592534603FA1E /* Pods-EatFreshNY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFreshNY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY.debug.xcconfig"; sourceTree = "<group>"; };
 		EEBC50D01E2ACDCF005EAE7B /* ImageAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ImageAssets; path = ../ImageAssets; sourceTree = "<group>"; };
@@ -95,9 +101,20 @@
 			path = EatFreshNY;
 			sourceTree = "<group>";
 		};
+		8D0B7CD21E2ADE5B008799F4 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				8D0B7CD31E2ADE83008799F4 /* LoginViewController.swift */,
+				8D0B7CD51E2ADEAE008799F4 /* ClientSingUpViewController.swift */,
+				8D0B7CD71E2ADEC8008799F4 /* VendorSignUpViewController.swift */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
 		EEBC50D21E2ACF0F005EAE7B /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				8D0B7CD21E2ADE5B008799F4 /* Logic */,
 				EEBC50DF1E2AD1EC005EAE7B /* Auth.storyboard */,
 			);
 			name = Auth;
@@ -339,6 +356,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				50DB2B551E20380600AA63A8 /* ViewController.swift in Sources */,
+				8D0B7CD41E2ADE83008799F4 /* LoginViewController.swift in Sources */,
+				8D0B7CD81E2ADEC8008799F4 /* VendorSignUpViewController.swift in Sources */,
+				8D0B7CD61E2ADEAE008799F4 /* ClientSingUpViewController.swift in Sources */,
 				50DB2B531E20380600AA63A8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
