@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0C3A98581E2C84B80014E190 /* VendorStoryboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */; };
+		4C189B571E2DD0C200684E85 /* VendorStoryboard1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C189B561E2DD0C200684E85 /* VendorStoryboard1.storyboard */; };
+		4C189B611E2EC0F200684E85 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C189B601E2EC0F200684E85 /* UserModel.swift */; };
 		4C189B611E2EC0F200684E85 /* vendorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C189B601E2EC0F200684E85 /* vendorData.swift */; };
 		4C189B631E2EC6A500684E85 /* ClientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C189B621E2EC6A500684E85 /* ClientData.swift */; };
 		4C189B671E2ECCD400684E85 /* VendorFirebaseFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C189B661E2ECCD400684E85 /* VendorFirebaseFunc.swift */; };
+		5033D3511E2EC4D80020FD42 /* _UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5033D3501E2EC4D80020FD42 /* _UserModel.swift */; };
 		4C189B691E2F004100684E85 /* Hospital_000000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C189B681E2F004100684E85 /* Hospital_000000_25.png */; };
 		4CA14E6C1E2FFF7D00CA326A /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA14E6B1E2FFF7D00CA326A /* ImageProcessing.swift */; };
 		4CA14E6E1E3001B600CA326A /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA14E6D1E3001B600CA326A /* NewItemViewController.swift */; };
@@ -42,9 +45,12 @@
 
 /* Begin PBXFileReference section */
 		0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VendorStoryboard2.storyboard; sourceTree = "<group>"; };
+		4C189B561E2DD0C200684E85 /* VendorStoryboard1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VendorStoryboard1.storyboard; sourceTree = "<group>"; };
+		4C189B601E2EC0F200684E85 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4C189B601E2EC0F200684E85 /* vendorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vendorData.swift; sourceTree = "<group>"; };
 		4C189B621E2EC6A500684E85 /* ClientData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientData.swift; sourceTree = "<group>"; };
 		4C189B661E2ECCD400684E85 /* VendorFirebaseFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorFirebaseFunc.swift; sourceTree = "<group>"; };
+		5033D3501E2EC4D80020FD42 /* _UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _UserModel.swift; sourceTree = "<group>"; };
 		4C189B681E2F004100684E85 /* Hospital_000000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hospital_000000_25.png; sourceTree = "<group>"; };
 		4CA14E6B1E2FFF7D00CA326A /* ImageProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
 		4CA14E6D1E3001B600CA326A /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +116,7 @@
 		5033D3521E2EC4E10020FD42 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				5033D3501E2EC4D80020FD42 /* UserModel.swift */,
+				5033D3501E2EC4D80020FD42 /* _UserModel.swift */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -244,6 +250,8 @@
 		EEBC50DA1E2AD091005EAE7B /* FireBase */ = {
 			isa = PBXGroup;
 			children = (
+				4C189B641E2ECAEF00684E85 /* ImageModel.swift */,
+				4C189B601E2EC0F200684E85 /* UserModel.swift */,
 			);
 			name = FireBase;
 			sourceTree = "<group>";
@@ -271,7 +279,6 @@
 		EEBC50E11E2AD3A8005EAE7B /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				4C189B601E2EC0F200684E85 /* vendorData.swift */,
 				4C189B661E2ECCD400684E85 /* VendorFirebaseFunc.swift */,
 			);
 			name = Data;
@@ -430,12 +437,12 @@
 				EEBC50EF1E2ADB5F005EAE7B /* ThankYouPurchaseConfirmationPageViewController.swift in Sources */,
 				8D0B7CD41E2ADE83008799F4 /* LoginViewController.swift in Sources */,
 				8D0B7CD81E2ADEC8008799F4 /* VendorSignUpViewController.swift in Sources */,
-				5033D3511E2EC4D80020FD42 /* UserModel.swift in Sources */,
+				5033D3511E2EC4D80020FD42 /* _UserModel.swift in Sources */,
 				8D0B7CD61E2ADEAE008799F4 /* ClientSingUpViewController.swift in Sources */,
 				50DB2B531E20380600AA63A8 /* AppDelegate.swift in Sources */,
 				EEBC50ED1E2ADB29005EAE7B /* ProductDetailPageViewController.swift in Sources */,
 				EEBC50F91E2ADCFF005EAE7B /* CartTableViewCell.swift in Sources */,
-				4C189B611E2EC0F200684E85 /* vendorData.swift in Sources */,
+				4C189B611E2EC0F200684E85 /* UserModel.swift in Sources */,
 				EEBC50F31E2ADC3C005EAE7B /* SelectVendorTableViewCell.swift in Sources */,
 				4C189B671E2ECCD400684E85 /* VendorFirebaseFunc.swift in Sources */,
 				4C189B631E2EC6A500684E85 /* ClientData.swift in Sources */,
