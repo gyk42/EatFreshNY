@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0C3A98581E2C84B80014E190 /* VendorStoryboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */; };
+		0CE244111E300C0800548D00 /* ProductDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE244101E300C0800548D00 /* ProductDataModel.swift */; };
+		0CE244131E300C6400548D00 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE244121E300C6400548D00 /* AddProductViewController.swift */; };
 		4C189B571E2DD0C200684E85 /* VendorStoryboard1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C189B561E2DD0C200684E85 /* VendorStoryboard1.storyboard */; };
 		5033D3511E2EC4D80020FD42 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5033D3501E2EC4D80020FD42 /* UserModel.swift */; };
 		50DB2B531E20380600AA63A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB2B521E20380600AA63A8 /* AppDelegate.swift */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VendorStoryboard2.storyboard; sourceTree = "<group>"; };
+		0CE244101E300C0800548D00 /* ProductDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDataModel.swift; sourceTree = "<group>"; };
+		0CE244121E300C6400548D00 /* AddProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		4C189B561E2DD0C200684E85 /* VendorStoryboard1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VendorStoryboard1.storyboard; sourceTree = "<group>"; };
 		5033D3501E2EC4D80020FD42 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		50DB2B4F1E20380600AA63A8 /* EatFreshNY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatFreshNY.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +236,7 @@
 		EEBC50DA1E2AD091005EAE7B /* FireBase */ = {
 			isa = PBXGroup;
 			children = (
+				0CE244101E300C0800548D00 /* ProductDataModel.swift */,
 			);
 			name = FireBase;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 		EEBC50E21E2AD3B0005EAE7B /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				0CE244121E300C6400548D00 /* AddProductViewController.swift */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -410,12 +416,14 @@
 				EEBC50F51E2ADCA2005EAE7B /* AllProductsCollectionViewCell.swift in Sources */,
 				EEBC50E91E2ADADC005EAE7B /* VendorProductCollectionViewPageViewController.swift in Sources */,
 				EEBC50F71E2ADCD1005EAE7B /* VendorProductsCollectionViewCell.swift in Sources */,
+				0CE244131E300C6400548D00 /* AddProductViewController.swift in Sources */,
 				EEBC50E71E2ADAB2005EAE7B /* AllProductCollectionViewPageViewController.swift in Sources */,
 				EEBC50F11E2ADBED005EAE7B /* SelectProductTableViewCell.swift in Sources */,
 				EEBC50EF1E2ADB5F005EAE7B /* ThankYouPurchaseConfirmationPageViewController.swift in Sources */,
 				8D0B7CD41E2ADE83008799F4 /* LoginViewController.swift in Sources */,
 				8D0B7CD81E2ADEC8008799F4 /* VendorSignUpViewController.swift in Sources */,
 				5033D3511E2EC4D80020FD42 /* UserModel.swift in Sources */,
+				0CE244111E300C0800548D00 /* ProductDataModel.swift in Sources */,
 				8D0B7CD61E2ADEAE008799F4 /* ClientSingUpViewController.swift in Sources */,
 				50DB2B531E20380600AA63A8 /* AppDelegate.swift in Sources */,
 				EEBC50ED1E2ADB29005EAE7B /* ProductDetailPageViewController.swift in Sources */,
