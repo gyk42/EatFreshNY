@@ -1,21 +1,71 @@
 //
-//  UserModel.swift
-//  practiceWithFB
+//  VendorData.swift
+//  EatFreshNY
 //
-//  Created by Yoon Yu on 1/16/17.
+//  Created by oskar morett on 1/17/17.
 //  Copyright © 2017 Grace Yu. All rights reserved.
 //
 
 import Foundation
+import UIKit
 import Firebase
-import FirebaseAuth
 import FirebaseDatabase
+import FirebaseAuth
+
+class User {
+   
+   var userID = FIRAuth.auth()?.currentUser?.uid
+   var userEmail: String
+   var userRole: String
+   var userLocation : String
+   var userName: String
+   var userPhoneNumber: String
+   var userWebsite: String
+   var userLogo: String
+   var ref: FIRDatabaseReference?
+   
+   init(userID: String, userRole: String, userEmail: String, userLocation: String, userName: String,userPhoneNumber : String, userWebsite: String, userLogo: String){
+      self.userID =  userID
+      self.userEmail = userEmail
+      self.userRole = userRole
+      self.userLocation = userLocation
+      self.userName = userName
+      self.userPhoneNumber = userPhoneNumber
+      self.userWebsite = userWebsite
+      self.userLogo = userLogo
+   }
+   
+   init(snapshot: FIRDataSnapshot) {
+      userID = snapshot.key
+      let snapshotValue = snapshot.value as! [String: AnyObject]
+      userEmail = snapshotValue["userEmail"] as! String
+      userRole = snapshotValue["userRole"] as! String
+      userLocation = snapshotValue["userLocation"] as! String
+      userName = snapshotValue["userName"] as! String
+      userPhoneNumber = snapshotValue["userPhoneNumber"] as! String
+      userWebsite = snapshotValue["userWebsite"] as! String
+      userLogo = snapshotValue["userLogo"] as! String
+      ref = snapshot.ref
+   }
+   
+   func toAnyObject() -> [String: AnyObject] {
+      return [
+         "userID":userID as Any as AnyObject,
+         "userEmail": userEmail as String as AnyObject,
+         "userRole" : userRole as String as AnyObject,
+         "userLocation": userLocation as String as AnyObject,
+         "userName": userName as String as AnyObject,
+         "userPhoneNumber": userPhoneNumber as String as AnyObject,
+         "userWebsite": userWebsite as String as AnyObject,
+         "userLogo": userLogo as String as AnyObject
+      ]
+   }
+}
 
 class UserModel {
+   
    static let shared = UserModel()
    private init() {}
-   
-   var role: Role = .none
    
    func login(email: String, password: String, complete: @escaping (Bool) -> ()) {
       FIRAuth.auth()?.signIn(withEmail: email, password: password) { user, error in
@@ -27,7 +77,6 @@ class UserModel {
    }
    
    func logout() {
-      role = .none
       do {
          try FIRAuth.auth()?.signOut()
          print("logout success")
@@ -35,53 +84,13 @@ class UserModel {
          print(error.localizedDescription)
       }
    }
+   
+   func checkStoryBoard(storyBoard: String) {
+      let sb = UIStoryboard(name: storyBoard, bundle: nil)
+      let viewController = sb.instantiateInitialViewController()!
+      let appDelegate = UIApplication.shared.delegate as! AppDelegate
+      appDelegate.window?.rootViewController = viewController
+   }
 }
 
-enum Role {
-   case vendor
-   case client
-   case none
-   
-   var value: String {
-      switch self {
-      case .vendor:
-         return "vendor"
-      case .client:
-         return "client"
-      case .none:
-         return "none"
-      }
-   }
-   
-   var buttonText: String {
-      switch self {
-      case .vendor, .client:
-         return "Sign up"
-      case .none:
-         return "Log in"
-      }
-   }
-   
-   var title: String {
-      switch self {
-      case .vendor:
-         return "Vendor"
-      case .client:
-         return "Client"
-      case .none:
-         return "Login"
-      }
-   }
-   
-   mutating func update(value: String) {
-      switch value {
-      case "vendor":
-         self = .vendor
-      case "client":
-         self = .client
-      default:
-         self = .none
-         
-      }
-   }
-}
+

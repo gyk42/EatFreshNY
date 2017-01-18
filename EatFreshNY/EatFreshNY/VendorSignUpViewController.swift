@@ -52,9 +52,11 @@ class VendorSignUpViewController: UIViewController {
                print("User signed in!")
                let currentUserID = FIRAuth.auth()!.currentUser!.uid
                
-               self.ref.child("users").updateChildValues(["\(currentUserID)":["role": "vendor", "userEmail": email, "userLocation" : location, "userName" : name, "userPhoneNumber": phone, "userWebsite": website]])
+               self.ref.child("users").updateChildValues(["\(currentUserID)":["userRole": "vendor", "userEmail": email, "userLocation" : location, "userName" : name, "userPhoneNumber": phone, "userWebsite": website, "userLogo" : "0"]])
             }
          }
+         
+          UserModel.shared.checkStoryBoard(storyBoard: "VendorStoryboard2")
       } else {
          print("You left email/password empty")
       }
