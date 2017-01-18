@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C3A98581E2C84B80014E190 /* VendorStoryboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */; };
 		4C189B571E2DD0C200684E85 /* VendorStoryboard1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C189B561E2DD0C200684E85 /* VendorStoryboard1.storyboard */; };
+		5033D3511E2EC4D80020FD42 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5033D3501E2EC4D80020FD42 /* UserModel.swift */; };
 		50DB2B531E20380600AA63A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB2B521E20380600AA63A8 /* AppDelegate.swift */; };
 		50DB2B581E20380600AA63A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B561E20380600AA63A8 /* Main.storyboard */; };
 		50DB2B5A1E20380600AA63A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B591E20380600AA63A8 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VendorStoryboard2.storyboard; sourceTree = "<group>"; };
 		4C189B561E2DD0C200684E85 /* VendorStoryboard1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VendorStoryboard1.storyboard; sourceTree = "<group>"; };
+		5033D3501E2EC4D80020FD42 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		50DB2B4F1E20380600AA63A8 /* EatFreshNY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatFreshNY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DB2B521E20380600AA63A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50DB2B571E20380600AA63A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5033D3521E2EC4E10020FD42 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				5033D3501E2EC4D80020FD42 /* UserModel.swift */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
 		50DB2B461E20380600AA63A8 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 		EEBC50D21E2ACF0F005EAE7B /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				5033D3521E2EC4E10020FD42 /* DataModel */,
 				8D0B7CD21E2ADE5B008799F4 /* Logic */,
 				EEBC50DF1E2AD1EC005EAE7B /* Auth.storyboard */,
 			);
@@ -404,6 +415,7 @@
 				EEBC50EF1E2ADB5F005EAE7B /* ThankYouPurchaseConfirmationPageViewController.swift in Sources */,
 				8D0B7CD41E2ADE83008799F4 /* LoginViewController.swift in Sources */,
 				8D0B7CD81E2ADEC8008799F4 /* VendorSignUpViewController.swift in Sources */,
+				5033D3511E2EC4D80020FD42 /* UserModel.swift in Sources */,
 				8D0B7CD61E2ADEAE008799F4 /* ClientSingUpViewController.swift in Sources */,
 				50DB2B531E20380600AA63A8 /* AppDelegate.swift in Sources */,
 				EEBC50ED1E2ADB29005EAE7B /* ProductDetailPageViewController.swift in Sources */,

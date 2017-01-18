@@ -7,27 +7,46 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class ClientSingUpViewController: UIViewController {
    
+   var ref: FIRDatabaseReference!
+   
    //MARK: IBoutlet ---------------------------------
    
-   @IBOutlet weak var firstNameTextField: UITextField!
-   
-   @IBOutlet weak var lastNameTextField: UITextField!
+   @IBOutlet weak var nameTextField: UITextField!
    
    @IBOutlet weak var emailTextField: UITextField!
+   
+   @IBOutlet weak var passwordTextField: UITextField!
    
    @IBOutlet weak var phoneNumberTextField: UITextField!
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      ref = FIRDatabase.database().reference()
    }
    
    //MARK: IBAction ---------------------------------
    
    @IBAction func signUpPressed(_ sender: Any) {
+      if let email = emailTextField.text, let password = passwordTextField.text,
+         let phone = phoneNumberTextField.text, let name = nameTextField.text {
+         FIRAuth.auth()?.createUser(withEmail: email, password: password)
+         {(user, error) in
+            if let error = error {
+               print(error.localizedDescription)
+            } else {
+               print("User signed in!")
+               let currentUserID = FIRAuth.auth()!.currentUser!.uid
+               self.ref.child("users").updateChildValues(["\(currentUserID)":["role": "client", "userEmail": email, "userLocation" : "0", "userName": name, "userLogo": "0", "userPhoneNumber": phone, "userWebsite": "0"]])
+            }
+         }
+      } else {
+         print("You left email/password empty")
+      }
    }
-   
-   
 }
