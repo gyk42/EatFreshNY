@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class VendorSignUpViewController: UIViewController {
+   
+   var ref: FIRDatabaseReference!
    
    //MARK: IBOutlet ------------------------------
    @IBOutlet weak var vendorLogo: UIImageView!
@@ -21,10 +26,13 @@ class VendorSignUpViewController: UIViewController {
    
    @IBOutlet weak var vendorPhoneNumber: UITextField!
    
+   @IBOutlet weak var vendorPassword: UITextField!
+   
    @IBOutlet weak var vendorWebsite: UITextField!
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      ref = FIRDatabase.database().reference()
    }
    
    //MARK: IBAction ------------------------------
@@ -34,6 +42,22 @@ class VendorSignUpViewController: UIViewController {
    }
    
    @IBAction func signUpPressed(_ sender: Any) {
-   
+      if let email = vendorContactEmail.text, let password = vendorPassword.text, let location = vendorAddress.text, let name = vendorName.text,
+         let phone = vendorPhoneNumber.text, let website = vendorWebsite.text {
+         FIRAuth.auth()?.createUser(withEmail: email, password: password)
+         {(user, error) in
+            if let error = error {
+               print(error.localizedDescription)
+            } else {
+               print("User signed in!")
+               let currentUserID = FIRAuth.auth()!.currentUser!.uid
+               
+               self.ref.child("users").updateChildValues(["\(currentUserID)":["role": "vendor", "userEmail": email, "userLocation" : location, "userName" : name, "userPhoneNumber": phone, "userWebsite": website]])
+            }
+         }
+      } else {
+         print("You left email/password empty")
+      }
+
    }
 }

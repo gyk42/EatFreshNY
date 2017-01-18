@@ -23,7 +23,17 @@ class LoginViewController: UIViewController {
    // MARK: IBAction -------------------------------
    
    @IBAction func loginBtnPressed(_ sender: Any) {
-   
+      let userLoginEmail = clientNameTextField.text!
+      let userLoginPassword = clientNamePassword.text!
+      
+      UserModel.shared.login(email: userLoginEmail, password: userLoginPassword) { success in
+         
+         // TODO: handle success
+         if success {
+            self.performSegue(withIdentifier: "dummyViewController", sender: self)
+         } else {
+            print("error in login")
+         }
+      }
    }
-   
 }
