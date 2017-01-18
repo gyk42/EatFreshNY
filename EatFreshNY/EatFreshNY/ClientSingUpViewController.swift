@@ -42,7 +42,8 @@ class ClientSingUpViewController: UIViewController {
             } else {
                print("User signed in!")
                let currentUserID = FIRAuth.auth()!.currentUser!.uid
-               self.ref.child("users").updateChildValues(["\(currentUserID)":["role": "client", "userEmail": email, "userLocation" : "0", "userName": name, "userLogo": "0", "userPhoneNumber": phone, "userWebsite": "0"]])
+               self.ref.child("users").updateChildValues(["\(currentUserID)":["userRole": "client", "userEmail": email, "userLocation" : "0", "userName": name, "userLogo": "0", "userPhoneNumber": phone, "userWebsite": "0"]])
+              UserModel.shared.checkStoryBoard(storyBoard: "Main")
             }
          }
       } else {
