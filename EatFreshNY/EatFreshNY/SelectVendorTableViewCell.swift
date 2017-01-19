@@ -14,6 +14,10 @@ class SelectVendorTableViewCell: UITableViewCell {
 	@IBOutlet weak var vendorImage: UIImageView!
 	@IBOutlet weak var vendorNameLabel: UILabel!
 	
+	// IBActions 
+	@IBAction func favoriteButtonTapped(_ sender: Any) {
+	}
+	
 
     override func awakeFromNib() {
         super.awakeFromNib()
