@@ -33,7 +33,8 @@ class SelectProductCategoryTableViewPageViewController: UIViewController, UITabl
 	
 	// IBActions 
 	@IBAction func logOutButtonTapped(_ sender: Any) {
-	}
+      UserModel.shared.logout()
+   }
 
 
 }

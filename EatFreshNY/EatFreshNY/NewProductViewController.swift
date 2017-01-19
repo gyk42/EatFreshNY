@@ -127,15 +127,7 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
    let image = info[UIImagePickerControllerOriginalImage] as! UIImage
       let imageName = NSUUID().uuidString
       
-      if imageview1.image == nil {
-         photoName = imageName
-         saveImege.image = image //// to be changed  
-
-         
-      } else if imageView2.image == nil {
-         
-      }
-      
+            
       
       picker.dismiss(animated: true, completion: nil)
    }

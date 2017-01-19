@@ -17,6 +17,7 @@
 		4CA14E6E1E3001B600CA326A /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA14E6D1E3001B600CA326A /* NewProductViewController.swift */; };
 		5088356D1E3017AF00EAC364 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5088356C1E3017AF00EAC364 /* UserDataModel.swift */; };
 		5088356F1E3017D400EAC364 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5088356E1E3017D400EAC364 /* UserModel.swift */; };
+		508835931E3119C400EAC364 /* VendorSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508835921E3119C400EAC364 /* VendorSettingsViewController.swift */; };
 		50DB2B531E20380600AA63A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DB2B521E20380600AA63A8 /* AppDelegate.swift */; };
 		50DB2B581E20380600AA63A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B561E20380600AA63A8 /* Main.storyboard */; };
 		50DB2B5A1E20380600AA63A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DB2B591E20380600AA63A8 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		4CA14E6D1E3001B600CA326A /* NewProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
 		5088356C1E3017AF00EAC364 /* UserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		5088356E1E3017D400EAC364 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		508835921E3119C400EAC364 /* VendorSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorSettingsViewController.swift; sourceTree = "<group>"; };
 		50DB2B4F1E20380600AA63A8 /* EatFreshNY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatFreshNY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DB2B521E20380600AA63A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50DB2B571E20380600AA63A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,13 +117,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5033D3521E2EC4E10020FD42 /* DataModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = DataModel;
-			sourceTree = "<group>";
-		};
 		50DB2B461E20380600AA63A8 = {
 			isa = PBXGroup;
 			children = (
@@ -167,7 +162,6 @@
 		EEBC50D21E2ACF0F005EAE7B /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				5033D3521E2EC4E10020FD42 /* DataModel */,
 				8D0B7CD21E2ADE5B008799F4 /* Logic */,
 				EEBC50DF1E2AD1EC005EAE7B /* Auth.storyboard */,
 			);
@@ -292,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				0CE244121E300C6400548D00 /* AddProductViewController.swift */,
+				508835921E3119C400EAC364 /* VendorSettingsViewController.swift */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -439,6 +434,7 @@
 				EEBC50F71E2ADCD1005EAE7B /* VendorProductsCollectionViewCell.swift in Sources */,
 				0CE244131E300C6400548D00 /* AddProductViewController.swift in Sources */,
 				EEBC50E71E2ADAB2005EAE7B /* AllProductCollectionViewPageViewController.swift in Sources */,
+				508835931E3119C400EAC364 /* VendorSettingsViewController.swift in Sources */,
 				EEBC50F11E2ADBED005EAE7B /* SelectProductTableViewCell.swift in Sources */,
 				EEACAAEF1E310C01006F3D10 /* FavoritesCollectionViewCell.swift in Sources */,
 				EEBC50EF1E2ADB5F005EAE7B /* ThankYouPurchaseConfirmationPageViewController.swift in Sources */,

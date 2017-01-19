@@ -26,28 +26,12 @@ class LoginViewController: UIViewController {
    
    func checkForCurrentUser() {
       if FIRAuth.auth()?.currentUser != nil {
+         UserModel.shared.checkForLoginUser()
          //checkForLoginUser()
       }
    }
    
-   func checkForLoginUser() {
-      FIRDatabase.database().reference(withPath: "users").child(FIRAuth.auth()!.currentUser!.uid).observeSingleEvent(of: .value, with: { (snapshot: FIRDataSnapshot) in
-         
-         let roleSnapshot = snapshot.childSnapshot(forPath: "userRole").value!
-         
-         var whichSB: String
-         
-         if roleSnapshot as! String == "client" {
-            whichSB = "Main"
-         } else {
-            whichSB = "VendorStoryboard2"
-         }
-         
-         UserModel.shared.checkStoryBoard(storyBoard: whichSB)
-         
-      })
-      
-   }
+   
    // MARK: IBAction -------------------------------
    
    @IBAction func loginBtnPressed(_ sender: Any) {
@@ -60,7 +44,7 @@ class LoginViewController: UIViewController {
          
          // TODO: handle success
          if success {
-            self.checkForLoginUser()
+            UserModel.shared.checkForLoginUser()
          } else {
             print("error in login")
          }
