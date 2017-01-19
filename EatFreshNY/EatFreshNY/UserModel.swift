@@ -32,6 +32,7 @@ class UserModel {
       do {
          try FIRAuth.auth()?.signOut()
          print("logout success")
+         self.checkStoryBoard(storyBoard: "Auth")
       } catch {
          print(error.localizedDescription)
       }
