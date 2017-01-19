@@ -1,5 +1,5 @@
 //
-//  NewItemViewController.swift
+//  NewProductViewController.swift
 //  EatFreshNY
 //
 //  Created by oskar morett on 1/18/17.
@@ -8,47 +8,70 @@
 
 import UIKit
 
-class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewProductViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
    
    
    var model: ImageP!
-   
-   // >>>>>>>>>>>>>>>>>>>>>>Image to FireBAse >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-   
-   
-   // SAVE image TO  FireBase
-   
-   @IBOutlet weak var saveImege: UIImageView! // not conected
-   
-   @IBAction func saveButton(_ sender: UIButton) {  // not conected
-      
-      uploadImage()
+///////// Photos ///////////
+// MAIN PHOTO
+ 
+   @IBAction func mainPhotoButton(_ sender: UIButton) {
    }
    
-   func uploadImage() {
+// from left to rigth  button and outlets
+ 
+   @IBAction func addPhotoOneButton(_ sender: UIButton) {
+   }
+   
+  
+   
+   @IBAction func addPhotoTwoButton(_ sender: UIButton) {
+   }
+   
+   
+   @IBAction func addPhotoThreeButton(_ sender: UIButton) {
+   }
+   
+   
+//// Outlets /////////
+   
+   @IBOutlet weak var productNameTextfield: UITextField!
+   @IBOutlet weak var productDescriptionTextfield: UITextView!
+   @IBOutlet weak var qtyTextfield: UITextField!
+   
+   
+   @IBOutlet weak var addPhotoOneImage: UIImageView!
+   @IBOutlet weak var addPhotoTwoImage: UIImageView!
+   @IBOutlet weak var addPhotoThreeImage: UIImageView!
+   
+   
+ //// Buttons/////
+   
+   @IBAction func saveNewProductButtton(_ sender: UIButton) {
+   }
+   
+   
+   
+   
+   // >>>>>>>>>>>>>>>>>>>>>>Image to FireBAse >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+   // SAVE image TO  FireBas
+   func uploadImage(image: UIImage ) {
       
-      if let image = saveImege.image {
          model.uploadImage(withData: UIImagePNGRepresentation(image)!, named: "\(photoName)")
-      }
+      
    }
    
    
    
    // GEt image from Firebase
    
-   @IBOutlet weak var getImage: UIImageView!
-   
-   @IBAction func getButton(_ sender: UIButton) {
-      downloadImage()
-   }
-   
    func downloadImage() {
       
       model.downloadImage(named: "niM7azZS.png", complete: { image in
          
          if let i = image {
-            self.getImage.image = i
+           // self.getImage.image = i
          }
       })
       
@@ -61,7 +84,10 @@ class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, 
    
    let imagePickerController = UIImagePickerController()
    var photoName = " "
-   
+//   var onePhotoName = " "
+//   var twoPhotoName = " "
+//   var threePhotoName = " "
+//   
    @IBAction func pickImageButton(_ sender: UIButton) { // not conected
       
       pickImagePressed()
@@ -95,14 +121,26 @@ class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, 
       self.present(actionSheet, animated: true, completion: nil)
    }
    //
+   
+   
    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-      let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+   let image = info[UIImagePickerControllerOriginalImage] as! UIImage
       let imageName = NSUUID().uuidString
-      photoName = imageName
-      saveImege.image = image
+      
+      if imageview1.image == nil {
+         photoName = imageName
+         saveImege.image = image //// to be changed  
+
+         
+      } else if imageView2.image == nil {
+         
+      }
+      
+      
       picker.dismiss(animated: true, completion: nil)
    }
    //
+
    
    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
       picker.dismiss(animated: true, completion: nil)
@@ -131,4 +169,4 @@ class NewItemViewController: UIViewController, UIImagePickerControllerDelegate, 
    
    
    
-}// END ViewController
+}// END NewProductViewController
