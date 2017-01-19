@@ -115,13 +115,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5033D3521E2EC4E10020FD42 /* DataModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = DataModel;
-			sourceTree = "<group>";
-		};
 		50DB2B461E20380600AA63A8 = {
 			isa = PBXGroup;
 			children = (
@@ -167,7 +160,6 @@
 		EEBC50D21E2ACF0F005EAE7B /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				5033D3521E2EC4E10020FD42 /* DataModel */,
 				8D0B7CD21E2ADE5B008799F4 /* Logic */,
 				EEBC50DF1E2AD1EC005EAE7B /* Auth.storyboard */,
 			);
