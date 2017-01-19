@@ -13,40 +13,46 @@ import FirebaseDatabase
 
 class AllProductCollectionViewPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 	
+    var ref: FIRDatabaseReference!
+    
+    var products = [Product]()
+    
 	// IBOutlets 
 	@IBOutlet weak var allProductsCollectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        productCollectionDisplay()
+        
     }
+    
 	
+    func productCollectionDisplay() {
+        let productsRef = FIRDatabase.database().reference(withPath:"products")
+        productsRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            for product in snapshot.children {
+                let name = Product(snapshot: product as! FIRDataSnapshot)
+                self.products.append(name)
+            }
+            DispatchQueue.main.async {
+                self.allProductsCollectionView.reloadData()
+            }
+        })
+    }
+   
 	// CollectionView 
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 1
+		return products.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "allProductsCell", for: indexPath)
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "allProductsCell", for: indexPath) as! AllProductsCollectionViewCell
+        cell.productNameLabel.text = products[indexPath.row].name
+        
 		return cell 
 	}
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
