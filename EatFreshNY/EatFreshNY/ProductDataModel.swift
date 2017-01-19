@@ -13,7 +13,7 @@ import FirebaseCore
 
 
 class Product {
-    //var productID: String
+    var productID: String
     var name: String
     var marketDate: String
     var image: String
@@ -23,7 +23,8 @@ class Product {
     var category: String
     var ref: FIRDatabaseReference?
     
-    init(name: String, marketDate: String = "", image: String, description: String, price: String, quantity: String, category: String) {
+    init(productID: String, name: String, marketDate: String = "", image: String, description: String, price: String, quantity: String, category: String) {
+        self.productID = productID
         self.name = name
         self.marketDate = marketDate
         self.image = image
@@ -34,16 +35,15 @@ class Product {
     }
     
     init(snapshot: FIRDataSnapshot) {
-        //productID = snapshot.key
-        //let snapshotValue = snapshot.value as! [String : AnyObject]
-        name = snapshot.childSnapshot(forPath: "name").value as! String
-        marketDate = snapshot.childSnapshot(forPath: "market_date").value as! String
-        //= Date(timeIntervalSince1970: interval)
-        image = snapshot.childSnapshot(forPath: "image").value as! String
-        description = snapshot.childSnapshot(forPath: "description").value as! String
-        price = snapshot.childSnapshot(forPath: "price").value as! String
-        quantity = snapshot.childSnapshot(forPath: "quantity").value as! String
-        category = snapshot.childSnapshot(forPath: "category").value as! String
+        productID = snapshot.key
+        let snapshotValue = snapshot.value as! [String : AnyObject]
+        name = snapshotValue["name"] as! String
+        marketDate = snapshotValue["market_date"] as! String
+        image = snapshotValue["image"] as! String
+        description = snapshotValue["description"] as! String
+        price = snapshotValue["price"] as! String
+        quantity = snapshotValue["quantity"] as! String
+        category = snapshotValue["category"] as! String
         ref = snapshot.ref
     }
     

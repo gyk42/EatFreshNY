@@ -9,10 +9,15 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseDatabase
+
+
 
 class AddProductViewController: UIViewController {
     
     var products = [Product]()
+
+    var ref: FIRDatabaseReference!
     
     
     @IBOutlet weak var productName: UITextField!
@@ -27,7 +32,8 @@ class AddProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createProduct(name: "Apple", image: "Richel.jpeg", description: "Macintosh", price: "$1/lb", quantity: "4", category: "Fruits")
+        ref = FIRDatabase.database().reference()
+        createProduct(productID: ref.child("products").childByAutoId().key, name: "Bing Cherry Preserves", image: "preserves.jpeg", description: "Sweet and tangy.", price: "$5.99", quantity: "7", category: "Preserves")
     }
     
     
@@ -57,11 +63,11 @@ class AddProductViewController: UIViewController {
     
     
     // MARK: - FB: Create Product, Delete Product, Update Product
-    func createProduct(name: String, image: String, description: String, price: String, quantity: String, category: String) {
+    func createProduct(productID: String, name: String, image: String, description: String, price: String, quantity: String, category: String) {
         
         let productsRef = FIRDatabase.database().reference(withPath: "products")
-        let product = Product(name: name, marketDate: Date().format(), image: image, description: description, price: price, quantity: quantity, category: category)
-        let productRef = productsRef.child(name)
+        let product = Product(productID: productID, name: name, marketDate: Date().format(), image: image, description: description, price: price, quantity: quantity, category: category)
+        let productRef = productsRef.childByAutoId()
         productRef.setValue(product.toAnyObject())
     }
     
@@ -72,15 +78,18 @@ class AddProductViewController: UIViewController {
     }
     
     
-    //    func updateProduct() {
-    //    let key = ref.child("products").childByAutoId().key
-    //    let post = ["uid": userID,
-    //                "author": username,
-    //                "title": title,
-    //                "body": body]
-    //    let childUpdates = ["/posts/\(key)": post,
-    //                        "/user-posts/\(userID)/\(key)/": post]
-    //    ref.updateChildValues(childUpdates)
+//    func updateProduct() {
+//        let key = ref.child("products").childByAutoId().key
+//        let product = ["name": name,
+//                       "market_date": marketDate,
+//                       "image": image,
+//                       "description": description,
+//                       "price" : price,
+//                       "quantity" : quantity,
+//                       "category" : category]
+//        let childUpdates = ["/products/\(key)": product,
+//                            "/user-products/\(userID)/\(key)/": product]
+//        ref.updateChildValues(childUpdates)
     
     
     

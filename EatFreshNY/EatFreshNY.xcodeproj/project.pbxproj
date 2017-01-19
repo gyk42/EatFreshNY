@@ -11,7 +11,6 @@
 		0CE244111E300C0800548D00 /* ProductDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE244101E300C0800548D00 /* ProductDataModel.swift */; };
 		0CE244131E300C6400548D00 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE244121E300C6400548D00 /* AddProductViewController.swift */; };
 		4C189B631E2EC6A500684E85 /* ClientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C189B621E2EC6A500684E85 /* ClientData.swift */; };
-		4C189B671E2ECCD400684E85 /* VendorFirebaseFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C189B661E2ECCD400684E85 /* VendorFirebaseFunc.swift */; };
 		4C189B691E2F004100684E85 /* Hospital_000000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C189B681E2F004100684E85 /* Hospital_000000_25.png */; };
 		4CA14E6C1E2FFF7D00CA326A /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA14E6B1E2FFF7D00CA326A /* ImageProcessing.swift */; };
 		4CA14E6E1E3001B600CA326A /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA14E6D1E3001B600CA326A /* NewItemViewController.swift */; };
@@ -47,7 +46,6 @@
 		0CE244101E300C0800548D00 /* ProductDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDataModel.swift; sourceTree = "<group>"; };
 		0CE244121E300C6400548D00 /* AddProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		4C189B621E2EC6A500684E85 /* ClientData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientData.swift; sourceTree = "<group>"; };
-		4C189B661E2ECCD400684E85 /* VendorFirebaseFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorFirebaseFunc.swift; sourceTree = "<group>"; };
 		4C189B681E2F004100684E85 /* Hospital_000000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hospital_000000_25.png; sourceTree = "<group>"; };
 		4CA14E6B1E2FFF7D00CA326A /* ImageProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
 		4CA14E6D1E3001B600CA326A /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				EEBC50DA1E2AD091005EAE7B /* FireBase */,
-				4CA14E6B1E2FFF7D00CA326A /* ImageProcessing.swift */,
 			);
 			name = "Global Data Model";
 			sourceTree = "<group>";
@@ -247,9 +244,10 @@
 		EEBC50DA1E2AD091005EAE7B /* FireBase */ = {
 			isa = PBXGroup;
 			children = (
+				4CA14E6B1E2FFF7D00CA326A /* ImageProcessing.swift */,
 				5088356C1E3017AF00EAC364 /* UserDataModel.swift */,
-				0CE244101E300C0800548D00 /* ProductDataModel.swift */,
 				5088356E1E3017D400EAC364 /* UserModel.swift */,
+				0CE244101E300C0800548D00 /* ProductDataModel.swift */,
 			);
 			name = FireBase;
 			sourceTree = "<group>";
@@ -277,7 +275,6 @@
 		EEBC50E11E2AD3A8005EAE7B /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				4C189B661E2ECCD400684E85 /* VendorFirebaseFunc.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -285,6 +282,7 @@
 		EEBC50E21E2AD3B0005EAE7B /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				4CA14E6D1E3001B600CA326A /* NewItemViewController.swift */,
 				0CE244121E300C6400548D00 /* AddProductViewController.swift */,
 			);
 			name = Logic;
@@ -294,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */,
-				4CA14E6D1E3001B600CA326A /* NewItemViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -444,7 +441,6 @@
 				EEBC50F91E2ADCFF005EAE7B /* CartTableViewCell.swift in Sources */,
 				5088356F1E3017D400EAC364 /* UserModel.swift in Sources */,
 				EEBC50F31E2ADC3C005EAE7B /* SelectVendorTableViewCell.swift in Sources */,
-				4C189B671E2ECCD400684E85 /* VendorFirebaseFunc.swift in Sources */,
 				4C189B631E2EC6A500684E85 /* ClientData.swift in Sources */,
 				EEBC50EB1E2ADB05005EAE7B /* CartViewController.swift in Sources */,
 				4CA14E6E1E3001B600CA326A /* NewItemViewController.swift in Sources */,
