@@ -16,9 +16,9 @@ class SelectProductCategoryTableViewPageViewController: UIViewController, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 	
+	var productCategoryImageArray: [String] = ["baked", "dairy", "fruits", "honey", "fish", "meat"]
 	
 	// TableView
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,7 +26,8 @@ class SelectProductCategoryTableViewPageViewController: UIViewController, UITabl
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as! SelectProductTableViewCell
+		cell.ProductCategoryImageOutlet.image = UIImage(named:self.productCategoryImageArray[indexPath.row])
 		return cell
 	}
 
