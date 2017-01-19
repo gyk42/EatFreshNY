@@ -77,6 +77,7 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
    @IBOutlet weak var productNameTextfield: UITextField!
    @IBOutlet weak var productDescriptionTextfield: UITextView!
    @IBOutlet weak var qtyTextfield: UITextField!
+    @IBOutlet weak var productPrice: UITextField!
    
  
    

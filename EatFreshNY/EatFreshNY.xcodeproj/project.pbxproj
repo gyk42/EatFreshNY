@@ -192,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				EEBC50DA1E2AD091005EAE7B /* FireBase */,
-				4CA14E6B1E2FFF7D00CA326A /* ImageProcessing.swift */,
 			);
 			name = "Global Data Model";
 			sourceTree = "<group>";
@@ -247,6 +246,7 @@
 		EEBC50DA1E2AD091005EAE7B /* FireBase */ = {
 			isa = PBXGroup;
 			children = (
+				4CA14E6B1E2FFF7D00CA326A /* ImageProcessing.swift */,
 				5088356C1E3017AF00EAC364 /* UserDataModel.swift */,
 				0CE244101E300C0800548D00 /* ProductDataModel.swift */,
 				5088356E1E3017D400EAC364 /* UserModel.swift */,
