@@ -36,7 +36,7 @@ class ImageP {
             return
          }
          let downloadURL = metadata.downloadURL
-         print(downloadURL)// image urr to be assingned
+         print(downloadURL)
       }
    }
    
