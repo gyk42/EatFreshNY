@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+
 
 class AllProductCollectionViewPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 	
