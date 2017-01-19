@@ -27,6 +27,8 @@
 		8D0B7CD61E2ADEAE008799F4 /* ClientSingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B7CD51E2ADEAE008799F4 /* ClientSingUpViewController.swift */; };
 		8D0B7CD81E2ADEC8008799F4 /* VendorSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0B7CD71E2ADEC8008799F4 /* VendorSignUpViewController.swift */; };
 		EEACAAA71E2EA385006F3D10 /* SelectProductCategoryTableViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACAAA61E2EA385006F3D10 /* SelectProductCategoryTableViewPageViewController.swift */; };
+		EEACAAED1E310BCD006F3D10 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACAAEC1E310BCD006F3D10 /* FavoritesViewController.swift */; };
+		EEACAAEF1E310C01006F3D10 /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACAAEE1E310C01006F3D10 /* FavoritesCollectionViewCell.swift */; };
 		EEBC50D11E2ACDCF005EAE7B /* ImageAssets in Resources */ = {isa = PBXBuildFile; fileRef = EEBC50D01E2ACDCF005EAE7B /* ImageAssets */; };
 		EEBC50E01E2AD1EC005EAE7B /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEBC50DF1E2AD1EC005EAE7B /* Auth.storyboard */; };
 		EEBC50E51E2ADA74005EAE7B /* SelectVendorTableViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBC50E41E2ADA74005EAE7B /* SelectVendorTableViewPageViewController.swift */; };
@@ -67,6 +69,8 @@
 		8F00FDEAEA1731D06D53F6D2 /* Pods-EatFreshNY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFreshNY.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY.release.xcconfig"; sourceTree = "<group>"; };
 		CFE0AD9FDA2592534603FA1E /* Pods-EatFreshNY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFreshNY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatFreshNY/Pods-EatFreshNY.debug.xcconfig"; sourceTree = "<group>"; };
 		EEACAAA61E2EA385006F3D10 /* SelectProductCategoryTableViewPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectProductCategoryTableViewPageViewController.swift; sourceTree = "<group>"; };
+		EEACAAEC1E310BCD006F3D10 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		EEACAAEE1E310C01006F3D10 /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEBC50D01E2ACDCF005EAE7B /* ImageAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ImageAssets; path = ../ImageAssets; sourceTree = "<group>"; };
 		EEBC50DF1E2AD1EC005EAE7B /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		EEBC50E41E2ADA74005EAE7B /* SelectVendorTableViewPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectVendorTableViewPageViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 				EEBC50F41E2ADCA2005EAE7B /* AllProductsCollectionViewCell.swift */,
 				EEBC50F61E2ADCD1005EAE7B /* VendorProductsCollectionViewCell.swift */,
 				EEBC50F81E2ADCFF005EAE7B /* CartTableViewCell.swift */,
+				EEACAAEC1E310BCD006F3D10 /* FavoritesViewController.swift */,
+				EEACAAEE1E310C01006F3D10 /* FavoritesCollectionViewCell.swift */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -434,8 +440,10 @@
 				0CE244131E300C6400548D00 /* AddProductViewController.swift in Sources */,
 				EEBC50E71E2ADAB2005EAE7B /* AllProductCollectionViewPageViewController.swift in Sources */,
 				EEBC50F11E2ADBED005EAE7B /* SelectProductTableViewCell.swift in Sources */,
+				EEACAAEF1E310C01006F3D10 /* FavoritesCollectionViewCell.swift in Sources */,
 				EEBC50EF1E2ADB5F005EAE7B /* ThankYouPurchaseConfirmationPageViewController.swift in Sources */,
 				8D0B7CD41E2ADE83008799F4 /* LoginViewController.swift in Sources */,
+				EEACAAED1E310BCD006F3D10 /* FavoritesViewController.swift in Sources */,
 				8D0B7CD81E2ADEC8008799F4 /* VendorSignUpViewController.swift in Sources */,
 				0CE244111E300C0800548D00 /* ProductDataModel.swift in Sources */,
 				8D0B7CD61E2ADEAE008799F4 /* ClientSingUpViewController.swift in Sources */,

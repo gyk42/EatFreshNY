@@ -13,7 +13,6 @@ class SelectProductCategoryTableViewPageViewController: UIViewController, UITabl
 	// IBOutlets 
 	@IBOutlet weak var selectProductCategoryTableView: UITableView!
 	
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,13 +31,9 @@ class SelectProductCategoryTableViewPageViewController: UIViewController, UITabl
 	}
 
 	
-	
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+	// IBActions 
+	@IBAction func logOutButtonTapped(_ sender: Any) {
+	}
 
 
 }
