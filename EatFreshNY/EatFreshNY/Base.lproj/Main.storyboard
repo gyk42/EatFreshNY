@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3AH-0a-BZc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xQi-oY-vqE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1p-Vb-cEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1493.5999999999999" y="-386.35682158920542"/>
+            <point key="canvasLocation" x="1353" y="-467"/>
         </scene>
         <!--All Product Collection View Page-->
         <scene sceneID="QpJ-nz-G4s">
@@ -256,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJZ-gg-85X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2258" y="196"/>
+            <point key="canvasLocation" x="2185" y="196"/>
         </scene>
         <!--Select Vendor TableView Page-->
         <scene sceneID="qXn-YZ-CPe">
@@ -383,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ov-jT-kt5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1493.5999999999999" y="412.44377811094455"/>
+            <point key="canvasLocation" x="1353" y="228"/>
         </scene>
         <!--Cart View Controller-->
         <scene sceneID="5cJ-YP-WQU">
@@ -692,7 +692,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOf-ld-zaI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1494" y="1233"/>
+            <point key="canvasLocation" x="1353" y="1028"/>
         </scene>
         <!--Product Detail Page-->
         <scene sceneID="J3l-ND-ZKT">
@@ -803,7 +803,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSG-Vz-9ob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3025" y="196"/>
+            <point key="canvasLocation" x="2958" y="196"/>
         </scene>
     </scenes>
     <resources>
