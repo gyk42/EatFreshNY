@@ -25,14 +25,17 @@ class SelectProductCategoryTableViewPageViewController: UIViewController, UITabl
 		return 6
 	}
 	
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      self.performSegue(withIdentifier: "ToCollection", sender: productCategoryImageArray[indexPath.row])
+   }
+   
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath) as! SelectProductTableViewCell
 		cell.ProductCategoryImageOutlet.image = UIImage(named:self.productCategoryImageArray[indexPath.row])
         
-        self.performSegue(withIdentifier: "ToCollection", sender: productCategoryImageArray[indexPath.row])
-        
 		return cell
 	}
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToCollection" {
             let destination = segue.destination as! AllProductCollectionViewPageViewController

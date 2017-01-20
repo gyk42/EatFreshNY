@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xQi-oY-vqE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xQi-oY-vqE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -47,7 +47,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ProductCategoryImageOutlet" destination="FD7-Zl-suv" id="JJ8-SA-bGe"/>
-                                            <segue destination="AR3-WU-OkQ" kind="show" identifier="ToCollection" id="SYf-Go-UEt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -131,6 +130,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="selectProductCategoryTableView" destination="S5T-uk-GDU" id="Rr9-39-B2w"/>
+                        <segue destination="AR3-WU-OkQ" kind="show" identifier="ToCollection" id="Ue6-Lk-NZJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1p-Vb-cEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
