@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xQi-oY-vqE">
-
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -250,6 +249,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="allProductsCollectionView" destination="usq-Cp-bGx" id="L5M-F2-Bzv"/>
+                        <segue destination="3AH-0a-BZc" kind="show" identifier="ToDetail" id="0dS-ki-zgO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJZ-gg-85X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -716,6 +716,9 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="AR3-WU-OkQ" kind="show" id="4n3-DL-Zb5"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo 4" translatesAutoresizingMaskIntoConstraints="NO" id="zCV-YI-xQu">
                                 <rect key="frame" x="146" y="28" width="82" height="31"/>
@@ -801,7 +804,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSG-Vz-9ob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2958" y="196"/>
+            <point key="canvasLocation" x="3198" y="196"/>
         </scene>
     </scenes>
     <resources>
@@ -817,5 +820,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6ig-OP-DxS"/>
+        <segue reference="4n3-DL-Zb5"/>
     </inferredMetricsTieBreakers>
 </document>

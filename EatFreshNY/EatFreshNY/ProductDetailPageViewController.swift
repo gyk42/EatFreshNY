@@ -13,7 +13,7 @@ import FirebaseStorage
 
 class ProductDetailPageViewController: UIViewController {
    
-   var ref: FIRDatabaseReference!
+   var product: Product?
    
    // MARK: IBOutlets ----------------------------------
    @IBOutlet weak var productDetailImage: UIImageView!
@@ -25,27 +25,14 @@ class ProductDetailPageViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      let userRef = FIRDatabase.database().reference(withPath: "products/-KaoLdcYr2iI75Ycs8fD")
-      userRef.observeSingleEvent(of: .value, with: { (snapshot) in
-         if snapshot.hasChildren(){
-            let productNameLabel = snapshot.childSnapshot(forPath: "name").value as! String
-            let productDescriptionLabel = snapshot.childSnapshot(forPath: "description").value as! String
-            let productPriceLabel = snapshot.childSnapshot(forPath: "price").value as! String
-            let quantityNumberLabel = snapshot.childSnapshot(forPath: "quantity").value as! String
-            //let productDetailImage = snapshot.childSnapshot(forPath: "image").value as! Data
-            
-            self.productNameLabel.text = productNameLabel
-            self.productDescriptionLabel.text = productDescriptionLabel
-            self.productPriceLabel.text = productPriceLabel
-            self.quantityNumberLabel.text = quantityNumberLabel
-            //self.productDetailImage.image = productDetailImage
-         }
-         
-         
-      })
+      self.productNameLabel.text = product?.name
+      self.productDescriptionLabel.text = product?.description
+      self.productPriceLabel.text = product?.price
+      self.quantityNumberLabel.text = product?.quantity
       
-      
+      //self.productDetailImage.image = productDetailImage      
    }
+   
    
    // MARK: IBActions ----------------------------------
    
