@@ -27,15 +27,11 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
    
    func productCollectionDisplay() {
       let productsRef = FIRDatabase.database().reference(withPath:"products")
-      let productID = productsRef.ref.key
-      print("productID: \(productID)")
-//      let productsQuery = productsRef.queryOrdered(byChild: "category").queryEqual(toValue: categoryName)
       let productsQuery = productsRef.queryOrdered(byChild: "category").queryEqual(toValue: categoryName)
       
       productsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
          
          for product in snapshot.children {
-  //             print("product Ref \(productID)")
             let product = Product(snapshot: product as! FIRDataSnapshot)
             
             self.products.append(product)
@@ -58,20 +54,17 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "allProductsCell", for: indexPath) as! AllProductsCollectionViewCell
       cell.productNameLabel.text = products[indexPath.row].name
       
-      print(products[indexPath.row].category)
-      
       return cell
    }
    
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-     self.performSegue(withIdentifier: "ToDetail", sender: products[indexPath.row])
+      self.performSegue(withIdentifier: "ToDetail", sender: products[indexPath.row])
    }
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "ToDetail" {
          let destination = segue.destination as! ProductDetailPageViewController
-         destination.productID = sender as? String
-         
+         destination.product = products[(allProductsCollectionView.indexPathsForSelectedItems!.first!.item)]
       }
    }
    

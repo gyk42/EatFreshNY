@@ -815,7 +815,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="AR3-WU-OkQ" kind="show" id="aLN-qe-g8A"/>
+                                    <segue destination="AR3-WU-OkQ" kind="show" id="4n3-DL-Zb5"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo 4" translatesAutoresizingMaskIntoConstraints="NO" id="zCV-YI-xQu">
@@ -918,6 +918,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6ig-OP-DxS"/>
-        <segue reference="aLN-qe-g8A"/>
+        <segue reference="4n3-DL-Zb5"/>
     </inferredMetricsTieBreakers>
 </document>
