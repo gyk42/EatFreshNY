@@ -12,7 +12,7 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class ProductDetailPageViewController: UIViewController {
-   var products = [Product]()
+   
    var ref: FIRDatabaseReference!
    
    // MARK: IBOutlets ----------------------------------
