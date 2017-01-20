@@ -30,13 +30,13 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
    
    func productCollectionDisplay() {
       let productsRef = FIRDatabase.database().reference(withPath:"products")
-      let productID = productsRef.ref.child(<#T##pathString: String##String#>).key
+    //  let productID = productsRef.ref.child(<#T##pathString: String##String#>).key
       let productsQuery = productsRef.queryOrdered(byChild: "category").queryEqual(toValue: categoryName)
       
       productsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
          
          for product in snapshot.children {
-               print("product Ref \(productID)")
+  //             print("product Ref \(productID)")
             let productNames = Product(snapshot: product as! FIRDataSnapshot)
             
             self.products.append(productNames)
