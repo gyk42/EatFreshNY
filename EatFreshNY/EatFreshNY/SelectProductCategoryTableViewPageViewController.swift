@@ -39,7 +39,7 @@ class SelectProductCategoryTableViewPageViewController: UIViewController, UITabl
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToCollection" {
             let destination = segue.destination as! AllProductCollectionViewPageViewController
-            destination.source = sender as? String
+            destination.categoryName = sender as? String
            
         }
     }

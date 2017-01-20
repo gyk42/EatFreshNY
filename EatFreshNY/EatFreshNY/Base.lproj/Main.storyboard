@@ -204,17 +204,10 @@
                                 <items>
                                     <navigationItem id="GgD-g6-Joc">
                                         <nil key="title"/>
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="Ktd-h9-T0C">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RRY-SK-53r">
-                                                <rect key="frame" x="16" y="7" width="37" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="Back">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="VDM-Ta-Yrb">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="Vqx-za-xSY" kind="show" id="qKr-rr-HI9"/>
+                                                <segue destination="Vqx-za-xSY" kind="show" id="6ig-OP-DxS"/>
                                             </connections>
                                         </barButtonItem>
                                         <view key="titleView" contentMode="scaleToFill" id="D1a-J3-peH">
@@ -920,6 +913,6 @@
         <image name="logo 4" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qKr-rr-HI9"/>
+        <segue reference="6ig-OP-DxS"/>
     </inferredMetricsTieBreakers>
 </document>
