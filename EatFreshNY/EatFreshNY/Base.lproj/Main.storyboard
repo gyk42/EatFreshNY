@@ -249,6 +249,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="allProductsCollectionView" destination="usq-Cp-bGx" id="L5M-F2-Bzv"/>
+                        <segue destination="3AH-0a-BZc" kind="show" identifier="ToDetail" id="0dS-ki-zgO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jJZ-gg-85X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -813,6 +814,9 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="AR3-WU-OkQ" kind="show" id="aLN-qe-g8A"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo 4" translatesAutoresizingMaskIntoConstraints="NO" id="zCV-YI-xQu">
                                 <rect key="frame" x="146" y="28" width="82" height="31"/>
@@ -914,5 +918,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6ig-OP-DxS"/>
+        <segue reference="aLN-qe-g8A"/>
     </inferredMetricsTieBreakers>
 </document>

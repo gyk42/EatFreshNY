@@ -12,7 +12,7 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class ProductDetailPageViewController: UIViewController {
-   
+   var productID: String?
    var ref: FIRDatabaseReference!
    
    // MARK: IBOutlets ----------------------------------
@@ -25,7 +25,7 @@ class ProductDetailPageViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      let userRef = FIRDatabase.database().reference(withPath: "products/-KaoLdcYr2iI75Ycs8fD")
+      let userRef = FIRDatabase.database().reference(withPath: "products/\(productID)")
       userRef.observeSingleEvent(of: .value, with: { (snapshot) in
          if snapshot.hasChildren(){
             let productNameLabel = snapshot.childSnapshot(forPath: "name").value as! String

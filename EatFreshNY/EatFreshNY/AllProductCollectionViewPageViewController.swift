@@ -14,7 +14,7 @@ import FirebaseDatabase
 class AllProductCollectionViewPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
    
    var ref: FIRDatabaseReference!
-   var categoryName:String?
+   var categoryName: String?
    var products = [Product]()
    
    // IBOutlets
@@ -22,25 +22,24 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      
       productCollectionDisplay()
-      print("---------------------\(categoryName ?? "This is test")----------------------")
    }
-   
    
    func productCollectionDisplay() {
       let productsRef = FIRDatabase.database().reference(withPath:"products")
-      let productID = productsRef.ref.child(<#T##pathString: String##String#>).key
+      let productID = productsRef.ref.key
+      print("productID: \(productID)")
+//      let productsQuery = productsRef.queryOrdered(byChild: "category").queryEqual(toValue: categoryName)
       let productsQuery = productsRef.queryOrdered(byChild: "category").queryEqual(toValue: categoryName)
       
       productsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
          
          for product in snapshot.children {
-               print("product Ref \(productID)")
-            let productNames = Product(snapshot: product as! FIRDataSnapshot)
+  //             print("product Ref \(productID)")
+            let product = Product(snapshot: product as! FIRDataSnapshot)
             
-            self.products.append(productNames)
-            print(productNames)
+            self.products.append(product)
+            print(product)
             
          }
          DispatchQueue.main.async {
@@ -62,6 +61,18 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
       print(products[indexPath.row].category)
       
       return cell
+   }
+   
+   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+     self.performSegue(withIdentifier: "ToDetail", sender: products[indexPath.row])
+   }
+   
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "ToDetail" {
+         let destination = segue.destination as! ProductDetailPageViewController
+         destination.productID = sender as? String
+         
+      }
    }
    
    
