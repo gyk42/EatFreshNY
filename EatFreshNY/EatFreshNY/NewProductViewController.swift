@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class NewProductViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -94,10 +95,12 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
         
         //TEXT FIELDS:
         if let name = productNameTextfield.text, let description = productDescriptionTextfield.text, let price = productPrice.text, let quantity = qtyTextfield.text, let category = productCategory.text {
-            ProductModel.shared.createProduct(name: name, description: description, price: price, quantity: quantity, category: category, userID: "2ne4cRuQg0XMrtsY3T1G0QJQrlb2");
+//            ProductModel.shared.createProduct(name: name, description: description, price: price, quantity: quantity, category: category, userID: FIRAuth.auth()!.currentUser!.uid);
+//            ProductModel.shared.updatePrduct(newName: "Steak", newDescription: <#T##String?#>, newPrice: <#T##String?#>, newQuantity: <#T##String?#>, newCategory: <#T##String?#>, product: <#T##Product#>)
+            
             productDescriptionTextfield.resignFirstResponder()
             qtyTextfield.resignFirstResponder()
-            
+
         }
         
         

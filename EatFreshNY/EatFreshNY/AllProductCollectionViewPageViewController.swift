@@ -27,6 +27,7 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
    
    func productCollectionDisplay() {
       let productsRef = FIRDatabase.database().reference(withPath:"products")
+      let productID = productsRef.ref.key
       let productsQuery = productsRef.queryOrdered(byChild: "category").queryEqual(toValue: AllProductCollectionViewPageViewController.categoryName)
       
       productsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
