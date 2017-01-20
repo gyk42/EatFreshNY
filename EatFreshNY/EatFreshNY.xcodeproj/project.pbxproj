@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C3A98581E2C84B80014E190 /* VendorStoryboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */; };
 		0CE244111E300C0800548D00 /* ProductDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE244101E300C0800548D00 /* ProductDataModel.swift */; };
-		0CE244131E300C6400548D00 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE244121E300C6400548D00 /* AddProductViewController.swift */; };
 		4C189B631E2EC6A500684E85 /* ClientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C189B621E2EC6A500684E85 /* ClientData.swift */; };
-		4C189B671E2ECCD400684E85 /* VendorFirebaseFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C189B661E2ECCD400684E85 /* VendorFirebaseFunc.swift */; };
 		4C189B691E2F004100684E85 /* Hospital_000000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C189B681E2F004100684E85 /* Hospital_000000_25.png */; };
 		4CA14E6C1E2FFF7D00CA326A /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA14E6B1E2FFF7D00CA326A /* ImageProcessing.swift */; };
 		4CA14E6E1E3001B600CA326A /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA14E6D1E3001B600CA326A /* NewProductViewController.swift */; };
@@ -48,9 +46,7 @@
 /* Begin PBXFileReference section */
 		0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VendorStoryboard2.storyboard; sourceTree = "<group>"; };
 		0CE244101E300C0800548D00 /* ProductDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDataModel.swift; sourceTree = "<group>"; };
-		0CE244121E300C6400548D00 /* AddProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		4C189B621E2EC6A500684E85 /* ClientData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientData.swift; sourceTree = "<group>"; };
-		4C189B661E2ECCD400684E85 /* VendorFirebaseFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorFirebaseFunc.swift; sourceTree = "<group>"; };
 		4C189B681E2F004100684E85 /* Hospital_000000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hospital_000000_25.png; sourceTree = "<group>"; };
 		4CA14E6B1E2FFF7D00CA326A /* ImageProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
 		4CA14E6D1E3001B600CA326A /* NewProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
@@ -277,7 +273,6 @@
 		EEBC50E11E2AD3A8005EAE7B /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				4C189B661E2ECCD400684E85 /* VendorFirebaseFunc.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -285,7 +280,6 @@
 		EEBC50E21E2AD3B0005EAE7B /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				0CE244121E300C6400548D00 /* AddProductViewController.swift */,
 				508835921E3119C400EAC364 /* VendorSettingsViewController.swift */,
 				4CA14E6D1E3001B600CA326A /* NewProductViewController.swift */,
 			);
@@ -432,7 +426,6 @@
 				EEBC50F51E2ADCA2005EAE7B /* AllProductsCollectionViewCell.swift in Sources */,
 				EEBC50E91E2ADADC005EAE7B /* VendorProductCollectionViewPageViewController.swift in Sources */,
 				EEBC50F71E2ADCD1005EAE7B /* VendorProductsCollectionViewCell.swift in Sources */,
-				0CE244131E300C6400548D00 /* AddProductViewController.swift in Sources */,
 				EEBC50E71E2ADAB2005EAE7B /* AllProductCollectionViewPageViewController.swift in Sources */,
 				508835931E3119C400EAC364 /* VendorSettingsViewController.swift in Sources */,
 				EEBC50F11E2ADBED005EAE7B /* SelectProductTableViewCell.swift in Sources */,
@@ -448,7 +441,6 @@
 				EEBC50F91E2ADCFF005EAE7B /* CartTableViewCell.swift in Sources */,
 				5088356F1E3017D400EAC364 /* UserModel.swift in Sources */,
 				EEBC50F31E2ADC3C005EAE7B /* SelectVendorTableViewCell.swift in Sources */,
-				4C189B671E2ECCD400684E85 /* VendorFirebaseFunc.swift in Sources */,
 				4C189B631E2EC6A500684E85 /* ClientData.swift in Sources */,
 				EEBC50EB1E2ADB05005EAE7B /* CartViewController.swift in Sources */,
 				4CA14E6E1E3001B600CA326A /* NewProductViewController.swift in Sources */,
@@ -579,9 +571,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N624RJ86SL;
 				INFOPLIST_FILE = EatFreshNY/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.EatFresh.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gyk42.EatFreshNY;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -594,9 +586,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N624RJ86SL;
 				INFOPLIST_FILE = EatFreshNY/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.EatFresh.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gyk42.EatFreshNY;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
