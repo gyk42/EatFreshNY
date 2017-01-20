@@ -14,7 +14,7 @@ import FirebaseDatabase
 class AllProductCollectionViewPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
    
    var ref: FIRDatabaseReference!
-   var categoryName: String?
+   static var categoryName: String?
    var products = [Product]()
    
    // IBOutlets
@@ -27,7 +27,7 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
    
    func productCollectionDisplay() {
       let productsRef = FIRDatabase.database().reference(withPath:"products")
-      let productsQuery = productsRef.queryOrdered(byChild: "category").queryEqual(toValue: categoryName)
+      let productsQuery = productsRef.queryOrdered(byChild: "category").queryEqual(toValue: AllProductCollectionViewPageViewController.categoryName)
       
       productsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
          
@@ -67,6 +67,4 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
          destination.product = products[(allProductsCollectionView.indexPathsForSelectedItems!.first!.item)]
       }
    }
-   
-   
 }
