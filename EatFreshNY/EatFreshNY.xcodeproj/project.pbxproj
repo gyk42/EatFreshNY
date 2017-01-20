@@ -30,6 +30,7 @@
 		EEACAAA71E2EA385006F3D10 /* SelectProductCategoryTableViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACAAA61E2EA385006F3D10 /* SelectProductCategoryTableViewPageViewController.swift */; };
 		EEACAAED1E310BCD006F3D10 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACAAEC1E310BCD006F3D10 /* FavoritesViewController.swift */; };
 		EEACAAF11E31654E006F3D10 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACAAF01E31654E006F3D10 /* FavoritesTableViewCell.swift */; };
+		EEACAAF31E318BDF006F3D10 /* CartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACAAF21E318BDF006F3D10 /* CartData.swift */; };
 		EEBC50D11E2ACDCF005EAE7B /* ImageAssets in Resources */ = {isa = PBXBuildFile; fileRef = EEBC50D01E2ACDCF005EAE7B /* ImageAssets */; };
 		EEBC50E01E2AD1EC005EAE7B /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEBC50DF1E2AD1EC005EAE7B /* Auth.storyboard */; };
 		EEBC50E51E2ADA74005EAE7B /* SelectVendorTableViewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBC50E41E2ADA74005EAE7B /* SelectVendorTableViewPageViewController.swift */; };
@@ -71,6 +72,7 @@
 		EEACAAA61E2EA385006F3D10 /* SelectProductCategoryTableViewPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectProductCategoryTableViewPageViewController.swift; sourceTree = "<group>"; };
 		EEACAAEC1E310BCD006F3D10 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		EEACAAF01E31654E006F3D10 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		EEACAAF21E318BDF006F3D10 /* CartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartData.swift; sourceTree = "<group>"; };
 		EEBC50D01E2ACDCF005EAE7B /* ImageAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ImageAssets; path = ../ImageAssets; sourceTree = "<group>"; };
 		EEBC50DF1E2AD1EC005EAE7B /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		EEBC50E41E2ADA74005EAE7B /* SelectVendorTableViewPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectVendorTableViewPageViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				4C189B621E2EC6A500684E85 /* ClientData.swift */,
+				EEACAAF21E318BDF006F3D10 /* CartData.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				4C189B671E2ECCD400684E85 /* VendorFirebaseFunc.swift in Sources */,
 				4C189B631E2EC6A500684E85 /* ClientData.swift in Sources */,
 				EEACAAF11E31654E006F3D10 /* FavoritesTableViewCell.swift in Sources */,
+				EEACAAF31E318BDF006F3D10 /* CartData.swift in Sources */,
 				EEBC50EB1E2ADB05005EAE7B /* CartViewController.swift in Sources */,
 				4CA14E6E1E3001B600CA326A /* NewProductViewController.swift in Sources */,
 				4CA14E6C1E2FFF7D00CA326A /* ImageProcessing.swift in Sources */,
