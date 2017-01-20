@@ -69,7 +69,8 @@ class Product {
             "description": description as String as AnyObject,
             "price" : price as String as AnyObject,
             "quantity" : quantity as String as AnyObject,
-            "category" : category as String as AnyObject
+            "category" : category as String as AnyObject,
+            "userID" : userID! as String as AnyObject
         ]
     }
 }
@@ -136,26 +137,15 @@ class ProductModel {
         print(products)
     }
     
-    
-    //func updateProduct() {
-        // TODO guard against input values if ok
-        // TODO: update productToEdit   - e.g. productToEdit.name = validName
-    // let newDictionary = productToEdit.toAnyObject()
-    // let firversion = productToEdit.ref
-        //firversion?.setValue(newDictionary)
-    //}
-
-    
-//    func updatePrduct(newName: String? = nil, newDescription: String, newPrice: String, newQuantity: String, newCategory: String, product: Product) {
-//            
-//            if product.name == newName {
-//                productToEdit.ref?.updateChildValues([
-//                    "content": newContent,
-//                    "date": Date().format()
-//                    ])
-//            } else {
-                //product.name ==
-//        }//
+    func updatePrduct(newName: String? = nil, newDescription: String? = nil, newPrice: String? = nil, newQuantity: String? = nil, newCategory: String? = nil, product: Product) {
+        if productToEdit.name == newName {
+            productToEdit.ref?.updateChildValues([
+                "description" : newDescription!,
+                "date": Date().format(),
+                "price": newPrice!,
+                "quantity": newQuantity!,
+                "category": newCategory!
+                ])
+        }
+    }
 }
-
-

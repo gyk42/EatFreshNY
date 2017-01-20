@@ -129,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				50DB2B511E20380600AA63A8 /* EatFreshNY */,
-				EEBC50DD1E2AD107005EAE7B /* Assets */,
 				EEBC50D61E2ACFA4005EAE7B /* Plist  */,
 				50DB2B501E20380600AA63A8 /* Products */,
 				440481085AFA50D56E62E521 /* Pods */,
@@ -271,7 +270,6 @@
 				EEBC50D01E2ACDCF005EAE7B /* ImageAssets */,
 			);
 			name = Assets;
-			path = EatFreshNY;
 			sourceTree = "<group>";
 		};
 		EEBC50DE1E2AD14D005EAE7B /* Main */ = {
@@ -295,6 +293,7 @@
 			children = (
 				508835921E3119C400EAC364 /* VendorSettingsViewController.swift */,
 				4CA14E6D1E3001B600CA326A /* NewProductViewController.swift */,
+				EEBC50DD1E2AD107005EAE7B /* Assets */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
