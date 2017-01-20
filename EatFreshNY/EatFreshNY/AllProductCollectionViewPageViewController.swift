@@ -33,8 +33,8 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
       productsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
          
          for product in snapshot.children {
+
             let product = Product(snapshot: product as! FIRDataSnapshot)
-            
             self.products.append(product)
             print(product)
             

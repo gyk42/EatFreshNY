@@ -16,6 +16,8 @@ class UserModel {
    
    static let shared = UserModel()
    private init() {}
+	
+	var user: User?
    
    // global code to login users
    func login(email: String, password: String, complete: @escaping (Bool) -> ()) {
@@ -58,6 +60,9 @@ class UserModel {
          } else {
             whichSB = "VendorStoryboard2"
          }
+			
+			// Test this
+			UserModel.shared.user = User(snapshot: snapshot)
             
          self.checkStoryBoard(storyBoard: whichSB)
          
