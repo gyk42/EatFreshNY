@@ -14,7 +14,7 @@ import FirebaseDatabase
 class AllProductCollectionViewPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 	
     var ref: FIRDatabaseReference!
-    
+    var source:String?
     var products = [Product]()
     
 	// IBOutlets 
@@ -22,9 +22,9 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         productCollectionDisplay()
-        
+        print("---------------------\(source ?? "This is test")----------------------")
     }
     
 	
@@ -50,6 +50,7 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "allProductsCell", for: indexPath) as! AllProductsCollectionViewCell
         cell.productNameLabel.text = products[indexPath.row].name
+        
         
 		return cell 
 	}
