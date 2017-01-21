@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       checkForCurrentUser()
-//      UserModel.shared.logout()
+     // UserModel.shared.logout()
    }
    
    func checkForCurrentUser() {
