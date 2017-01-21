@@ -16,7 +16,6 @@ class VendorSignUpViewController: UIViewController {
    var ref: FIRDatabaseReference!
    
    //MARK: IBOutlet ------------------------------
-   @IBOutlet weak var vendorLogo: UIImageView!
    
    @IBOutlet weak var vendorName: UITextField!
    
@@ -37,10 +36,6 @@ class VendorSignUpViewController: UIViewController {
    
    //MARK: IBAction ------------------------------
    
-   @IBAction func changeLogoPressed(_ sender: Any) {
-   
-   }
-   
    @IBAction func signUpPressed(_ sender: Any) {
       if let email = vendorContactEmail.text, let password = vendorPassword.text, let location = vendorAddress.text, let name = vendorName.text,
          let phone = vendorPhoneNumber.text, let website = vendorWebsite.text {
@@ -52,10 +47,17 @@ class VendorSignUpViewController: UIViewController {
                print("User signed in!")
                let currentUserID = FIRAuth.auth()!.currentUser!.uid
                
-               self.ref.child("users").updateChildValues(["\(currentUserID)":["userRole": "vendor", "userEmail": email, "userLocation" : location, "userName" : name, "userPhoneNumber": phone, "userWebsite": website, "userLogo" : "0"]])
-					UserModel.shared.user = User(userID: currentUserID , userRole: "vendor", userEmail: email, userLocation: location, userName: name, userPhoneNumber: phone, userWebsite: website, userLogo: " ")
+               self.ref.child("users").updateChildValues(["\(currentUserID)":["userRole": "vendor", "userEmail": email, "userLocation" : location, "userName" : name, "userPhoneNumber": phone, "userWebsite": website]])
+					UserModel.shared.user = User(userID: currentUserID , userRole: "vendor", userEmail: email, userLocation: location, userName: name, userPhoneNumber: phone, userWebsite: website)
 				
                UserModel.shared.checkStoryBoard(storyBoard: "VendorStoryboard2")
+                
+                self.vendorContactEmail.resignFirstResponder()
+                self.vendorPassword.resignFirstResponder()
+                self.vendorAddress.resignFirstResponder()
+                self.vendorName.resignFirstResponder()
+                self.vendorPhoneNumber.resignFirstResponder()
+                self.vendorWebsite.resignFirstResponder()
 				}
          }
 			
