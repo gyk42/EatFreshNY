@@ -54,10 +54,6 @@ class ClientSingUpViewController: UIViewController {
                
                UserModel.shared.checkStoryBoard(storyBoard: "Main")
                 
-                self.emailTextField.resignFirstResponder()
-                self.nameTextField.resignFirstResponder()
-                self.passwordTextField.resignFirstResponder()
-                self.phoneNumberTextField.resignFirstResponder()
             }
          }
       } else {
