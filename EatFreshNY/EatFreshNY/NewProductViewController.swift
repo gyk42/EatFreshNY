@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class NewProductViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var imageName = ""
         
     var selectedButton: UIButton?
     
@@ -101,7 +102,7 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
         
         //TEXT FIELDS:
         if let name = productNameTextfield.text, let description = productDescriptionTextfield.text, let price = productPrice.text, let quantity = qtyTextfield.text, let category = productCategory.text {
-            ProductModel.shared.createProduct(name: name, description: description, price: price, quantity: quantity, category: category, userID: FIRAuth.auth()!.currentUser!.uid);
+            ProductModel.shared.createProduct(name: name, image: imageName, description: description, price: price, quantity: quantity, category: category, userID: FIRAuth.auth()!.currentUser!.uid);
         }
       
         //PHOTOS:
@@ -180,7 +181,7 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let imageName = NSUUID().uuidString // creates a randome string to  be uses as photo name
+        imageName = NSUUID().uuidString // creates a randome string to  be uses as photo name
         
         if selectedButton == mainPhotoOutlet {
             mainPhotoName = imageName

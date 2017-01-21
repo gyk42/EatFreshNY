@@ -21,10 +21,10 @@ class User {
    var userName: String
    var userPhoneNumber: String
    var userWebsite: String
-   //var userLogo: String
+   var userLogo: String
    var ref: FIRDatabaseReference?
    
-   init(userID: String, userRole: String, userEmail: String, userLocation: String, userName: String,userPhoneNumber : String, userWebsite: String/*, userLogo: String*/){
+   init(userID: String, userRole: String, userEmail: String, userLocation: String, userName: String,userPhoneNumber : String, userWebsite: String, userLogo: String){
       self.userID =  userID
       self.userEmail = userEmail
       self.userRole = userRole
@@ -32,7 +32,7 @@ class User {
       self.userName = userName
       self.userPhoneNumber = userPhoneNumber
       self.userWebsite = userWebsite
-      //self.userLogo = userLogo
+      self.userLogo = userLogo
    }
    
    init(snapshot: FIRDataSnapshot) {
@@ -44,7 +44,7 @@ class User {
       userName = snapshotValue["userName"] as! String
       userPhoneNumber = snapshotValue["userPhoneNumber"] as! String
       userWebsite = snapshotValue["userWebsite"] as! String
-      //userLogo = snapshotValue["userLogo"] as! String
+      userLogo = snapshotValue["userLogo"] as! String
       ref = snapshot.ref
    }
    
@@ -57,7 +57,7 @@ class User {
          "userName": userName as String as AnyObject,
          "userPhoneNumber": userPhoneNumber as String as AnyObject,
          "userWebsite": userWebsite as String as AnyObject,
-         //"userLogo": userLogo as String as AnyObject
+         "userLogo": userLogo as String as AnyObject
       ]
    }
 }
