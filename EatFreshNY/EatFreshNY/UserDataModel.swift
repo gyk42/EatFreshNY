@@ -22,6 +22,7 @@ class User {
    var userPhoneNumber: String
    var userWebsite: String
    var userLogo: String
+
    var ref: FIRDatabaseReference?
 
    var userDescription: String
