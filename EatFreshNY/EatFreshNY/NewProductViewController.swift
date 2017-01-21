@@ -88,21 +88,25 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
     //MARK: SAVE BUTTON ( it will save  all phots and  all textField to firebase
     
     var model: ImageP! // reference to ImageProcessing.swif (fireBase funcs)
-    
+   
+   // to get rid of keyboard by touching the outside of the textfield
+   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      self.view.endEditing(true)
+   }
+   
+
+   
+   
+   
     @IBAction func saveNewProductButtton(_ sender: UIButton) {
         
         //TEXT FIELDS:
         if let name = productNameTextfield.text, let description = productDescriptionTextfield.text, let price = productPrice.text, let quantity = qtyTextfield.text, let category = productCategory.text {
-//            ProductModel.shared.createProduct(name: name, description: description, price: price, quantity: quantity, category: category, userID: FIRAuth.auth()!.currentUser!.uid);
-//            ProductModel.shared.updatePrduct(newName: "Steak", newDescription: <#T##String?#>, newPrice: <#T##String?#>, newQuantity: <#T##String?#>, newCategory: <#T##String?#>, product: <#T##Product#>)
-            
-            productDescriptionTextfield.resignFirstResponder()
-            qtyTextfield.resignFirstResponder()
-
+            ProductModel.shared.createProduct(name: name, description: description, price: price, quantity: quantity, category: category, userID: FIRAuth.auth()!.currentUser!.uid);
         }
         
         
-        
+      
         //PHOTOS:
         
         //Main Product Photo - save to Firebase with name look at  (imageName)
