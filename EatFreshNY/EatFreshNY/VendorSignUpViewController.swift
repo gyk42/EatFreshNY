@@ -56,13 +56,7 @@ class VendorSignUpViewController: UIViewController {
 					UserModel.shared.user = User(userID: currentUserID , userRole: "vendor", userEmail: email, userLocation: location, userName: name, userPhoneNumber: phone, userWebsite: website)
 				
                UserModel.shared.checkStoryBoard(storyBoard: "VendorStoryboard2")
-                
-                self.vendorContactEmail.resignFirstResponder()
-                self.vendorPassword.resignFirstResponder()
-                self.vendorAddress.resignFirstResponder()
-                self.vendorName.resignFirstResponder()
-                self.vendorPhoneNumber.resignFirstResponder()
-                self.vendorWebsite.resignFirstResponder()
+         
 				}
          }
 			

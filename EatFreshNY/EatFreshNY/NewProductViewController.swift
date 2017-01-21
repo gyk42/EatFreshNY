@@ -16,6 +16,9 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
     var selectedButton: UIButton?
     
     
+   @IBAction func logoutPressed(_ sender: Any) {
+      UserModel.shared.logout()
+   }
     
     //MARK:  VIEWCONTOLLER funcs
     override func viewDidLoad() {
@@ -94,18 +97,12 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
       self.view.endEditing(true)
    }
    
-
-   
-   
-   
     @IBAction func saveNewProductButtton(_ sender: UIButton) {
         
         //TEXT FIELDS:
         if let name = productNameTextfield.text, let description = productDescriptionTextfield.text, let price = productPrice.text, let quantity = qtyTextfield.text, let category = productCategory.text {
             ProductModel.shared.createProduct(name: name, description: description, price: price, quantity: quantity, category: category, userID: FIRAuth.auth()!.currentUser!.uid);
         }
-        
-        
       
         //PHOTOS:
         
