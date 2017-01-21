@@ -12,9 +12,7 @@ import FirebaseAuth
 
 class NewProductViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
-    
-    
+        
     var selectedButton: UIButton?
     
     
