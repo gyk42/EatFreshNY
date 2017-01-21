@@ -30,6 +30,11 @@ class ClientSingUpViewController: UIViewController {
       ref = FIRDatabase.database().reference()
    }
    
+   // to get rid of keyboard by touching the outside of the textfield
+   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      self.view.endEditing(true)
+   }
+
    //MARK: IBAction ---------------------------------
    
    @IBAction func signUpPressed(_ sender: Any) {

@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       checkForCurrentUser()
+//      UserModel.shared.logout()
    }
    
    func checkForCurrentUser() {
@@ -31,6 +32,11 @@ class LoginViewController: UIViewController {
       }
    }
    
+   // to get rid of keyboard by touching the outside of the textfield
+   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      self.view.endEditing(true)
+   }
+
    
    // MARK: IBAction -------------------------------
    
