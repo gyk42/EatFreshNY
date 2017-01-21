@@ -51,12 +51,10 @@ class VendorSignUpViewController: UIViewController {
             } else {
                print("User signed in!")
                let currentUserID = FIRAuth.auth()!.currentUser!.uid
-               
+           
                self.ref.child("users").updateChildValues(["\(currentUserID)":["userRole": "vendor", "userEmail": email, "userLocation" : location, "userName" : name, "userPhoneNumber": phone, "userWebsite": website, "userDescription": "0"]])
-               UserModel.shared.user = User(userID: currentUserID , userRole: "vendor", userEmail: email, userLocation: location, userName: name, userPhoneNumber: phone, userWebsite: website, userDescription: "0")
-				
-               UserModel.shared.checkStoryBoard(storyBoard: "VendorStoryboard2")
-         
+               UserModel.shared.user = User(userID: currentUserID , userRole: "vendor", userEmail: email, userLocation: location, userName: name, userPhoneNumber: phone, userWebsite: website, userDescription: "0")				
+               UserModel.shared.checkStoryBoard(storyBoard: "VendorStoryboard2")         
 				}
          }
 			
