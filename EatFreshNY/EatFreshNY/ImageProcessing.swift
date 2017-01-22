@@ -42,7 +42,7 @@ class ImageP {
    
    
    
-   // GEt image from Firebase
+   // GEt image from Firebase as DAtA
    func downloadImage(named name: String, complete: @escaping (UIImage?) -> ()) {
       
       let imageRef = storage.reference(withPath: name)
@@ -53,5 +53,6 @@ class ImageP {
             complete(image)
          }
       }
+     
    }
 }

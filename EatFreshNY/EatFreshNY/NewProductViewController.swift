@@ -152,12 +152,12 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
     }
    
     // GEt image from Firebase Storage
-    func downloadImage(imageName: String) {
+   func GetImageFromStorage(imageName: String, imageView: UIImageView) {
       
         model.downloadImage(named: imageName, complete: { image in
          
             if let i = image {
-                // self.( ImageView to be conected).image = i
+               imageView.image = i
             }
         })
       

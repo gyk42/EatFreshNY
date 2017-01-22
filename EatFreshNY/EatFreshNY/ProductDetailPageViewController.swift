@@ -44,11 +44,11 @@ class ProductDetailPageViewController: UIViewController {
 		
 		
 		
-		CartModel.shared.Key = NSUUID().uuidString // creates a randome string to  be uses as cartID
-		
-		Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!), productQuantity: String(quantityNumberLabel.text!), productPhoto: productDetailImage.image!)
-		
-		Item(
+//		CartModel.shared.Key = NSUUID().uuidString // creates a randome string to  be uses as cartID
+//		
+//		Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!), productQuantity: String(quantityNumberLabel.text!), productPhoto: productDetailImage.image!)
+//		
+//		Item(
 //		(productName: productNameLabel.text!,
 //		               productPrice: productPriceLabel.text!,
 //		               productQuantity: quantityNumberLabel.text!,
