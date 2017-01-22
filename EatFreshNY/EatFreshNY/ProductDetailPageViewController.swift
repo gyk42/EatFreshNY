@@ -12,8 +12,8 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class ProductDetailPageViewController: UIViewController {
-   
-   var product: Product?
+  
+  var product: Product?
 	var cartModelClass = CartModel()
 	var availableCart: Item?
 
@@ -42,8 +42,6 @@ class ProductDetailPageViewController: UIViewController {
    // MARK: IBActions ------------------------------------------------------------------------
    @IBAction func addToCartButtonTapped(_ sender: UIButton) {
 		
-//		
-//		
 //		CartModel.shared.Key = NSUUID().uuidString // creates a randome string to  be uses as cartID
 //		
 //		Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!), productQuantity: String(quantityNumberLabel.text!), productPhoto: productDetailImage.image!)
@@ -63,11 +61,5 @@ class ProductDetailPageViewController: UIViewController {
    @IBAction func quantityStepperTapped(_ sender: Any) {
       
    }
-   
-   
-   
-   
-   
-   
-   
+
 }

@@ -9,13 +9,18 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 
 class AllProductCollectionViewPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
+
    
    var ref: FIRDatabaseReference!
    static var categoryName: String?
    var products = [Product]()
+   var modelImage = ImageP()
+   
    
    // IBOutlets
    @IBOutlet weak var allProductsCollectionView: UICollectionView!
@@ -55,6 +60,16 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "allProductsCell", for: indexPath) as! AllProductsCollectionViewCell
       cell.productNameLabel.text = products[indexPath.row].name
       
+//MARK : STEPS TO GET IMAGE  from storage  
+   /// to call this u need in each ViewContraller to call: copy/paste
+    //  import FirebaseStorage
+   //var modelImage = ImageP()
+   // func getImageFromStorage()
+
+      // get the name of the image
+       let productImage = products[indexPath.row].imageOne
+      // call funcion and give it name
+      cell.productImage.image = getImageFromStorage(imageName: productImage)
       return cell
    }
    
@@ -68,4 +83,20 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
          destination.product = products[(allProductsCollectionView.indexPathsForSelectedItems!.first!.item)]
       }
    }
-}
+   
+   // this func gets the image data from a fucnfion in Image Procecing model and return a UIImage
+   func getImageFromStorage(imageName: String)-> UIImage {
+      var newImage = UIImage()
+      modelImage.downloadImage(named: imageName, complete: { image in
+         
+         if let i = image {
+            newImage = i
+         }
+      })
+     return newImage
+   }
+ 
+   
+   
+}//End ViewController
+

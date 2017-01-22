@@ -42,6 +42,9 @@ class LoginViewController: UIViewController {
    @IBAction func loginBtnPressed(_ sender: Any) {
       let userLoginEmail = clientNameTextField.text!
       let userLoginPassword = clientNamePassword.text!
+
+      let userDescription = "0"
+      // TODO
       
       UserModel.shared.login(email: userLoginEmail, password: userLoginPassword, complete: { success in
          if success {
