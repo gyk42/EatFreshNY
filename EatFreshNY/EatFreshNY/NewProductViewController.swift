@@ -10,11 +10,17 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class NewProductViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewProductViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var imageName = ""
         
     var selectedButton: UIButton?
+    
+    var categories: [String] = ["baked-goods", "dairy", "fruits", "preserves", "fish", "meat"]
+
+    var categorySelected = ""
+    
+    
     
     
    @IBAction func logoutPressed(_ sender: Any) {
@@ -26,8 +32,8 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
         model = ImageP()
         imagePickerController.delegate = self
         super.viewDidLoad()
-  
-        
+        PickerCategories.dataSource = self
+        PickerCategories.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,8 +43,34 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     //--------------------------------------------------------------------
+    //MARK: CATEGORY SELECT BUTTON
+    
+    @IBOutlet weak var PickerCategories: UIPickerView!
+    
+    @IBOutlet weak var CategoryPickerOutlet: UIButton!
+    @IBAction func CategorySelected(_ sender: Any) {
+        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categories.count
+    }
     
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categories[row]
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        CategoryPickerOutlet.setTitle(categories[row], for: UIControlState.normal)
+        PickerCategories.isHidden = true
+        categorySelected = categories[row]//
+    }
     
     
     
@@ -101,8 +133,8 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func saveNewProductButtton(_ sender: UIButton) {
         
         //TEXT FIELDS:
-        if let name = productNameTextfield.text, let description = productDescriptionTextfield.text, let price = productPrice.text, let quantity = qtyTextfield.text, let category = productCategory.text {
-            ProductModel.shared.createProduct(name: name, image: imageName, description: description, price: price, quantity: quantity, category: category, userID: FIRAuth.auth()!.currentUser!.uid);
+        if let name = productNameTextfield.text, let description = productDescriptionTextfield.text, let price = productPrice.text, let quantity = qtyTextfield.text {
+            ProductModel.shared.createProduct(name: name, image: imageName, description: description, price: price, quantity: quantity, category: categorySelected, userID: FIRAuth.auth()!.currentUser!.uid);
         }
       
         //PHOTOS:
