@@ -42,13 +42,13 @@ class ProductDetailPageViewController: UIViewController {
    // MARK: IBActions ------------------------------------------------------------------------
    @IBAction func addToCartButtonTapped(_ sender: UIButton) {
 		
-		
-		
-		CartModel.shared.Key = NSUUID().uuidString // creates a randome string to  be uses as cartID
-		
-		Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!), productQuantity: String(quantityNumberLabel.text!), productPhoto: productDetailImage.image!)
-		
-		Item(
+//		
+//		
+//		CartModel.shared.Key = NSUUID().uuidString // creates a randome string to  be uses as cartID
+//		
+//		Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!), productQuantity: String(quantityNumberLabel.text!), productPhoto: productDetailImage.image!)
+//		
+//		Item(
 //		(productName: productNameLabel.text!,
 //		               productPrice: productPriceLabel.text!,
 //		               productQuantity: quantityNumberLabel.text!,
