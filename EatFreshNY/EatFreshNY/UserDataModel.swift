@@ -61,7 +61,8 @@ class User {
          "userPhoneNumber": userPhoneNumber as String as AnyObject,
          "userWebsite": userWebsite as String as AnyObject,
          "userLogo": userLogo as String as AnyObject,
-         "userDescription": userDescription! as String as AnyObject
+         "userDescription": userDescription as String? as AnyObject
+
       ]
    }
 }

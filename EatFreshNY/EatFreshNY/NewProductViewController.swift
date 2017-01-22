@@ -10,40 +10,44 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+
 class NewProductViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var imageName = ""
-        
-    var selectedButton: UIButton?
-    
-    var categories: [String] = ["baked-goods", "dairy", "fruits", "preserves", "fish", "meat"]
+   var imageName = ""
+   var selectedButton: UIButton?
+   var categories: [String] = ["baked-goods", "dairy", "fruits", "preserves", "fish", "meat"]
+   var categorySelected = ""
+   var imageNameOne = ""
+   var imageNameTwo = ""
+   var imageNameThree = ""
+   var imageNameFour = ""
 
-    var categorySelected = ""
-    
-    
-    
-    
+   
+   var model: ImageP! // reference to ImageProcessing.swif (fireBase funcs)
+   let imagePickerController = UIImagePickerController()
+   var selectedButton: UIButton? // it marks the presed button one to asisgn input to the rigth Image view and text
+   
    @IBAction func logoutPressed(_ sender: Any) {
       UserModel.shared.logout()
    }
     
     //MARK:  VIEWCONTOLLER funcs
+
     override func viewDidLoad() {
-        model = ImageP()
-        imagePickerController.delegate = self
-        super.viewDidLoad()
-        PickerCategories.dataSource = self
-        PickerCategories.delegate = self
+      super.viewDidLoad()  
+      model = ImageP()
+      imagePickerController.delegate = self
+      PickerCategories.dataSource = self
+      PickerCategories.delegate = self
     }
-    
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
     //--------------------------------------------------------------------
-    //MARK: CATEGORY SELECT BUTTON
+    //MARK: CATEGORY SELECT BUTTON 
     
     @IBOutlet weak var PickerCategories: UIPickerView!
     
@@ -76,114 +80,120 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
     
     //--------------------------------------------------------------------
     //MARK: PHOTOS ///////////
-    
+
+   
+//MARK: LOGOUT Button
+   @IBAction func logoutPressed(_ sender: Any) {
+      UserModel.shared.logout()
+   }
+   
+   
+   
+   // to get rid of keyboard by touching the outside of the textfield
+   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      self.view.endEditing(true)
+   }
+
     // Main Product Photo
-    @IBOutlet weak var addMainPhotoImage: UIImageView!
+    @IBOutlet weak var addImageOne: UIImageView!
     @IBOutlet weak var mainPhotoOutlet: UIButton!
     @IBAction func mainPhotoButton(_ sender: UIButton) {
-        
+      
         selectedButton = sender
         pickImagePressed()
-        
+      
     }
-    
+   
     // in the UI from left to right  buttons  to add images
-    @IBOutlet weak var addPhotoOneImage: UIImageView!
+    @IBOutlet weak var addImageTwo: UIImageView!
     @IBOutlet weak var onePhotoOutlet: UIButton!
     @IBAction func addPhotoOneButton(_ sender: UIButton) {
         selectedButton = sender
         pickImagePressed()
     }
-    
-    
-    @IBOutlet weak var addPhotoTwoImage: UIImageView!
+   
+   
+    @IBOutlet weak var addImageThree: UIImageView!
     @IBOutlet weak var twoPhotoOutlet: UIButton!
     @IBAction func addPhotoTwoButton(_ sender: UIButton) {
         selectedButton = sender
         pickImagePressed()
     }
-    
-    @IBOutlet weak var addPhotoThreeImage: UIImageView!
+   
+    @IBOutlet weak var addImageFour: UIImageView!
     @IBOutlet weak var threePhotoOutlet: UIButton!
     @IBAction func addPhotoThreeButton(_ sender: UIButton) {
         selectedButton = sender
         pickImagePressed()
     }
-    
-    
-    //MARK: TEXT INPUT
-    
+   
+   
+//MARK: TEXT INPUT
+   
     // Outlets /////////
     @IBOutlet weak var productNameTextfield: UITextField!
     @IBOutlet weak var productDescriptionTextfield: UITextView!
     @IBOutlet weak var qtyTextfield: UITextField!
     @IBOutlet weak var productPrice: UITextField!
     @IBOutlet weak var productCategory: UILabel!
-    
-    
-    //MARK: SAVE BUTTON ( it will save  all phots and  all textField to firebase
-    
-    var model: ImageP! // reference to ImageProcessing.swif (fireBase funcs)
    
-   // to get rid of keyboard by touching the outside of the textfield
-   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      self.view.endEditing(true)
-   }
-   
+//MARK: SAVE BUTTON ( it will save  all phots and  all textField to firebase
     @IBAction func saveNewProductButtton(_ sender: UIButton) {
-        
-        //TEXT FIELDS:
-        if let name = productNameTextfield.text, let description = productDescriptionTextfield.text, let price = productPrice.text, let quantity = qtyTextfield.text {
-            ProductModel.shared.createProduct(name: name, image: imageName, description: description, price: price, quantity: quantity, category: categorySelected, userID: FIRAuth.auth()!.currentUser!.uid);
+
+      
+        // Save new Product Info into Firebase Database
+        if let name = productNameTextfield.text,
+         let description = productDescriptionTextfield.text,
+         let price = productPrice.text, let quantity = qtyTextfield.text,
+         let category = productCategory.text {
+            ProductModel.shared.createProduct(name: name,
+                                              imageOne: imageNameOne,
+                                              imageTwo: imageNameTwo,
+                                              imageThree: imageNameThree,
+                                              imageFour: imageNameFour,
+                                              description: description,
+                                              price: price,
+                                              quantity: quantity,
+                                              category: category,
+                                              userID: FIRAuth.auth()!.currentUser!.uid)
         }
       
-        //PHOTOS:
-        
-        //Main Product Photo - save to Firebase with name look at  (imageName)
-        uploadImage(image: addMainPhotoImage.image!, imageName: mainPhotoName)
-        //one Product Photo - save to Firebase with name look at  (imageName)
-        uploadImage(image: addPhotoOneImage.image!, imageName: onePhotoName)
-        //two Product Photo - save to Firebase with name look at  (imageName)
-        uploadImage(image: addPhotoTwoImage.image!, imageName: twoPhotoName)
-        //two Product Photo - save to Firebase with name look at  (imageName)
-        uploadImage(image: addPhotoThreeImage.image!, imageName: threePhotoName)
+        //ImageOne - save in Firebase STORAGE
+        uploadImage(image: addImageOne.image!, imageName: imageNameOne)
+        //ImageTwo - save in Firebase STORAGE
+         uploadImage(image: addImageTwo.image!, imageName: imageNameTwo)
+        //ImageThree - save in Firebase STORAGE
+        uploadImage(image: addImageThree.image!, imageName: imageNameThree)
+        //ImageFour - save in Firebase STORAGE
+        uploadImage(image: addImageFour.image!, imageName: imageNameFour)
     
     }
-    
-    
-    //MARK: FIREBASE  funcs
-    
-    // SAVE image TO  FireBas
+   
+   
+//MARK: FIREBASE  funcs
+   
+    // SAVE image TO  FireBase STORAGE
     func uploadImage(image: UIImage, imageName: String ) {
-        
+      
         model.uploadImage(withData: UIImagePNGRepresentation(image)!, named: imageName)
-        
+      
     }
-    
-    // GEt image from Firebase
-    func downloadImage(imageName: String) {
-        
+   
+    // GEt image from Firebase Storage
+   func GetImageFromStorage(imageName: String, imageView: UIImageView) {
+      
         model.downloadImage(named: imageName, complete: { image in
-            
+         
             if let i = image {
-                // self.( ImageView to be conected).image = i
+               imageView.image = i
             }
         })
-        
+      
     }
-    
-    
-    //MARK: IMAGE PICKER funcs
-    
-    let imagePickerController = UIImagePickerController()
-    
-    var mainPhotoName = " "
-    var onePhotoName = " "
-    var twoPhotoName = " "
-    var threePhotoName = " "
-    
-    
-    
+   
+   
+//MARK: IMAGE PICKER funcs
+   
     func pickImagePressed (){
         
         let imagePickerController = UIImagePickerController()
@@ -210,31 +220,35 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
         self.present(actionSheet, animated: true, completion: nil)
     }
     
-    
+   // It will Asign the image to the Rigth ImageView and A name to the Selected Photo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        imageName = NSUUID().uuidString // creates a randome string to  be uses as photo name
+      
         
         if selectedButton == mainPhotoOutlet {
-            mainPhotoName = imageName
-            addMainPhotoImage.image = image
-            
+            imageNameOne = NSUUID().uuidString // creates a randome string to  be uses as photo name
+            addImageOne.image = image
+            print (imageNameOne)
         }
         else if selectedButton == onePhotoOutlet {
             
-            onePhotoName = imageName
-            addPhotoOneImage.image = image
+            imageNameTwo = NSUUID().uuidString // creates a randome string to  be uses as photo name
+            addImageTwo.image = image
+            print (imageNameTwo)
+
         }
         else if selectedButton == twoPhotoOutlet {
             
-            twoPhotoName = imageName
-            addPhotoTwoImage.image = image
+            imageNameThree = NSUUID().uuidString // creates a randome string to  be uses as photo name
+            addImageThree.image = image
+            print (imageNameThree)
         }
             
         else if selectedButton == threePhotoOutlet {
             
-            threePhotoName = imageName
-            addPhotoThreeImage.image = image
+            imageNameFour = NSUUID().uuidString // creates a randome string to  be uses as photo name
+            addImageFour.image = image
+            print (imageNameFour)
         }
         
         picker.dismiss(animated: true, completion: nil)

@@ -22,10 +22,7 @@ class UserModel {
    // global code to login users
    func login(email: String, password: String, complete: @escaping (Bool) -> ()) {
       FIRAuth.auth()?.signIn(withEmail: email, password: password) { user, error in
-         if error == nil {
-            print("success")
-            complete(true)
-         }
+         complete(user != nil)
       }
    }
    
@@ -67,7 +64,6 @@ class UserModel {
          self.checkStoryBoard(storyBoard: whichSB)
          
       })
-      
    }
 }
 
