@@ -37,23 +37,22 @@ class LoginViewController: UIViewController {
       self.view.endEditing(true)
    }
 
-   
    // MARK: IBAction -------------------------------
    
    @IBAction func loginBtnPressed(_ sender: Any) {
       let userLoginEmail = clientNameTextField.text!
       let userLoginPassword = clientNamePassword.text!
       
-      // TODO
-      
-      UserModel.shared.login(email: userLoginEmail, password: userLoginPassword) { success in
-         
-         // TODO: handle success
+      UserModel.shared.login(email: userLoginEmail, password: userLoginPassword, complete: { success in
          if success {
             UserModel.shared.checkForLoginUser()
          } else {
-            print("error in login")
+            let alertController = UIAlertController(title: "Error", message: "Please provide a valid email or password", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
          }
-      }
+      })
    }
 }
