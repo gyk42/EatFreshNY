@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fXm-qW-fJ7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fXm-qW-fJ7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -301,7 +301,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jfz-d5-tAX" userLabel="main Image View">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jfz-d5-tAX" userLabel="ImageONE">
                                 <rect key="frame" x="104" y="43" width="167" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
@@ -364,7 +364,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jo8-vA-m16" userLabel="photo one View">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jo8-vA-m16" userLabel="ImageTWO">
                                 <rect key="frame" x="23" y="371" width="109" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
@@ -380,7 +380,7 @@
                                     <action selector="addPhotoOneButton:" destination="fXm-qW-fJ7" eventType="touchUpInside" id="NOq-nQ-aEu"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-IW-ocn" userLabel="Photo Two View">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wOF-IW-ocn" userLabel="ImageTHREE">
                                 <rect key="frame" x="133" y="370" width="111" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
@@ -396,7 +396,7 @@
                                     <action selector="addPhotoTwoButton:" destination="fXm-qW-fJ7" eventType="touchUpInside" id="rcz-Oy-LMs"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J4e-7K-aM5" userLabel="Photo Three View">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J4e-7K-aM5" userLabel="ImageFOUR">
                                 <rect key="frame" x="248" y="370" width="105" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
@@ -450,11 +450,11 @@
                     </view>
                     <connections>
                         <outlet property="CategoryPickerOutlet" destination="aIB-5n-I8t" id="YQS-xq-2wt"/>
+                        <outlet property="ImageFour" destination="J4e-7K-aM5" id="o7a-T0-A3i"/>
+                        <outlet property="ImageOne" destination="Jfz-d5-tAX" id="rbI-rd-GaK"/>
+                        <outlet property="ImageThree" destination="wOF-IW-ocn" id="N1E-Au-Etx"/>
+                        <outlet property="ImageTwo" destination="jo8-vA-m16" id="ovb-GW-ZFV"/>
                         <outlet property="PickerCategories" destination="uqI-1f-jva" id="1Vz-D7-sVc"/>
-                        <outlet property="addMainPhotoImage" destination="Jfz-d5-tAX" id="sh6-md-zet"/>
-                        <outlet property="addPhotoOneImage" destination="jo8-vA-m16" id="fgx-ED-ZZh"/>
-                        <outlet property="addPhotoThreeImage" destination="J4e-7K-aM5" id="fNB-GK-G8w"/>
-                        <outlet property="addPhotoTwoImage" destination="wOF-IW-ocn" id="M7N-Un-pey"/>
                         <outlet property="mainPhotoOutlet" destination="MVq-Kd-yYo" id="mNC-N3-hwx"/>
                         <outlet property="onePhotoOutlet" destination="JXw-Vr-J9X" id="5xP-fG-Dum"/>
                         <outlet property="productDescriptionTextfield" destination="bJu-wX-QYT" id="dQa-N6-Ci0"/>

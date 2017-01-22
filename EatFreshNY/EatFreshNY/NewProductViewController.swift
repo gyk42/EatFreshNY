@@ -90,7 +90,7 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
    }
 
     // Main Product Photo
-    @IBOutlet weak var addImageOne: UIImageView!
+    @IBOutlet weak var ImageOne: UIImageView!
     @IBOutlet weak var mainPhotoOutlet: UIButton!
     @IBAction func mainPhotoButton(_ sender: UIButton) {
       
@@ -100,7 +100,7 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
     }
    
     // in the UI from left to right  buttons  to add images
-    @IBOutlet weak var addImageTwo: UIImageView!
+    @IBOutlet weak var ImageTwo: UIImageView!
     @IBOutlet weak var onePhotoOutlet: UIButton!
     @IBAction func addPhotoOneButton(_ sender: UIButton) {
         selectedButton = sender
@@ -108,14 +108,14 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
     }
    
    
-    @IBOutlet weak var addImageThree: UIImageView!
+    @IBOutlet weak var ImageThree: UIImageView!
     @IBOutlet weak var twoPhotoOutlet: UIButton!
     @IBAction func addPhotoTwoButton(_ sender: UIButton) {
         selectedButton = sender
         pickImagePressed()
     }
    
-    @IBOutlet weak var addImageFour: UIImageView!
+    @IBOutlet weak var ImageFour: UIImageView!
     @IBOutlet weak var threePhotoOutlet: UIButton!
     @IBAction func addPhotoThreeButton(_ sender: UIButton) {
         selectedButton = sender
@@ -154,13 +154,13 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
         }
       
         //ImageOne - save in Firebase STORAGE
-        uploadImage(image: addImageOne.image!, imageName: imageNameOne)
+        uploadImage(image: ImageOne.image!, imageName: imageNameOne)
         //ImageTwo - save in Firebase STORAGE
-         uploadImage(image: addImageTwo.image!, imageName: imageNameTwo)
+         uploadImage(image: ImageTwo.image!, imageName: imageNameTwo)
         //ImageThree - save in Firebase STORAGE
-        uploadImage(image: addImageThree.image!, imageName: imageNameThree)
+        uploadImage(image: ImageThree.image!, imageName: imageNameThree)
         //ImageFour - save in Firebase STORAGE
-        uploadImage(image: addImageFour.image!, imageName: imageNameFour)
+        uploadImage(image: ImageFour.image!, imageName: imageNameFour)
     
     }
    
@@ -222,27 +222,27 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
         
         if selectedButton == mainPhotoOutlet {
             imageNameOne = NSUUID().uuidString // creates a randome string to  be uses as photo name
-            addImageOne.image = image
+            ImageOne.image = image
             print (imageNameOne)
         }
         else if selectedButton == onePhotoOutlet {
             
             imageNameTwo = NSUUID().uuidString // creates a randome string to  be uses as photo name
-            addImageTwo.image = image
+            ImageTwo.image = image
             print (imageNameTwo)
 
         }
         else if selectedButton == twoPhotoOutlet {
             
             imageNameThree = NSUUID().uuidString // creates a randome string to  be uses as photo name
-            addImageThree.image = image
+            ImageThree.image = image
             print (imageNameThree)
         }
             
         else if selectedButton == threePhotoOutlet {
             
             imageNameFour = NSUUID().uuidString // creates a randome string to  be uses as photo name
-            addImageFour.image = image
+            ImageFour.image = image
             print (imageNameFour)
         }
         
