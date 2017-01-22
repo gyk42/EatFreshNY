@@ -32,26 +32,25 @@ class ProductDetailPageViewController: UIViewController {
       self.productDescriptionLabel.text = product?.description
       self.productPriceLabel.text = product?.price
       self.quantityNumberLabel.text = product?.quantity
-      
-      //self.productDetailImage.image = productDetailImage      
+      //self.productDetailImage.image = product?.image
    }
    
    
    // MARK: IBActions ------------------------------------------------------------------------
    @IBAction func addToCartButtonTapped(_ sender: UIButton) {
 		
-		CartModel.shared.Key = NSUUID().uuidString // creates a randome string to  be uses as cartID
-		CartModel.Item(productName: productNameLabel.text!,
-		               productPrice: productPriceLabel.text!,
-		               productQuantity: quantityNumberLabel.text!,
-		               productPhoto: productDetailImage.image!,
-		               productId: product!)
-		
-		
-		var cartArray = [productNameLabel.text, productDescriptionLabel.text, productPriceLabel.text, quantityNumberLabel.text]
-		NSKeyedArchiver.archiveRootObject(cartArray, toFile: CartViewController!)
- 
-      
+//		CartModel.shared.Key = NSUUID().uuidString // creates a randome string to  be uses as cartID
+//		CartModel.Item(productName: productNameLabel.text!,
+//		               productPrice: productPriceLabel.text!,
+//		               productQuantity: quantityNumberLabel.text!,
+//		               productPhoto: productDetailImage.image!,
+//		               productId: product!)
+//		
+//		
+//		var cartArray = [productNameLabel.text, productDescriptionLabel.text, productPriceLabel.text, quantityNumberLabel.text]
+//		NSKeyedArchiver.archiveRootObject(cartArray, toFile: CartViewController!)
+// 
+//      
    }
 	
 	

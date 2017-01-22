@@ -22,12 +22,9 @@ class User {
    var userPhoneNumber: String
    var userWebsite: String
    var userLogo: String
-
-   var ref: FIRDatabaseReference?
-
    var userDescription: String
    var ref: FIRDatabaseReference?
-   
+
    init(userID: String, userRole: String, userEmail: String, userLocation: String, userName: String,userPhoneNumber : String, userWebsite: String, userLogo: String, userDescription: String){
       self.userID =  userID
       self.userEmail = userEmail
@@ -63,7 +60,7 @@ class User {
          "userName": userName as String as AnyObject,
          "userPhoneNumber": userPhoneNumber as String as AnyObject,
          "userWebsite": userWebsite as String as AnyObject,
-         "userLogo": userLogo as String as AnyObject
+         "userLogo": userLogo as String as AnyObject,
          "userDescription": userDescription as String as AnyObject
       ]
    }
