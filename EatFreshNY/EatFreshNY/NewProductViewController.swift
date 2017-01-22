@@ -48,7 +48,8 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBOutlet weak var CategoryPickerOutlet: UIButton!
     @IBAction func CategorySelected(_ sender: Any) {
-        
+      PickerCategories.isHidden = false
+      
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -139,8 +140,8 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
         // Save new Product Info into Firebase Database
         if let name = productNameTextfield.text,
          let description = productDescriptionTextfield.text,
-         let price = productPrice.text, let quantity = qtyTextfield.text,
-         let category = productCategory.text {
+         let price = productPrice.text,
+         let quantity = qtyTextfield.text {
             ProductModel.shared.createProduct(name: name,
                                               imageOne: imageNameOne,
                                               imageTwo: imageNameTwo,
@@ -149,7 +150,7 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
                                               description: description,
                                               price: price,
                                               quantity: quantity,
-                                              category: category,
+                                              category: categorySelected,
                                               userID: FIRAuth.auth()!.currentUser!.uid)
         }
       
