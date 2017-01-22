@@ -13,6 +13,8 @@ import FirebaseStorage
 
 
 class AllProductCollectionViewPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
+
    
    var ref: FIRDatabaseReference!
    static var categoryName: String?
@@ -97,3 +99,4 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
    
    
 }//End ViewController
+

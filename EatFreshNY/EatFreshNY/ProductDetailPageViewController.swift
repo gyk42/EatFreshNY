@@ -12,8 +12,8 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class ProductDetailPageViewController: UIViewController {
-   
-   var product: Product?
+  
+  var product: Product?
 	var cartModelClass = CartModel()
 	var availableCart: Item?
 
@@ -63,11 +63,5 @@ class ProductDetailPageViewController: UIViewController {
    @IBAction func quantityStepperTapped(_ sender: Any) {
       
    }
-   
-   
-   
-   
-   
-   
-   
+
 }

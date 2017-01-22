@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0C3A98581E2C84B80014E190 /* VendorStoryboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */; };
+		0CBC51BB1E3519710074D564 /* InventoryProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC51BA1E3519710074D564 /* InventoryProductTableViewCell.swift */; };
+		0CBC51BF1E353B960074D564 /* InventoryProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC51BE1E353B960074D564 /* InventoryProductViewController.swift */; };
 		0CE244111E300C0800548D00 /* ProductDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE244101E300C0800548D00 /* ProductDataModel.swift */; };
 		4C189B631E2EC6A500684E85 /* ClientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C189B621E2EC6A500684E85 /* ClientData.swift */; };
 		4C189B691E2F004100684E85 /* Hospital_000000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C189B681E2F004100684E85 /* Hospital_000000_25.png */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VendorStoryboard2.storyboard; sourceTree = "<group>"; };
+		0CBC51BA1E3519710074D564 /* InventoryProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryProductTableViewCell.swift; sourceTree = "<group>"; };
+		0CBC51BE1E353B960074D564 /* InventoryProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryProductViewController.swift; sourceTree = "<group>"; };
 		0CE244101E300C0800548D00 /* ProductDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDataModel.swift; sourceTree = "<group>"; };
 		4C189B621E2EC6A500684E85 /* ClientData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientData.swift; sourceTree = "<group>"; };
 		4C189B681E2F004100684E85 /* Hospital_000000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hospital_000000_25.png; sourceTree = "<group>"; };
@@ -227,17 +231,17 @@
 				503630A31E3269A200AF0940 /* ViewContollers */,
 				503630A21E32699A00AF0940 /* Outlets */,
 				EEACAAA61E2EA385006F3D10 /* SelectProductCategoryTableViewPageViewController.swift */,
-				EEBC50E41E2ADA74005EAE7B /* SelectVendorTableViewPageViewController.swift */,
-				EEBC50E61E2ADAB2005EAE7B /* AllProductCollectionViewPageViewController.swift */,
-				EEBC50EA1E2ADB05005EAE7B /* CartViewController.swift */,
-				EEBC50EC1E2ADB29005EAE7B /* ProductDetailPageViewController.swift */,
-				EEBC50EE1E2ADB5F005EAE7B /* ThankYouPurchaseConfirmationPageViewController.swift */,
 				EEBC50F01E2ADBED005EAE7B /* SelectProductTableViewCell.swift */,
+				EEBC50E41E2ADA74005EAE7B /* SelectVendorTableViewPageViewController.swift */,
 				EEBC50F21E2ADC3C005EAE7B /* SelectVendorTableViewCell.swift */,
+				EEBC50E61E2ADAB2005EAE7B /* AllProductCollectionViewPageViewController.swift */,
 				EEBC50F41E2ADCA2005EAE7B /* AllProductsCollectionViewCell.swift */,
+				EEBC50EC1E2ADB29005EAE7B /* ProductDetailPageViewController.swift */,
+				EEBC50EA1E2ADB05005EAE7B /* CartViewController.swift */,
 				EEBC50F81E2ADCFF005EAE7B /* CartTableViewCell.swift */,
 				EEACAAEC1E310BCD006F3D10 /* FavoritesViewController.swift */,
 				EEACAAF01E31654E006F3D10 /* FavoritesTableViewCell.swift */,
+				EEBC50EE1E2ADB5F005EAE7B /* ThankYouPurchaseConfirmationPageViewController.swift */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -293,6 +297,8 @@
 			children = (
 				508835921E3119C400EAC364 /* VendorSettingsViewController.swift */,
 				4CA14E6D1E3001B600CA326A /* NewProductViewController.swift */,
+				0CBC51BE1E353B960074D564 /* InventoryProductViewController.swift */,
+				0CBC51BA1E3519710074D564 /* InventoryProductTableViewCell.swift */,
 				EEBC50DD1E2AD107005EAE7B /* Assets */,
 			);
 			name = Logic;
@@ -446,6 +452,7 @@
 				0CE244111E300C0800548D00 /* ProductDataModel.swift in Sources */,
 				8D0B7CD61E2ADEAE008799F4 /* ClientSingUpViewController.swift in Sources */,
 				50DB2B531E20380600AA63A8 /* AppDelegate.swift in Sources */,
+				0CBC51BF1E353B960074D564 /* InventoryProductViewController.swift in Sources */,
 				EEBC50ED1E2ADB29005EAE7B /* ProductDetailPageViewController.swift in Sources */,
 				EEBC50F91E2ADCFF005EAE7B /* CartTableViewCell.swift in Sources */,
 				5088356F1E3017D400EAC364 /* UserModel.swift in Sources */,
@@ -455,6 +462,7 @@
 				EEACAAF31E318BDF006F3D10 /* CartData.swift in Sources */,
 				EEBC50EB1E2ADB05005EAE7B /* CartViewController.swift in Sources */,
 				4CA14E6E1E3001B600CA326A /* NewProductViewController.swift in Sources */,
+				0CBC51BB1E3519710074D564 /* InventoryProductTableViewCell.swift in Sources */,
 				4CA14E6C1E2FFF7D00CA326A /* ImageProcessing.swift in Sources */,
 				EEBC50E51E2ADA74005EAE7B /* SelectVendorTableViewPageViewController.swift in Sources */,
 				5088356D1E3017AF00EAC364 /* UserDataModel.swift in Sources */,

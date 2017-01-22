@@ -10,8 +10,13 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class NewProductViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-   
+
+class NewProductViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+   var imageName = ""
+   var selectedButton: UIButton?
+   var categories: [String] = ["baked-goods", "dairy", "fruits", "preserves", "fish", "meat"]
+   var categorySelected = ""
    var imageNameOne = ""
    var imageNameTwo = ""
    var imageNameThree = ""
@@ -22,29 +27,60 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
    let imagePickerController = UIImagePickerController()
    var selectedButton: UIButton? // it marks the presed button one to asisgn input to the rigth Image view and text
    
-   //--------------------------------------------------------------------
-   
-   
-//MARK:  VIEWCONTOLLER funcs
+   @IBAction func logoutPressed(_ sender: Any) {
+      UserModel.shared.logout()
+   }
+    
+    //MARK:  VIEWCONTOLLER funcs
+
     override func viewDidLoad() {
-        model = ImageP()
-        imagePickerController.delegate = self
-        super.viewDidLoad()
-  
-      
+      super.viewDidLoad()  
+      model = ImageP()
+      imagePickerController.delegate = self
+      PickerCategories.dataSource = self
+      PickerCategories.delegate = self
     }
    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
 
+    //--------------------------------------------------------------------
+    //MARK: CATEGORY SELECT BUTTON 
+    
+    @IBOutlet weak var PickerCategories: UIPickerView!
+    
+    @IBOutlet weak var CategoryPickerOutlet: UIButton!
+    @IBAction func CategorySelected(_ sender: Any) {
+        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categories.count
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categories[row]
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        CategoryPickerOutlet.setTitle(categories[row], for: UIControlState.normal)
+        PickerCategories.isHidden = true
+        categorySelected = categories[row]//
+    }
+    
+    
+    
+    //--------------------------------------------------------------------
+    //MARK: PHOTOS ///////////
 
-//--------------------------------------------------------------------
-   
-   
-   
    
 //MARK: LOGOUT Button
    @IBAction func logoutPressed(_ sender: Any) {
@@ -57,12 +93,7 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       self.view.endEditing(true)
    }
-   
-   
-   
-   
-//MARK: PHOTOS ///////////
-   
+
     // Main Product Photo
     @IBOutlet weak var addImageOne: UIImageView!
     @IBOutlet weak var mainPhotoOutlet: UIButton!
@@ -106,12 +137,9 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var productPrice: UITextField!
     @IBOutlet weak var productCategory: UILabel!
    
-
-   
-   
-   
 //MARK: SAVE BUTTON ( it will save  all phots and  all textField to firebase
     @IBAction func saveNewProductButtton(_ sender: UIButton) {
+
       
         // Save new Product Info into Firebase Database
         if let name = productNameTextfield.text,
