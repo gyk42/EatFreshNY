@@ -30,7 +30,6 @@ class CartModel {
 	}
 }
 	
-		
 	class Item: NSObject, NSCoding {
 		
 		struct Keys {
