@@ -14,8 +14,10 @@ import FirebaseStorage
 class ProductDetailPageViewController: UIViewController {
    
    var product: Product?
+	var cartModelClass = CartModel()
+	var availableCart: Item?
+
 	
-	var cartInfo: String?
    
    // MARK: IBOutlets --------------------------------------------------------------------
    @IBOutlet weak var productDetailImage: UIImageView!
@@ -33,24 +35,27 @@ class ProductDetailPageViewController: UIViewController {
       self.productPriceLabel.text = product?.price
       self.quantityNumberLabel.text = product?.quantity
       //self.productDetailImage.image = product?.image
+		
    }
    
    
    // MARK: IBActions ------------------------------------------------------------------------
    @IBAction func addToCartButtonTapped(_ sender: UIButton) {
 		
-//		CartModel.shared.Key = NSUUID().uuidString // creates a randome string to  be uses as cartID
-//		CartModel.Item(productName: productNameLabel.text!,
+		
+		
+		CartModel.shared.Key = NSUUID().uuidString // creates a randome string to  be uses as cartID
+		
+		Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!), productQuantity: String(quantityNumberLabel.text!), productPhoto: productDetailImage.image!)
+		
+		Item(
+//		(productName: productNameLabel.text!,
 //		               productPrice: productPriceLabel.text!,
 //		               productQuantity: quantityNumberLabel.text!,
-//		               productPhoto: productDetailImage.image!,
-//		               productId: product!)
-//		
-//		
-//		var cartArray = [productNameLabel.text, productDescriptionLabel.text, productPriceLabel.text, quantityNumberLabel.text]
-//		NSKeyedArchiver.archiveRootObject(cartArray, toFile: CartViewController!)
-// 
-//      
+//		               productPhoto: productDetailImage.image!)
+		
+	
+      
    }
 	
 	
