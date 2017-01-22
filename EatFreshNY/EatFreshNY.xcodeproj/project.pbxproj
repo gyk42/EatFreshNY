@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C3A98581E2C84B80014E190 /* VendorStoryboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */; };
 		0CBC51BB1E3519710074D564 /* InventoryProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC51BA1E3519710074D564 /* InventoryProductTableViewCell.swift */; };
 		0CBC51BF1E353B960074D564 /* InventoryProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC51BE1E353B960074D564 /* InventoryProductViewController.swift */; };
 		0CE244111E300C0800548D00 /* ProductDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE244101E300C0800548D00 /* ProductDataModel.swift */; };
@@ -15,6 +14,7 @@
 		4C189B691E2F004100684E85 /* Hospital_000000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C189B681E2F004100684E85 /* Hospital_000000_25.png */; };
 		4CA14E6C1E2FFF7D00CA326A /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA14E6B1E2FFF7D00CA326A /* ImageProcessing.swift */; };
 		4CA14E6E1E3001B600CA326A /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA14E6D1E3001B600CA326A /* NewProductViewController.swift */; };
+		501B20381E354F4F00B2BDE9 /* VendorStoryboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501B20371E354F4F00B2BDE9 /* VendorStoryboard2.storyboard */; };
 		5088356D1E3017AF00EAC364 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5088356C1E3017AF00EAC364 /* UserDataModel.swift */; };
 		5088356F1E3017D400EAC364 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5088356E1E3017D400EAC364 /* UserModel.swift */; };
 		508835931E3119C400EAC364 /* VendorSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508835921E3119C400EAC364 /* VendorSettingsViewController.swift */; };
@@ -45,7 +45,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VendorStoryboard2.storyboard; sourceTree = "<group>"; };
 		0CBC51BA1E3519710074D564 /* InventoryProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryProductTableViewCell.swift; sourceTree = "<group>"; };
 		0CBC51BE1E353B960074D564 /* InventoryProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryProductViewController.swift; sourceTree = "<group>"; };
 		0CE244101E300C0800548D00 /* ProductDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDataModel.swift; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		4C189B681E2F004100684E85 /* Hospital_000000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hospital_000000_25.png; sourceTree = "<group>"; };
 		4CA14E6B1E2FFF7D00CA326A /* ImageProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
 		4CA14E6D1E3001B600CA326A /* NewProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
+		501B20371E354F4F00B2BDE9 /* VendorStoryboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VendorStoryboard2.storyboard; sourceTree = "<group>"; };
 		5088356C1E3017AF00EAC364 /* UserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		5088356E1E3017D400EAC364 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		508835921E3119C400EAC364 /* VendorSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorSettingsViewController.swift; sourceTree = "<group>"; };
@@ -307,7 +307,7 @@
 		EEBC50E31E2AD3B7005EAE7B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				0C3A98571E2C84B80014E190 /* VendorStoryboard2.storyboard */,
+				501B20371E354F4F00B2BDE9 /* VendorStoryboard2.storyboard */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -375,10 +375,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C3A98581E2C84B80014E190 /* VendorStoryboard2.storyboard in Resources */,
 				EEBC50E01E2AD1EC005EAE7B /* Auth.storyboard in Resources */,
 				4C189B691E2F004100684E85 /* Hospital_000000_25.png in Resources */,
 				50DB2B5D1E20380600AA63A8 /* LaunchScreen.storyboard in Resources */,
+				501B20381E354F4F00B2BDE9 /* VendorStoryboard2.storyboard in Resources */,
 				EEBC50D11E2ACDCF005EAE7B /* ImageAssets in Resources */,
 				50DB2B651E203F6C00AA63A8 /* GoogleService-Info.plist in Resources */,
 				50DB2B5A1E20380600AA63A8 /* Assets.xcassets in Resources */,

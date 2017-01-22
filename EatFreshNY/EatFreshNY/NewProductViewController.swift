@@ -14,7 +14,7 @@ import FirebaseAuth
 class NewProductViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
    var imageName = ""
-   var selectedButton: UIButton?
+   var selectedButton: UIButton? // it marks the presed button one to asisgn input to the rigth Image view and text
    var categories: [String] = ["baked-goods", "dairy", "fruits", "preserves", "fish", "meat"]
    var categorySelected = ""
    var imageNameOne = ""
@@ -25,11 +25,6 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
    
    var model: ImageP! // reference to ImageProcessing.swif (fireBase funcs)
    let imagePickerController = UIImagePickerController()
-   var selectedButton: UIButton? // it marks the presed button one to asisgn input to the rigth Image view and text
-   
-   @IBAction func logoutPressed(_ sender: Any) {
-      UserModel.shared.logout()
-   }
     
     //MARK:  VIEWCONTOLLER funcs
 
