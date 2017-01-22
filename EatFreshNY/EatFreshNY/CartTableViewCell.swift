@@ -10,20 +10,19 @@ import UIKit
 
 class CartTableViewCell: UITableViewCell {
 	
-	// IBOutlets 
+	// MARK: IBOutlets ----------------------------------------------------------------
 	@IBOutlet weak var productImage: UIImageView!
 	@IBOutlet weak var productNameLabel: UILabel!
 	@IBOutlet weak var priceAmountLabel: UILabel!
 	@IBOutlet weak var quantityAmountLabel: UILabel!
 	
-	// IBActions 
+	// MARK: IBActions -----------------------------------------------------------------
 	@IBAction func quantityStepperTapped(_ sender: Any) {
+		
+		
+		
 	}
 	
-	
-	
-	
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

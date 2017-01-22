@@ -9,6 +9,8 @@
 import UIKit
 
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	
+	var cartModelClass = CartModel()
    
    // MARK: IBOutlets --------------------------------------------------------------------------------------
    @IBOutlet weak var cartTableView: UITableView!
@@ -22,8 +24,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	// MARK: ViewDidLoad ---------------------------------------------------------------------------------------
    override func viewDidLoad() {
       super.viewDidLoad()
-		
-		
+				
    }
    
    // MARK: TableView ------------------------------------------------------------------------------------------

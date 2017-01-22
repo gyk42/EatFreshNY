@@ -11,14 +11,26 @@ import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 
+// MARK: Extensions ------------------------------------------------------------------------------
+extension String {
+	var floatValue: Float {
+		return (self as NSString).floatValue
+	}
+}
+
+extension String {
+	var intValue: Int {
+		return Int((self as NSString).intValue)
+	}
+}
+
+// MARK: ViewController Class ---------------------------------------------------------------------
 class ProductDetailPageViewController: UIViewController {
    
    var product: Product?
 	var cartModelClass = CartModel()
 	var availableCart: Item?
 
-	
-   
    // MARK: IBOutlets --------------------------------------------------------------------
    @IBOutlet weak var productDetailImage: UIImageView!
    @IBOutlet weak var productNameLabel: UILabel!
@@ -42,19 +54,9 @@ class ProductDetailPageViewController: UIViewController {
    // MARK: IBActions ------------------------------------------------------------------------
    @IBAction func addToCartButtonTapped(_ sender: UIButton) {
 		
-		
-		
 		CartModel.shared.Key = NSUUID().uuidString // creates a randome string to  be uses as cartID
+		//Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text?.floatValue)!, productQuantity: (quantityNumberLabel.text!.intValue), productPhoto: productDetailImage.image)
 		
-		Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!), productQuantity: String(quantityNumberLabel.text!), productPhoto: productDetailImage.image!)
-		
-		Item(
-//		(productName: productNameLabel.text!,
-//		               productPrice: productPriceLabel.text!,
-//		               productQuantity: quantityNumberLabel.text!,
-//		               productPhoto: productDetailImage.image!)
-		
-	
       
    }
 	

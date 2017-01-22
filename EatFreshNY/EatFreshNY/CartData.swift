@@ -15,6 +15,7 @@ class CartModel {
 	
 	var cart = [Item]()
 	var availableCartItem: Item?
+	
 	func persistCartToDefaults() {
 		
 		let data = NSKeyedArchiver.archivedData(withRootObject: cart)
