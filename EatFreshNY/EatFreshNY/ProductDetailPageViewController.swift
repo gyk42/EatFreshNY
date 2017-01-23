@@ -28,7 +28,7 @@ class ProductDetailPageViewController: UIViewController {
   
   var product: Product?
 	var cartModelClass = CartModel()
-	var availableCart: Item?
+	var itemsInTheCart: Item?
 
    // MARK: IBOutlets --------------------------------------------------------------------
    @IBOutlet weak var productDetailImage: UIImageView!
@@ -55,6 +55,10 @@ class ProductDetailPageViewController: UIViewController {
 		CartModel.shared.Key = NSUUID().uuidString // creates a randome string to  be uses as cartID
 		
 		//Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productPhoto: productDetailImage.image!)
+		
+		Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productId: itemsInTheCart?.productId)
+		
+		
 
    }
 	
