@@ -56,6 +56,8 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
          }
       })
    }
+    
+    
    
    // CollectionView
    
