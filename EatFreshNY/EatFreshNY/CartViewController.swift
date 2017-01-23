@@ -12,6 +12,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	var cartModel = CartModel()
 	var itemClass = [Item]()
+	var cartCell = CartTableViewCell()
 	
 	
 	// MARK: IBOutlets --------------------------------------------------------------------------------------
@@ -32,6 +33,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		cartNumberOfItemsTotalLabel.text = String(itemClass.count) // Displays the total number of items currently in the cart
 		
+		cartCell.stepper.wraps = true
+		cartCell.stepper.autorepeat = true
+		cartCell.stepper.maximumValue = 10
 		
 	}
 	

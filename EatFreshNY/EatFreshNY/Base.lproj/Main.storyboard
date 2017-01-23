@@ -412,7 +412,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <connections>
-                                                        <action selector="quantityStepperTapped:" destination="OSg-fU-kSQ" eventType="valueChanged" id="eWR-oF-EtE"/>
+                                                        <action selector="quantityStepperTapped:" destination="OSg-fU-kSQ" eventType="valueChanged" id="VFn-74-tSV"/>
                                                     </connections>
                                                 </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2T-Ez-1BT">
@@ -461,6 +461,7 @@
                                             <outlet property="productImage" destination="lQk-Z4-DWr" id="S3r-Nu-Brr"/>
                                             <outlet property="productNameLabel" destination="x4b-lY-kbs" id="xuV-SF-mjf"/>
                                             <outlet property="quantityAmountLabel" destination="c2T-Ez-1BT" id="ohx-bg-p2K"/>
+                                            <outlet property="stepper" destination="6e8-AK-3Wc" id="FCZ-jW-Sm7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -773,7 +774,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <action selector="quantityStepperTapped:" destination="3AH-0a-BZc" eventType="valueChanged" id="aaI-zL-mrC"/>
+                                            <action selector="quantityStepperTapped:" destination="3AH-0a-BZc" eventType="valueChanged" id="OiO-jI-0YQ"/>
                                         </connections>
                                     </stepper>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJf-3N-mz3">
@@ -800,6 +801,7 @@
                         <outlet property="productNameLabel" destination="cIt-Vh-B5Z" id="AOv-wD-zkR"/>
                         <outlet property="productPriceLabel" destination="jTO-y2-Xpm" id="QBK-iO-w7A"/>
                         <outlet property="quantityNumberLabel" destination="rgU-XP-b3H" id="QQM-gJ-Qqa"/>
+                        <outlet property="stepper" destination="CXE-SK-di0" id="ZrN-hr-V42"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSG-Vz-9ob" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -820,6 +822,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6ig-OP-DxS"/>
-        <segue reference="Ue6-Lk-NZJ"/>
+        <segue reference="4n3-DL-Zb5"/>
     </inferredMetricsTieBreakers>
 </document>
