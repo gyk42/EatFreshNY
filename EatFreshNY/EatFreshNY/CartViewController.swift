@@ -36,6 +36,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 		// Displays the subtotal price in the cartTotalPriceLabel
 		let numberOfItems = Int(cartNumberOfItemsTotalLabel.text!)
 		
+		// Displays the subtotal amount in currency format Ex 35.99
 		if let formatedPrice = cartTotalPriceLabel.text {
 			
 			let formatter = NumberFormatter()
@@ -74,13 +75,13 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 		return cell
 	}
 	
-	// To delete items from the Cart Table View 
+	// To delete items from the Cart Table View
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
 			itemClass.remove(at: indexPath.row)
 			tableView.deleteRows(at: [indexPath], with: .fade)
 		} else if editingStyle == .insert {
-			// Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+			
 		}
 	}
 	

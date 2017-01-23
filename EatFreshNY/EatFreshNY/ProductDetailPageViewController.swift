@@ -73,8 +73,6 @@ class ProductDetailPageViewController: UIViewController {
 
    }
 	
-	
-	
    // MARK: Stepper ---------------------------------------------------------------------------------------
 	@IBAction func quantityStepperTapped(_ sender: UIStepper) {
 		
