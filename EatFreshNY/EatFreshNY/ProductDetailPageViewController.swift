@@ -28,6 +28,13 @@ class ProductDetailPageViewController: UIViewController {
   
   var product: Product?
 	var cartModelClass = CartModel()
+
+   //ImageProsissing
+   var ref: FIRDatabaseReference!
+   var modelImage : ImageP!
+   // animation 
+   var productImagesNames = [String]()
+   var poductsImageData = [UIImage] ()
 	var itemsInTheCart: Item?
 
    // MARK: IBOutlets --------------------------------------------------------------------
@@ -42,6 +49,8 @@ class ProductDetailPageViewController: UIViewController {
 	// MARK: ViewDidLoad -------------------------------------------------------------------
    override func viewDidLoad() {
       super.viewDidLoad()
+      modelImage = ImageP()
+      animationProductImage()
       
       self.productNameLabel.text = product?.name
       self.productDescriptionLabel.text = product?.description
@@ -53,9 +62,13 @@ class ProductDetailPageViewController: UIViewController {
 		stepper.wraps = true
 		stepper.autorepeat = true
 		stepper.maximumValue = 10
-		
+
+   } // END ViewDidLoad
+
+   override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(animated)
    }
-	
+
    // MARK: IBActions ------------------------------------------------------------------------
    @IBAction func addToCartButtonTapped(_ sender: UIButton) {
 		
@@ -72,12 +85,41 @@ class ProductDetailPageViewController: UIViewController {
 		self.present(alertController, animated: true, completion: nil)
 
    }
-	
+  
    // MARK: Stepper ---------------------------------------------------------------------------------------
-	@IBAction func quantityStepperTapped(_ sender: UIStepper) {
-		
+	@IBAction func quantityStepperTapped(_ sender: UIStepper) {		
 		quantityNumberLabel.text = Int(sender.value).description
-		
 	}
 	
 }
+   
+   // Image Animation
+   
+   func animationProductImage () {
+      productImagesNames = [(product?.imageOne)!, (product?.imageTwo)!, (product?.imageThree)!, (product?.imageFour)!]
+      
+      for imageName in productImagesNames {
+         modelImage.downloadImage(named: imageName, complete: { image in
+            if let i = image {
+               self.poductsImageData.append(i)
+               print(self.poductsImageData.count)
+               if self.poductsImageData.count == 4 {
+                  self.allImagesLoaded()
+               }
+            }
+            
+         })
+         
+      }
+      
+   }//END fucn animationProductImage
+   
+   
+   func allImagesLoaded() {
+      productDetailImage.animationImages = poductsImageData
+      productDetailImage.animationDuration = 6.0
+      productDetailImage.startAnimating()
+   }
+   
+
+}// END ProductDetailPageViewController
