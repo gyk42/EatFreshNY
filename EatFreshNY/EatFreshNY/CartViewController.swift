@@ -12,7 +12,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	var cartModel = CartModel()
 	var itemClass = [Item]()
-	
+	var cartCell = CartTableViewCell()
 	
 	// MARK: IBOutlets --------------------------------------------------------------------------------------
 	@IBOutlet weak var cartTableView: UITableView!
@@ -30,26 +30,34 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		cartNumberOfItemsTotalLabel.text = String(itemClass.count) // Displays the total number of items currently in the cart
+		// Displays the total number of items currently in the cart
+		cartNumberOfItemsTotalLabel.text = String(itemClass.count)
 		
+		// Displays the subtotal price in the cartTotalPriceLabel
+		let numberOfItems = Int(cartNumberOfItemsTotalLabel.text!)
 		
+		// Displays the subtotal amount in currency format Ex 35.99
+		if let formatedPrice = cartTotalPriceLabel.text {
+			
+			let formatter = NumberFormatter()
+			formatter.numberStyle = .currency
+			let totalPrice = Float(formatter.number(from: formatedPrice) ?? 0)
+			let calculatedPrice = calculateTotalPrice(qty: numberOfItems!, priceItem: totalPrice)
+			cartTotalPriceLabel.text = String(calculatedPrice)
+		}
 	}
 	
 	// MARK: ViewWillAppear -------------------------------------------------------------------------------------
 	override func viewWillAppear(_ animated: Bool) {
-		let numberOfItems = Int(cartNumberOfItemsTotalLabel.text!)
-		let totalPrice = Float(cartTotalPriceLabel.text!)
-		calculateTotalPrice(qty: numberOfItems!, priceItem: totalPrice!)
-		
 		cartTableView.reloadData()
-
+		
 	}
 	
 	// MARK: Calculate cart total price function ---------------------------------------------------------------
 	 func calculateTotalPrice(qty: Int, priceItem: Float) -> Float {
-	   var productTotal: Float
-		productTotal = 0
-		productTotal = Float(qty) * (priceItem)
+	   var productTotal: Float = 0 
+		productTotal = Float(qty) * priceItem
+		
 		return productTotal
 	}
 	
@@ -63,15 +71,22 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
 		
 		CartModel.shared.loadPersistedCartFromDefaults()
-		
-		let indexPath = itemClass[indexPath.row]
-		cell.productNameLabel.text = indexPath.productName
-		cell.priceAmountLabel.text = String(indexPath.productPrice)
-		cell.quantityAmountLabel.text = String(indexPath.productQuantity)
-		//cell.productImage.image = indexPath.productPhoto
-		
+		cell.data = itemClass[indexPath.row]
 		return cell
 	}
 	
+	// To delete items from the Cart Table View
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		if editingStyle == .delete {
+			itemClass.remove(at: indexPath.row)
+			tableView.deleteRows(at: [indexPath], with: .fade)
+		} else if editingStyle == .insert {
+			
+		}
+	}
+	
+	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		return true
+	}
  
 }

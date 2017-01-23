@@ -10,20 +10,38 @@ import UIKit
 
 class CartTableViewCell: UITableViewCell {
 	
-	// IBOutlets 
+	// MARK: IBOutlets ---------------------------------------------------------------------------
 	@IBOutlet weak var productImage: UIImageView!
 	@IBOutlet weak var productNameLabel: UILabel!
 	@IBOutlet weak var priceAmountLabel: UILabel!
 	@IBOutlet weak var quantityAmountLabel: UILabel!
+	@IBOutlet weak var stepper: UIStepper!
 	
-	// IBActions 
-	@IBAction func quantityStepperTapped(_ sender: Any) {
+	var data: Item? {
+		didSet {
+			updateUI()
+		}
+	}
+	
+	func updateUI() {
+		
+		stepper.wraps = true
+		stepper.autorepeat = true
+		stepper.maximumValue = 10
+		
+		productNameLabel.text = data?.productName ?? "unknown"
+		priceAmountLabel.text = "\(data?.productPrice))"
+		quantityAmountLabel.text = "\(data?.productQuantity))"
+		//productImage.image =
+
 	}
 	
 	
+	// MARK: IBActions ----------------------------------------------------------------------------	
+	@IBAction func quantityStepperTapped(_ sender: UIStepper) {
+		quantityAmountLabel.text = Int(sender.value).description
+	}
 	
-	
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

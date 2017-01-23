@@ -43,6 +43,8 @@ class ProductDetailPageViewController: UIViewController {
    @IBOutlet weak var productDescriptionLabel: UILabel!
    @IBOutlet weak var productPriceLabel: UILabel!
    @IBOutlet weak var quantityNumberLabel: UILabel!
+	@IBOutlet weak var stepper: UIStepper!
+	
 	
 	// MARK: ViewDidLoad -------------------------------------------------------------------
    override func viewDidLoad() {
@@ -55,17 +57,16 @@ class ProductDetailPageViewController: UIViewController {
       self.productPriceLabel.text = product?.price
       self.quantityNumberLabel.text = product?.quantity
       //self.productDetailImage.image = product?.image
+		
+		// Stepper 
+		stepper.wraps = true
+		stepper.autorepeat = true
+		stepper.maximumValue = 10
 
-
-      
    } // END ViewDidLoad
-   
-   
-   
-   
+
    override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
-      
    }
 
    // MARK: IBActions ------------------------------------------------------------------------
@@ -77,17 +78,20 @@ class ProductDetailPageViewController: UIViewController {
 		
 		Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productId: itemsInTheCart?.productId)
 		
-		
+		// Alert Message to let user know an item was added to the cart
+		let alertController = UIAlertController(title: "Alert!", message:
+			"You added an item to the cart", preferredStyle: UIAlertControllerStyle.alert)
+		alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+		self.present(alertController, animated: true, completion: nil)
 
    }
+  
+   // MARK: Stepper ---------------------------------------------------------------------------------------
+	@IBAction func quantityStepperTapped(_ sender: UIStepper) {		
+		quantityNumberLabel.text = Int(sender.value).description
+	}
 	
-   // MARK: IBAction Buttons --------------------------------------------------------------------
-   @IBAction func quantityStepperTapped(_ sender: Any) {
-      
-   }
-   
-   
-   
+}
    
    // Image Animation
    
