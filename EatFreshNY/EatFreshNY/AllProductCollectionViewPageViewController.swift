@@ -19,20 +19,27 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
    var ref: FIRDatabaseReference!
    static var categoryName: String?
    var products = [Product]()
-   var modelImage = ImageP()
+   var modelImage : ImageP!
    
    
    // IBOutlets
    @IBOutlet weak var allProductsCollectionView: UICollectionView!
    
    override func viewDidLoad() {
+      
       super.viewDidLoad()
+       modelImage = ImageP()
+   }
+   
+   
+   override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
       productCollectionDisplay()
    }
    
    func productCollectionDisplay() {
+      
       let productsRef = FIRDatabase.database().reference(withPath:"products")
-      let productID = productsRef.ref.key
       let productsQuery = productsRef.queryOrdered(byChild: "category").queryEqual(toValue: AllProductCollectionViewPageViewController.categoryName)
       
       productsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -58,18 +65,31 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
    
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "allProductsCell", for: indexPath) as! AllProductsCollectionViewCell
-      cell.productNameLabel.text = products[indexPath.row].name
       
+      
+      cell.productNameLabel.text = products[indexPath.row].name
+      print(products[indexPath.row].name)
 //MARK : STEPS TO GET IMAGE  from storage  
    /// to call this u need in each ViewContraller to call: copy/paste
     //  import FirebaseStorage
    //var modelImage = ImageP()
    // func getImageFromStorage()
 
-      // get the name of the image
-       let productImage = products[indexPath.row].imageOne
-      // call funcion and give it name
-      cell.productImage.image = getImageFromStorage(imageName: productImage)
+//       get the name of the image
+      let imageName = products[indexPath.row].imageOne
+      print (imageName)
+//       call funcion and give it name
+      modelImage.downloadImage(named: imageName, complete: { image in
+         if let i = image {
+            cell.productImage.image = i
+         }
+      })
+      
+      ///////////
+      
+      
+      
+      ///////////
       return cell
    }
    
@@ -84,18 +104,7 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
       }
    }
    
-   // this func gets the image data from a fucnfion in Image Procecing model and return a UIImage
-   func getImageFromStorage(imageName: String)-> UIImage {
-      var newImage = UIImage()
-      modelImage.downloadImage(named: imageName, complete: { image in
-         
-         if let i = image {
-            newImage = i
-         }
-      })
-     return newImage
-   }
- 
+   
    
    
 }//End ViewController
