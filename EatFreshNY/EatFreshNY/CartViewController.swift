@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
 	var cartModel = CartModel()
@@ -23,25 +21,38 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	// MARK: IBActions ----------------------------------------------------------------------------------------
 	@IBAction func purchaseButtonTapped(_ sender: Any) {
+		
+		
+		
 	}
 	
 	// MARK: ViewDidLoad ---------------------------------------------------------------------------------------
 	override func viewDidLoad() {
 		super.viewDidLoad()
-	
-		cartNumberOfItemsTotalLabel.text = String(itemClass.count)
+		
+		cartNumberOfItemsTotalLabel.text = String(itemClass.count) // Displays the total number of items currently in the cart
+		
+		
 	}
 	
-	var total: Float = 0
-	var productTotal: Float = 0
+	// MARK: ViewWillAppear -------------------------------------------------------------------------------------
+	override func viewWillAppear(_ animated: Bool) {
+		let numberOfItems = Int(cartNumberOfItemsTotalLabel.text!)
+		let totalPrice = Float(cartTotalPriceLabel.text!)
+		calculateTotalPrice(qty: numberOfItems!, priceItem: totalPrice!)
+		
+		cartTableView.reloadData()
+
+	}
 	
-	func calculateTotalPrice() {
+	// MARK: Calculate cart total price function ---------------------------------------------------------------
+	 func calculateTotalPrice(qty: Int, priceItem: Float) -> Float {
+	   var productTotal: Float
 		productTotal = 0
-		for item in itemClass {
-			productTotal += (item.productPrice)
-		}
-		//total
+		productTotal = Float(qty) * (priceItem)
+		return productTotal
 	}
+	
 	
 	// MARK: TableView ------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
