@@ -221,10 +221,20 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
     
    // It will Asign the image to the Rigth ImageView and A name to the Selected Photo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+      
+      
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
       
-        
-        if selectedButton == mainPhotoOutlet {
+        let imageData = UIImagePNGRepresentation(image)!
+      
+      if imageData.count > 10000000 {
+         let alertController = UIAlertController(title: "Image is to large.", message: "Please use another Photo max 10mb.", preferredStyle: UIAlertControllerStyle.alert)
+         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+         alertController.addAction(defaultAction)
+         self.present(alertController, animated: true, completion: nil)
+
+      }
+       else if selectedButton == mainPhotoOutlet {
             imageNameOne = NSUUID().uuidString + ".png" // creates a randome string to  be uses as photo name
             ImageOne.image = image
             print (imageNameOne)
