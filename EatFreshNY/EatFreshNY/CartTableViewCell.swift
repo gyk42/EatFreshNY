@@ -18,12 +18,35 @@ class CartTableViewCell: UITableViewCell {
 	@IBOutlet weak var stepper: UIStepper!
 	
 	
+	var data: Item? {
+		didSet {
+			updateUI()
+		}
+	}
+	
+	
+	func updateUI() {
+		
+		stepper.wraps = true
+		stepper.autorepeat = true
+		stepper.maximumValue = 10
+		
+		productNameLabel.text = data?.productName ?? "unknown"
+		priceAmountLabel.text = "\(data?.productPrice))"
+		quantityAmountLabel.text = "\(data?.productQuantity))"
+		
+		
+	}
+	
+	
 	// MARK: IBActions ----------------------------------------------------------------------------	
 	@IBAction func quantityStepperTapped(_ sender: UIStepper) {
 		
 		quantityAmountLabel.text = Int(sender.value).description
 		
 	}
+	
+	
 	
 	
     override func awakeFromNib() {

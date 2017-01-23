@@ -64,8 +64,6 @@ class ProductDetailPageViewController: UIViewController {
 		//Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productPhoto: productDetailImage.image!)
 		
 		Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productId: itemsInTheCart?.productId)
-		
-		
 
    }
 	
@@ -76,5 +74,4 @@ class ProductDetailPageViewController: UIViewController {
 		
 	}
 	
-
 }

@@ -14,7 +14,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	var itemClass = [Item]()
 	var cartCell = CartTableViewCell()
 	
-	
 	// MARK: IBOutlets --------------------------------------------------------------------------------------
 	@IBOutlet weak var cartTableView: UITableView!
 	@IBOutlet weak var cartNumberOfItemsTotalLabel: UILabel!
@@ -31,29 +30,38 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		cartNumberOfItemsTotalLabel.text = String(itemClass.count) // Displays the total number of items currently in the cart
+		// Displays the total number of items currently in the cart
+		cartNumberOfItemsTotalLabel.text = String(itemClass.count)
 		
-		cartCell.stepper.wraps = true
-		cartCell.stepper.autorepeat = true
-		cartCell.stepper.maximumValue = 10
+		// Displays the subtotal price in the cartTotalPriceLabel
+		let numberOfItems = Int(cartNumberOfItemsTotalLabel.text!)
 		
+		if let formatedPrice = cartTotalPriceLabel.text {
+			
+			let formatter = NumberFormatter()
+			formatter.numberStyle = .currency
+			let totalPrice = Float(formatter.number(from: formatedPrice) ?? 0)
+			let calculatedPrice = calculateTotalPrice(qty: numberOfItems!, priceItem: totalPrice)
+			cartTotalPriceLabel.text = String(calculatedPrice)
+		}
 	}
 	
 	// MARK: ViewWillAppear -------------------------------------------------------------------------------------
 	override func viewWillAppear(_ animated: Bool) {
-		let numberOfItems = Int(cartNumberOfItemsTotalLabel.text!)
-		let totalPrice = Float(cartTotalPriceLabel.text!)
-		calculateTotalPrice(qty: numberOfItems!, priceItem: totalPrice!)
+//		let numberOfItems = Int(cartNumberOfItemsTotalLabel.text!)
+//		let totalPrice = Float(cartTotalPriceLabel.text!)
+//		calculateTotalPrice(qty: numberOfItems!, priceItem: totalPrice!)
+	
+
 		
 		cartTableView.reloadData()
-
 	}
 	
 	// MARK: Calculate cart total price function ---------------------------------------------------------------
 	 func calculateTotalPrice(qty: Int, priceItem: Float) -> Float {
-	   var productTotal: Float
-		productTotal = 0
-		productTotal = Float(qty) * (priceItem)
+	   var productTotal: Float = 0 
+		productTotal = Float(qty) * priceItem
+		
 		return productTotal
 	}
 	
@@ -67,13 +75,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
 		
 		CartModel.shared.loadPersistedCartFromDefaults()
-		
-		let indexPath = itemClass[indexPath.row]
-		cell.productNameLabel.text = indexPath.productName
-		cell.priceAmountLabel.text = String(indexPath.productPrice)
-		cell.quantityAmountLabel.text = String(indexPath.productQuantity)
-		//cell.productImage.image = indexPath.productPhoto
-		
+		cell.data = itemClass[indexPath.row]
 		return cell
 	}
 	
