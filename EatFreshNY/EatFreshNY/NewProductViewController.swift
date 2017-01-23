@@ -17,6 +17,7 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
    var selectedButton: UIButton? // it marks the presed button one to asisgn input to the rigth Image view and text
    var categories: [String] = ["baked-goods", "dairy", "fruits", "preserves", "fish", "meat"]
    var categorySelected = ""
+   
    var imageNameOne = ""
    var imageNameTwo = ""
    var imageNameThree = ""
@@ -171,6 +172,8 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
     // SAVE image TO  FireBase STORAGE
     func uploadImage(image: UIImage, imageName: String ) {
       
+      // let metadata = FIRStorageMetadata()
+      //metadeta.
         model.uploadImage(withData: UIImagePNGRepresentation(image)!, named: imageName)
       
     }
@@ -222,27 +225,27 @@ class NewProductViewController: UIViewController, UIImagePickerControllerDelegat
       
         
         if selectedButton == mainPhotoOutlet {
-            imageNameOne = NSUUID().uuidString // creates a randome string to  be uses as photo name
+            imageNameOne = NSUUID().uuidString + ".png" // creates a randome string to  be uses as photo name
             ImageOne.image = image
             print (imageNameOne)
         }
         else if selectedButton == onePhotoOutlet {
             
-            imageNameTwo = NSUUID().uuidString // creates a randome string to  be uses as photo name
+            imageNameTwo = NSUUID().uuidString + ".png"  // creates a randome string to  be uses as photo name
             ImageTwo.image = image
             print (imageNameTwo)
 
         }
         else if selectedButton == twoPhotoOutlet {
             
-            imageNameThree = NSUUID().uuidString // creates a randome string to  be uses as photo name
+            imageNameThree = NSUUID().uuidString + ".png"  // creates a randome string to  be uses as photo name
             ImageThree.image = image
             print (imageNameThree)
         }
             
         else if selectedButton == threePhotoOutlet {
             
-            imageNameFour = NSUUID().uuidString // creates a randome string to  be uses as photo name
+            imageNameFour = NSUUID().uuidString + ".png"  // creates a randome string to  be uses as photo name
             ImageFour.image = image
             print (imageNameFour)
         }
