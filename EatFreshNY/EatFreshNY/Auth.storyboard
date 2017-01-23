@@ -254,22 +254,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="1y9-oR-cAM">
                                 <rect key="frame" x="49" y="423" width="222" height="43"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLa-DO-kmp">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="43"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="ICz-8K-wR4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
-                                        <state key="normal" title="Sign Up!">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="signUpPressed:" destination="ypE-Xd-gcn" eventType="touchUpInside" id="4Su-YO-p51"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIb-Rr-E26">
-                                        <rect key="frame" x="122" y="0.0" width="100" height="43"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="43"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="U69-mk-Pb1"/>
@@ -281,6 +267,20 @@
                                         <connections>
                                             <action selector="signUpPressed:" destination="ypE-Xd-gcn" eventType="touchUpInside" id="7Mo-YF-ppN"/>
                                             <segue destination="hrh-Pw-nRh" kind="show" id="YI8-sB-thX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLa-DO-kmp">
+                                        <rect key="frame" x="122" y="0.0" width="100" height="43"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="ICz-8K-wR4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
+                                        <state key="normal" title="Sign Up!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signUpPressed:" destination="ypE-Xd-gcn" eventType="touchUpInside" id="4Su-YO-p51"/>
                                         </connections>
                                     </button>
                                 </subviews>
