@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kXQ-qp-nCM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JyH-8Y-ToA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Y5F-Li-mjK">
@@ -146,7 +146,7 @@
                         <viewControllerLayoutGuide type="bottom" id="jhB-FK-FFE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ua7-bI-pw0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="usq-Cp-bGx">
@@ -377,6 +377,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="selectVendorTableView" destination="NEb-1D-d21" id="h9x-mv-Dgk"/>
+                        <segue destination="AR3-WU-OkQ" kind="show" identifier="vendorsToproducts" id="4cG-yp-NTy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ov-jT-kt5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -823,7 +824,7 @@
         <image name="logo 4" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4n3-DL-Zb5"/>
         <segue reference="6ig-OP-DxS"/>
+        <segue reference="4cG-yp-NTy"/>
     </inferredMetricsTieBreakers>
 </document>

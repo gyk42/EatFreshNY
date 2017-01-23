@@ -17,10 +17,10 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
 
    
    var ref: FIRDatabaseReference!
-   static var categoryName: String?
+   static var selecrtedProductValue: String?
+   static var selectedProductKey : String?
    var products = [Product]()
    var modelImage : ImageP!
-   
    
    // IBOutlets
    @IBOutlet weak var allProductsCollectionView: UICollectionView!
@@ -29,6 +29,7 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
       
       super.viewDidLoad()
        modelImage = ImageP()
+      
    }
    
    
@@ -40,7 +41,7 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
    func productCollectionDisplay() {
       
       let productsRef = FIRDatabase.database().reference(withPath:"products")
-      let productsQuery = productsRef.queryOrdered(byChild: "category").queryEqual(toValue: AllProductCollectionViewPageViewController.categoryName)
+      let productsQuery = productsRef.queryOrdered(byChild: AllProductCollectionViewPageViewController.selectedProductKey!).queryEqual(toValue: AllProductCollectionViewPageViewController.selecrtedProductValue)
       
       productsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
          
