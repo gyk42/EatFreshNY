@@ -64,10 +64,18 @@ class ProductDetailPageViewController: UIViewController {
 		//Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productPhoto: productDetailImage.image!)
 		
 		Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productId: itemsInTheCart?.productId)
+		
+		// Alert Message to let user know an item was added to the cart
+		let alertController = UIAlertController(title: "Alert!", message:
+			"You added an item to the cart", preferredStyle: UIAlertControllerStyle.alert)
+		alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+		self.present(alertController, animated: true, completion: nil)
 
    }
 	
-   // MARK: IBAction Buttons --------------------------------------------------------------------
+	
+	
+   // MARK: Stepper ---------------------------------------------------------------------------------------
 	@IBAction func quantityStepperTapped(_ sender: UIStepper) {
 		
 		quantityNumberLabel.text = Int(sender.value).description

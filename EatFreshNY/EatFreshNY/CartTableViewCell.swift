@@ -17,13 +17,11 @@ class CartTableViewCell: UITableViewCell {
 	@IBOutlet weak var quantityAmountLabel: UILabel!
 	@IBOutlet weak var stepper: UIStepper!
 	
-	
 	var data: Item? {
 		didSet {
 			updateUI()
 		}
 	}
-	
 	
 	func updateUI() {
 		
@@ -34,20 +32,15 @@ class CartTableViewCell: UITableViewCell {
 		productNameLabel.text = data?.productName ?? "unknown"
 		priceAmountLabel.text = "\(data?.productPrice))"
 		quantityAmountLabel.text = "\(data?.productQuantity))"
-		
-		
+		//productImage.image =
+
 	}
 	
 	
 	// MARK: IBActions ----------------------------------------------------------------------------	
 	@IBAction func quantityStepperTapped(_ sender: UIStepper) {
-		
 		quantityAmountLabel.text = Int(sender.value).description
-		
 	}
-	
-	
-	
 	
     override func awakeFromNib() {
         super.awakeFromNib()

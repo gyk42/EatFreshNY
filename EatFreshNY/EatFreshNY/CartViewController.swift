@@ -48,13 +48,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	
 	// MARK: ViewWillAppear -------------------------------------------------------------------------------------
 	override func viewWillAppear(_ animated: Bool) {
-//		let numberOfItems = Int(cartNumberOfItemsTotalLabel.text!)
-//		let totalPrice = Float(cartTotalPriceLabel.text!)
-//		calculateTotalPrice(qty: numberOfItems!, priceItem: totalPrice!)
-	
-
-		
 		cartTableView.reloadData()
+		
 	}
 	
 	// MARK: Calculate cart total price function ---------------------------------------------------------------
