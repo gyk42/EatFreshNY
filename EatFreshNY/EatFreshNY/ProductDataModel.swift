@@ -136,17 +136,6 @@ class ProductModel {
     
     
     func deleteProduct(product: Product) {
-        
-//        var index = -1
-//        for (i, items) in products.enumerated() {
-//            if item === product {
-//                index = i
-//            }
-//        }
-//        if index > 0 {
-//            products.remove(at: index)
-//        }
-        
         product.ref?.removeValue()
     }
     
@@ -160,7 +149,7 @@ class ProductModel {
         print(products)
     }
     
-    func updatePrduct(newName: String? = nil, newDescription: String? = nil, newPrice: String? = nil, newQuantity: String? = nil, product: Product) {
+    func updateProduct(newName: String? = nil, newDescription: String? = nil, newPrice: String? = nil, newQuantity: String? = nil, product: Product) {
         if productToEdit.name == newName {
             productToEdit.ref?.updateChildValues([
                 "description" : newDescription!,

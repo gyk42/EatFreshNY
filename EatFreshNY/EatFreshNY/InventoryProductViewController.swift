@@ -58,6 +58,7 @@ class InventoryProductViewController: UIViewController, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "inventoryCell", for: indexPath) as! InventoryProductTableViewCell
+        cell.ref = products[indexPath.row].ref!
         cell.productName.text = products[indexPath.row].name
         cell.productPrice.text = products[indexPath.row].price
         cell.productQuantity.text = products[indexPath.row].quantity
@@ -72,21 +73,6 @@ class InventoryProductViewController: UIViewController, UITableViewDataSource, U
             ProductModel.shared.deleteProduct(product: products[indexPath.row])            
         }
     }
-    
-    
-    //MARK: Update Product Values
-    
-    @IBAction func updateProductValues(_ sender: UIButton) {
-
-    }
-    
-    
-    func populateProduct() {
-
-    }
-    
-    
-    
 }
 
 
