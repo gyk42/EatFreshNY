@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
 class InventoryProductViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -15,6 +17,7 @@ class InventoryProductViewController: UIViewController, UITableViewDataSource, U
     var ref: FIRDatabaseReference!
     static var userID = FIRAuth.auth()!.currentUser!.uid
     var products = [Product]()
+    var modelImage : ImageP!
     
     @IBOutlet weak var InventoryProductTableView: UITableView!
     
@@ -23,7 +26,7 @@ class InventoryProductViewController: UIViewController, UITableViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         productTableviewDisplay()
-        
+        modelImage = ImageP()
     }
     
     
@@ -65,6 +68,17 @@ class InventoryProductViewController: UIViewController, UITableViewDataSource, U
         cell.productDescription.text = products[indexPath.row].description
         cell.productMarketDate.text = products[indexPath.row].marketDate
         //ADD IMAGE TO TABLEVIEW - RICHEL & OSKAR
+        print(products[indexPath.row].name)
+     
+        let imageName = products[indexPath.row].imageOne
+        print (imageName)
+      
+        modelImage.downloadImage(named: imageName, complete: { image in
+            if let i = image {
+                cell.productImage.image = i
+            }
+        })
+        
         return cell
     }
     
