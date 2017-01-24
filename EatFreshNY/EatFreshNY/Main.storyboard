@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xQi-oY-vqE">
     <device id="retina4_7" orientation="portrait">
@@ -208,7 +207,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="VDM-Ta-Yrb">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="xQi-oY-vqE" kind="show" id="z8Y-ru-o2e"/>
+                                                <segue destination="xQi-oY-vqE" kind="show" identifier="" id="ENT-xj-H4d"/>
                                             </connections>
                                         </barButtonItem>
                                         <view key="titleView" contentMode="scaleToFill" id="D1a-J3-peH">
@@ -305,6 +304,7 @@
                                         <connections>
                                             <outlet property="vendorImage" destination="ZRB-mh-iI3" id="tcc-5J-Chm"/>
                                             <outlet property="vendorNameLabel" destination="IQ7-pb-P62" id="jVN-4n-Xxs"/>
+                                            <segue destination="AR3-WU-OkQ" kind="show" identifier="vendorsToproducts" id="uy7-05-Swc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -378,7 +378,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="selectVendorTableView" destination="NEb-1D-d21" id="h9x-mv-Dgk"/>
-                        <segue destination="AR3-WU-OkQ" kind="show" identifier="vendorsToproducts" id="4cG-yp-NTy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ov-jT-kt5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -811,7 +810,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSG-Vz-9ob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2944.8000000000002" y="195.6521739130435"/>
+            <point key="canvasLocation" x="2946" y="196"/>
         </scene>
     </scenes>
     <resources>
@@ -825,6 +824,6 @@
         <image name="logo 4" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4n3-DL-Zb5"/>
+        <segue reference="uy7-05-Swc"/>
     </inferredMetricsTieBreakers>
 </document>
