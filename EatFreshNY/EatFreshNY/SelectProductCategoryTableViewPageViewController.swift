@@ -10,13 +10,8 @@ import UIKit
 
 class SelectProductCategoryTableViewPageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
    
-   //static var categoryName: String?
-   //static var selectedProductKey : String?
+    // IBOutlets --------------------------------------------------
    
-   
-   //let selectedProductKey = "category"
-   
-    // IBOutlets
     @IBOutlet weak var selectProductCategoryTableView: UITableView!
    
     override func viewDidLoad() {
@@ -45,16 +40,14 @@ class SelectProductCategoryTableViewPageViewController: UIViewController, UITabl
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToCollection" {
             let destination = segue.destination as! AllProductCollectionViewPageViewController
-            AllProductCollectionViewPageViewController.selecrtedProductValue = sender as? String
+            AllProductCollectionViewPageViewController.selectedProductValue = sender as? String
             AllProductCollectionViewPageViewController.selectedProductKey = "category"
         }
     }
     
-    
-    // IBActions
+    // IBActions -------------------------------------------------
+   
     @IBAction func logOutButtonTapped(_ sender: Any) {
         UserModel.shared.logout()
     }
-    
-    
 }

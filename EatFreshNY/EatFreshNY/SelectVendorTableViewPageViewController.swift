@@ -11,31 +11,22 @@ import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 
-
-
 class SelectVendorTableViewPageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-   
-   
+
    var ref: FIRDatabaseReference!
-   static var selecrtedProductValue: String?
+   static var selectedProductValue: String?
    static var selectedProductKey : String?
    var vendorsList = [User]()
    var modelImage : ImageP!
+
+   // IBOutlets ------------------------------------------------------------------------
    
-   
-   
-   
-   // IBOutlets
    @IBOutlet weak var selectVendorTableView: UITableView!
    
    // //MARK: viewDidLoad
    override func viewDidLoad() {
       super.viewDidLoad()
       modelImage = ImageP()
-      
-      
-      
-      
       
    }// END ViewDidLoad
    
@@ -44,13 +35,11 @@ class SelectVendorTableViewPageViewController: UIViewController, UITableViewData
       vendorsDisplay()
    }
    
-   
-   
-   
-   // TableView
-   
    //  @IBOutlet weak var vendorImage: UIImageView!
    //  @IBOutlet weak var vendorNameLabel: UILabel!
+   
+   
+   // MARK: Tableview ------------------------------------------------------------------------
    
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return vendorsList.count
@@ -60,19 +49,8 @@ class SelectVendorTableViewPageViewController: UIViewController, UITableViewData
       let cell = tableView.dequeueReusableCell(withIdentifier: "vendorCell", for: indexPath)
          as! SelectVendorTableViewCell
       
-      
       cell.vendorNameLabel.text = vendorsList[indexPath.row].userName
       print(vendorsList[indexPath.row].userName)
-      //
-      let imageName = products[indexPath.row].imageOne
-      print (imageName)
-      //       call funcion and give it name
-      modelImage.downloadImage(named: imageName, complete: { image in
-         if let i = image {
-            cell.vendorImage.image = i
-         }
-      })
-      
       
       return cell
    }
@@ -81,51 +59,65 @@ class SelectVendorTableViewPageViewController: UIViewController, UITableViewData
       self.performSegue(withIdentifier: "vendorsToproducts", sender: vendorsList[indexPath.row].userID)
    }
    
-   
-   
-   
-   
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "vendorsToproducts" {
-         let destination = segue.destination as! SelectVendorTableViewPageViewController
-         SelectVendorTableViewPageViewController.selecrtedProductValue = sender as? String
+         if let _ = segue.destination as? SelectVendorTableViewPageViewController {
+         SelectVendorTableViewPageViewController.selectedProductValue = sender as? String
          SelectVendorTableViewPageViewController.selectedProductKey = "userID"
+         }
          //
          
       }
    }//END prepare sagues
    
-   
-   
-   
-   override func didReceiveMemoryWarning() {
-      
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
-   }
-   
    func vendorsDisplay() {
-      
       let usersRef = FIRDatabase.database().reference(withPath:"users")
       
-      let vendorsQuery = usersRef.queryOrdered(byChild: "userRole").queryEqual(toValue: SelectVendorTableViewPageViewController.self)
-      
-      vendorsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
+      usersRef.observeSingleEvent(of: .value, with: { (snapshot) in
+         if snapshot.hasChildren(){
+            
+            for userSnapshot in snapshot.children {
+               if let firUserSnapshot = userSnapshot as? FIRDataSnapshot {
+                  let rolesSnapshot = firUserSnapshot.childSnapshot(forPath: "userRole").value!
+                  
+                  if rolesSnapshot as! String == "vendor"{
+                     let user = User(snapshot: firUserSnapshot)
+                     self.vendorsList.append(user)
+                  }
+               }
+            }
+            
+            DispatchQueue.main.async {
+               self.selectVendorTableView.reloadData()
+            }
+         }
          
-         let rolesnapshot = snapshot.childSnapshot(forPath: "userRole").value!
-         if rolesnapshot as! String == "vendor"{
-            
-            self.vendorsList.append(rolesnapshot as! User)
-            
-            
-         }
-         DispatchQueue.main.async {
-            self.selectVendorTableView.reloadData()
-         }
       })
-      
    }//END of vendorDisplay
    
+   /*
+    func vendorsDisplay() {
+    
+    let usersRef = FIRDatabase.database().reference(withPath:"users")
+    
+    let vendorsQuery = usersRef.queryOrdered(byChild: "userRole").queryEqual(toValue: SelectVendorTableViewPageViewController.self)
+    
+    vendorsQuery.observeSingleEvent(of: .value, with: { (snapshot) in
+    
+    let rolesnapshot = snapshot.childSnapshot(forPath: "userRole").value!
+    if rolesnapshot as! String == "vendor"{
+    
+    self.vendorsList.append(rolesnapshot as! User)
+    
+    
+    }
+    DispatchQueue.main.async {
+    self.selectVendorTableView.reloadData()
+    }
+    })
+    
+    }//END of vendorDisplay
+    */
    
    
    

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xQi-oY-vqE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xQi-oY-vqE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -207,7 +207,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="VDM-Ta-Yrb">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="Vqx-za-xSY" kind="show" id="6ig-OP-DxS"/>
+                                                <segue destination="xQi-oY-vqE" kind="show" id="frm-0F-QbL"/>
                                             </connections>
                                         </barButtonItem>
                                         <view key="titleView" contentMode="scaleToFill" id="D1a-J3-peH">
@@ -824,7 +824,6 @@
         <image name="logo 4" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6ig-OP-DxS"/>
         <segue reference="4cG-yp-NTy"/>
     </inferredMetricsTieBreakers>
 </document>
