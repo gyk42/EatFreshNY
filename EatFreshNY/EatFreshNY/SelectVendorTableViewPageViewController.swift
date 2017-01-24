@@ -97,7 +97,7 @@ class SelectVendorTableViewPageViewController: UIViewController, UITableViewData
    
    /*
     func vendorsDisplay() {
-    
+   
     let usersRef = FIRDatabase.database().reference(withPath:"users")
     
     let vendorsQuery = usersRef.queryOrdered(byChild: "userRole").queryEqual(toValue: SelectVendorTableViewPageViewController.self)
@@ -109,7 +109,42 @@ class SelectVendorTableViewPageViewController: UIViewController, UITableViewData
     
     self.vendorsList.append(rolesnapshot as! User)
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "vendorsToproducts" {
+            if let _ = segue.destination as? SelectVendorTableViewPageViewController {
+                SelectVendorTableViewPageViewController.selectedProductValue = sender as? String
+                SelectVendorTableViewPageViewController.selectedProductKey = "userID"
+            }
+            //
+            
+        }
+    }//END prepare sagues
     
+    func vendorsDisplay() {
+        let usersRef = FIRDatabase.database().reference(withPath:"users")
+        
+        usersRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.hasChildren(){
+                
+                for userSnapshot in snapshot.children {
+                    if let firUserSnapshot = userSnapshot as? FIRDataSnapshot {
+                        let rolesSnapshot = firUserSnapshot.childSnapshot(forPath: "userRole").value!
+                        
+                        if rolesSnapshot as! String == "vendor"{
+                            let user = User(snapshot: firUserSnapshot)
+                            self.vendorsList.append(user)
+                        }
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    self.selectVendorTableView.reloadData()
+                }
+            }
+            
+        })
+    }//END of vendorDisplay
+   
     }
     DispatchQueue.main.async {
     self.selectVendorTableView.reloadData()
@@ -118,12 +153,5 @@ class SelectVendorTableViewPageViewController: UIViewController, UITableViewData
     
     }//END of vendorDisplay
     */
-   
-   
-   
-   
-   
-   
-   
-   
+
 }// END SelectVendorTableViewPageViewController

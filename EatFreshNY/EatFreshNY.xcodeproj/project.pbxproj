@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C651F541E3676B700BB19B9 /* VendorDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C651F531E3676B700BB19B9 /* VendorDashboardViewController.swift */; };
 		0CBC51BB1E3519710074D564 /* InventoryProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC51BA1E3519710074D564 /* InventoryProductTableViewCell.swift */; };
 		0CBC51BF1E353B960074D564 /* InventoryProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC51BE1E353B960074D564 /* InventoryProductViewController.swift */; };
 		0CE244111E300C0800548D00 /* ProductDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE244101E300C0800548D00 /* ProductDataModel.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C651F531E3676B700BB19B9 /* VendorDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendorDashboardViewController.swift; sourceTree = "<group>"; };
 		0CBC51BA1E3519710074D564 /* InventoryProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryProductTableViewCell.swift; sourceTree = "<group>"; };
 		0CBC51BE1E353B960074D564 /* InventoryProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryProductViewController.swift; sourceTree = "<group>"; };
 		0CE244101E300C0800548D00 /* ProductDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDataModel.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				4CA14E6D1E3001B600CA326A /* NewProductViewController.swift */,
 				0CBC51BE1E353B960074D564 /* InventoryProductViewController.swift */,
 				0CBC51BA1E3519710074D564 /* InventoryProductTableViewCell.swift */,
+				0C651F531E3676B700BB19B9 /* VendorDashboardViewController.swift */,
 				EEBC50DD1E2AD107005EAE7B /* Assets */,
 			);
 			name = Logic;
@@ -446,6 +449,7 @@
 				508835931E3119C400EAC364 /* VendorSettingsViewController.swift in Sources */,
 				EEBC50F11E2ADBED005EAE7B /* SelectProductTableViewCell.swift in Sources */,
 				EEBC50EF1E2ADB5F005EAE7B /* ThankYouPurchaseConfirmationPageViewController.swift in Sources */,
+				0C651F541E3676B700BB19B9 /* VendorDashboardViewController.swift in Sources */,
 				8D0B7CD41E2ADE83008799F4 /* LoginViewController.swift in Sources */,
 				EEACAAED1E310BCD006F3D10 /* FavoritesViewController.swift in Sources */,
 				8D0B7CD81E2ADEC8008799F4 /* VendorSignUpViewController.swift in Sources */,

@@ -57,6 +57,8 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
          }
       })
    }
+    
+    
    
    // CollectionView
    
@@ -70,27 +72,17 @@ class AllProductCollectionViewPageViewController: UIViewController, UICollection
       
       cell.productNameLabel.text = products[indexPath.row].name
       print(products[indexPath.row].name)
-//MARK : STEPS TO GET IMAGE  from storage  
-   /// to call this u need in each ViewContraller to call: copy/paste
-    //  import FirebaseStorage
-   //var modelImage = ImageP()
-   // func getImageFromStorage()
 
-//       get the name of the image
       let imageName = products[indexPath.row].imageOne
       print (imageName)
-//       call funcion and give it name
+
       modelImage.downloadImage(named: imageName, complete: { image in
          if let i = image {
             cell.productImage.image = i
          }
       })
       
-      ///////////
-      
-      
-      
-      ///////////
+    
       return cell
    }
    
