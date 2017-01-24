@@ -76,7 +76,11 @@ class ProductDetailPageViewController: UIViewController {
 		
 		//Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productPhoto: productDetailImage.image!)
 		
-		Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productId: itemsInTheCart?.productId)
+		Item(productName: productNameLabel.text!,
+		     productPrice: (productPriceLabel.text!.floatValue),
+		     productQuantity: (quantityNumberLabel.text!.intValue),
+		     productId: itemsInTheCart?.productId,
+		     productPhoto:  (product?.imageOne)!)
 		
 		// Alert Message to let user know an item was added to the cart
 		let alertController = UIAlertController(title: "Alert!", message:

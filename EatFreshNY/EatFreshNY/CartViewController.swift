@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseStorage
 
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
+    var ref: FIRDatabaseReference!
 	var cartModel = CartModel()
 	var itemClass = [Item]()
+    var productsIds = [String] ()
+    var productImages = [String]()
+    
 	var cartCell = CartTableViewCell()
-	
+	 var modelImage : ImageP!
 	// MARK: IBOutlets --------------------------------------------------------------------------------------
 	@IBOutlet weak var cartTableView: UITableView!
 	@IBOutlet weak var cartNumberOfItemsTotalLabel: UILabel!
@@ -29,7 +36,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	// MARK: ViewDidLoad ---------------------------------------------------------------------------------------
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+        modelImage = ImageP()
+
 		// Displays the total number of items currently in the cart
 		cartNumberOfItemsTotalLabel.text = String(itemClass.count)
 		
@@ -72,6 +80,18 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		CartModel.shared.loadPersistedCartFromDefaults()
 		cell.data = itemClass[indexPath.row]
+        
+        
+     
+        let imageName = itemClass[indexPath.row].productPhoto
+        modelImage.downloadImage(named: imageName, complete: { image in
+            if let i = image {
+                cell.productImage.image = i
+            }
+        })
+        
+
+        
 		return cell
 	}
 	
