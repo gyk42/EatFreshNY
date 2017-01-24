@@ -13,6 +13,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	var cartModel = CartModel()
 	var itemClass = [Item]()
 	var cartCell = CartTableViewCell()
+   var productsImages = [String]()
+   var modelImage : ImageP!
 	
 	// MARK: IBOutlets --------------------------------------------------------------------------------------
 	@IBOutlet weak var cartTableView: UITableView!
@@ -29,6 +31,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 	// MARK: ViewDidLoad ---------------------------------------------------------------------------------------
 	override func viewDidLoad() {
 		super.viewDidLoad()
+      modelImage = ImageP()
+
+      
+      itemClass = CartModel.shared.cart
 		
 		// Displays the total number of items currently in the cart
 		cartNumberOfItemsTotalLabel.text = String(itemClass.count)
@@ -72,6 +78,18 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 		
 		CartModel.shared.loadPersistedCartFromDefaults()
 		cell.data = itemClass[indexPath.row]
+      
+      let imageName = itemClass[indexPath.row].productPhoto
+    
+      
+      modelImage.downloadImage(named: imageName, complete: { image in
+         if let i = image {
+            cell.productImage.image = i
+         }
+      })
+
+      
+      
 		return cell
 	}
 	

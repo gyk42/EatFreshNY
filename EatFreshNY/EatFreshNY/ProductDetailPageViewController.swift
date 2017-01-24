@@ -28,6 +28,7 @@ class ProductDetailPageViewController: UIViewController {
   
   var product: Product?
 	var cartModelClass = CartModel()
+   
 
    //ImageProsissing
    var ref: FIRDatabaseReference!
@@ -76,7 +77,9 @@ class ProductDetailPageViewController: UIViewController {
 		
 		//Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productPhoto: productDetailImage.image!)
 		
-		Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productId: itemsInTheCart?.productId)
+      let item = Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productId: itemsInTheCart?.productId, productPhoto: (product?.imageOne)! )
+      
+      CartModel.shared.cart.append(item)
 		
 		// Alert Message to let user know an item was added to the cart
 		let alertController = UIAlertController(title: "Alert!", message:
