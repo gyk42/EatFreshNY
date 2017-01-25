@@ -13,7 +13,6 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class User {
-   
    var userID = FIRAuth.auth()?.currentUser?.uid
    var userEmail: String
    var userRole: String
@@ -24,7 +23,7 @@ class User {
    var userLogo: String
    var userDescription: String?
    var ref: FIRDatabaseReference?
-
+   
    init(userID: String, userRole: String, userEmail: String, userLocation: String, userName: String,userPhoneNumber : String, userWebsite: String, userLogo: String, userDescription: String){
       self.userID =  userID
       self.userEmail = userEmail
@@ -62,7 +61,6 @@ class User {
          "userWebsite": userWebsite as String as AnyObject,
          "userLogo": userLogo as String as AnyObject,
          "userDescription": userDescription as String? as AnyObject
-
       ]
    }
 }
