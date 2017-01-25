@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       checkForCurrentUser()
-     // UserModel.shared.logout()
+      // UserModel.shared.logout()
    }
    
    func checkForCurrentUser() {
@@ -36,13 +36,13 @@ class LoginViewController: UIViewController {
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
       self.view.endEditing(true)
    }
-
+   
    // MARK: IBAction -------------------------------
    
    @IBAction func loginBtnPressed(_ sender: Any) {
       let userLoginEmail = clientNameTextField.text!
       let userLoginPassword = clientNamePassword.text!
-
+      
       let userDescription = "0"
       // TODO
       

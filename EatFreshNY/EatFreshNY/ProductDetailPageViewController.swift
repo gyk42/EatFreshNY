@@ -11,43 +11,45 @@ import Firebase
 import FirebaseDatabase
 import FirebaseStorage
 
-// MARK: Extentions ---------------------------------------------------------------------
+// MARK: Extentions ------------------------------------------
+
 extension String {
-	var floatValue: Float {
-		return (self as NSString).floatValue
-	}
+   var floatValue: Float {
+      return (self as NSString).floatValue
+   }
 }
 
 extension String {
-	var intValue: Int {
-		return Int((self as NSString).intValue)
-	}
+   var intValue: Int {
+      return Int((self as NSString).intValue)
+   }
 }
 
 class ProductDetailPageViewController: UIViewController {
-  
-  var product: Product?
-	var cartModelClass = CartModel()
    
-
+   var product: Product?
+   var cartModelClass = CartModel()
+   
    //ImageProsissing
    var ref: FIRDatabaseReference!
    var modelImage : ImageP!
-   // animation 
+   
+   // animation
    var productImagesNames = [String]()
    var poductsImageData = [UIImage] ()
-	var itemsInTheCart: Item?
-
-   // MARK: IBOutlets --------------------------------------------------------------------
+   var itemsInTheCart: Item?
+   
+   // MARK: IBOutlets -----------------------------------------
+   
    @IBOutlet weak var productDetailImage: UIImageView!
    @IBOutlet weak var productNameLabel: UILabel!
    @IBOutlet weak var productDescriptionLabel: UILabel!
    @IBOutlet weak var productPriceLabel: UILabel!
    @IBOutlet weak var quantityNumberLabel: UILabel!
-	@IBOutlet weak var stepper: UIStepper!
-	
-	
-	// MARK: ViewDidLoad -------------------------------------------------------------------
+   @IBOutlet weak var stepper: UIStepper!
+   
+   // MARK: ViewDidLoad ----------------------------------------
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       modelImage = ImageP()
@@ -58,47 +60,43 @@ class ProductDetailPageViewController: UIViewController {
       self.productPriceLabel.text = product?.price
       self.quantityNumberLabel.text = product?.quantity
       //self.productDetailImage.image = product?.image
-		
-		// Stepper 
-		stepper.wraps = true
-		stepper.autorepeat = true
-		stepper.maximumValue = 10
-
-   } // END ViewDidLoad
-
-   override func viewWillAppear(_ animated: Bool) {
-       super.viewWillAppear(animated)
+      
+      // Stepper
+      stepper.wraps = true
+      stepper.autorepeat = true
+      stepper.maximumValue = 10
+      
    }
-
-   // MARK: IBActions ------------------------------------------------------------------------
+   
+   override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+   }
+   
+   // MARK: IBActions -----------------------------------------
+   
    @IBAction func addToCartButtonTapped(_ sender: UIButton) {
-		
-		CartModel.shared.Key = NSUUID().uuidString // creates a randome string to  be uses as cartID
-		
-		//Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productPhoto: productDetailImage.image!)
-		
-
+      
+      // creates a randome string to  be uses as cartID
+      CartModel.shared.Key = NSUUID().uuidString
+      
       let item = Item(productName: productNameLabel.text!, productPrice: (productPriceLabel.text!.floatValue), productQuantity: (quantityNumberLabel.text!.intValue), productId: itemsInTheCart?.productId, productPhoto: (product?.imageOne)! )
       
       CartModel.shared.cart.append(item)
-
-		
-		// Alert Message to let user know an item was added to the cart
-		let alertController = UIAlertController(title: "Alert!", message:
-			"You added an item to the cart", preferredStyle: UIAlertControllerStyle.alert)
-		alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
-		self.present(alertController, animated: true, completion: nil)
-
+      
+      // Alert Message to let user know an item was added to the cart
+      let alertController = UIAlertController(title: "Alert!", message:
+         "You added an item to the cart", preferredStyle: UIAlertControllerStyle.alert)
+      alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+      self.present(alertController, animated: true, completion: nil)
    }
-  
-   // MARK: Stepper ---------------------------------------------------------------------------------------
-	@IBAction func quantityStepperTapped(_ sender: UIStepper) {		
-		quantityNumberLabel.text = Int(sender.value).description
-	}
-	
-
    
-   // Image Animation
+   @IBAction func quantityStepperTapped(_ sender: UIStepper) {
+      quantityNumberLabel.text = Int(sender.value).description
+   }
+   
+   // MARK: Functions ------------------------------------------
+   
+   //Image Animation
    
    func animationProductImage () {
       productImagesNames = [(product?.imageOne)!, (product?.imageTwo)!, (product?.imageThree)!, (product?.imageFour)!]
@@ -112,19 +110,13 @@ class ProductDetailPageViewController: UIViewController {
                   self.allImagesLoaded()
                }
             }
-            
          })
-         
       }
-      
-   }//END fucn animationProductImage
-   
+   }
    
    func allImagesLoaded() {
       productDetailImage.animationImages = poductsImageData
       productDetailImage.animationDuration = 6.0
       productDetailImage.startAnimating()
    }
-   
-
-}// END ProductDetailPageViewController
+}

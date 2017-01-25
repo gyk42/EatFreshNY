@@ -61,18 +61,18 @@ class ClientSingUpViewController: UIViewController {
       } else if phone == "" {
          alert(message: "number")
       } else {
-         
-         
          FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
             // Checks to see if user exists
             if let error = error {
                let alertController = UIAlertController(title: "User exists.", message: "Please use another email or sign in.", preferredStyle: UIAlertControllerStyle.alert)
                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+               
                alertController.addAction(defaultAction)
                self.present(alertController, animated: true, completion: nil)
                print(error.localizedDescription)
             } else {
                let currentUserID = FIRAuth.auth()!.currentUser!.uid
+               
                self.ref.child("users").updateChildValues(["\(currentUserID)":["userRole": "client", "userEmail": email, "userLocation" : "0", "userName": name, "userPhoneNumber": phone, "userWebsite": "0", "userDescription": "0", "userLogo": "0"]])
                UserModel.shared.user = User(userID: currentUserID, userRole: "client", userEmail: email, userLocation: "0", userName: name, userPhoneNumber: phone, userWebsite: "0", userLogo: "0", userDescription: "0")
                UserModel.shared.checkStoryBoard(storyBoard: "Main")

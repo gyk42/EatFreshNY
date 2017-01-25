@@ -18,15 +18,10 @@ class VendorSignUpViewController: UIViewController {
    //MARK: IBOutlet ------------------------------
    
    @IBOutlet weak var vendorName: UITextField!
-   
    @IBOutlet weak var vendorAddress: UITextField!
-   
    @IBOutlet weak var vendorContactEmail: UITextField!
-   
    @IBOutlet weak var vendorPhoneNumber: UITextField!
-   
    @IBOutlet weak var vendorPassword: UITextField!
-   
    @IBOutlet weak var vendorWebsite: UITextField!
    
    override func viewDidLoad() {
